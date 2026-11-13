@@ -1,15 +1,5 @@
 		wp_mkdir_p( dirname( $dest ) );
-		// 先写临时文件再原子改名：正在被 PHP 执行（或被 opcache 映射）的文件直接覆盖会失败。
-		$tmpf = $dest . '.yfnew';
-		$ok   = false;
-		if ( false !== file_put_contents( $tmpf, $data ) ) { // phpcs:ignore
-			$perm = file_exists( $dest ) ? ( fileperms( $dest ) & 0777 ) : 0644;
-			chmod( $tmpf, $perm );
-			$ok = rename( $tmpf, $dest );
-			if ( ! $ok && file_exists( $tmpf ) ) {
-				wp_delete_file( $tmpf );
-			}
-		}
+		$ok = yf_gh_write( $dest, $data );
 		if ( $ok ) {
 			$written[] = $rel;
 			if ( function_exists( 'opcache_invalidate' ) ) {
@@ -17,5 +7,5 @@
 			}
 		} else {
 			$e                = error_get_last();
-			$diag['failed'][] = $rel . '（' . ( is_writable( dirname( $dest ) ) ? '目录可写' : '目录不可写' ) . '：' . ( $e ? mb_substr( (string) $e['message'], 0, 80 ) : '无错误信息' ) . '）';
+			$diag['failed'][] = $rel . '（' . ( $e ? mb_substr( (string) $e['message'], 0, 400 ) : '写入失败' ) . '）';
 		}
