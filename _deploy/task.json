@@ -1,6 +1,1 @@
-{ "id": "events-rename-check-1", "ops": [
-  { "do": "probe", "path": "/", "find": ["讲座交流", "近期活动"] },
-  { "do": "probe", "path": "/events/", "find": ["讲座交流", "近期活动", "本地活动"] },
-  { "do": "probe", "path": "/go/", "find": ["可报名", "讲座交流", "yf-go-row"] },
-  { "do": "probe", "path": "/submit/?type=event", "find": ["evkind", "峰会展会", "请发到「课程」"] }
-] }
+{ "id": "news-check-1001", "ops": [ { "do": "news", "latest": 1 }, { "do": "log", "name": "yf_news_log", "n": 30 } ] }
