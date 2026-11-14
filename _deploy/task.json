@@ -1,1 +1,1 @@
-{ "id": "own-band-1", "ops": [ { "do": "probe", "path": "/", "find": ["yf-own", "找我的店"], "show": "你是店主", "shown": 1 }, { "do": "probe", "path": "/?s=dental&pt=city_merchant", "find": ["Dental", "认领"], "show": "Dental", "shown": 3 }, { "do": "probe", "path": "/?s=AcuCentre&pt=city_merchant", "find": ["AcuCentre"] } ] }
+{ "id": "claim-header-1", "ops": [ { "do": "probe", "path": "/news/", "find": ["yf-claimlink", "认领店铺"] }, { "do": "probe", "path": "/merchant/", "find": ["yf-mfind", "找我的店", "已经认领过？在这里登录"] } ] }
