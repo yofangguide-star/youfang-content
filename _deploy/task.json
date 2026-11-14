@@ -1,4 +1,7 @@
 {
-  "id": "merch-akl-dry-1",
-  "ops": [ { "do": "merch", "file": "merchants.csv", "dry": 1 } ]
+  "id": "merch-akl-live-1",
+  "ops": [
+    { "do": "merch", "file": "merchants.csv" },
+    { "do": "fp" }
+  ]
 }
