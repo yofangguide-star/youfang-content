@@ -1,4 +1,4 @@
 {
-  "id": "news-status-1",
-  "ops": [ { "do": "log", "name": "yf_news_log", "n": 3 } ]
+  "id": "news-runnow-1",
+  "ops": [ { "do": "news", "mode": "all", "unlock": 1 } ]
 }
