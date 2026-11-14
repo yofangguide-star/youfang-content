@@ -1,1 +1,8 @@
-{ "id": "news-latest-1", "ops": [ { "do": "news", "latest": 1 } ] }
+{
+  "id": "news-read-check-2",
+  "ops": [
+    { "do": "probe", "path": "/?p=5632", "find": ["data-read-lead", "data-read-play", "data-big", "对华人的影响", "yf_big"] },
+    { "do": "probe", "path": "/?p=5626", "find": ["data-read-lead", "data-big"] },
+    { "do": "probe", "path": "/", "find": ["本周要闻回顾", "今日要闻"] }
+  ]
+}
