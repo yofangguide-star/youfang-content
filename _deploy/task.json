@@ -1,1 +1,1 @@
-{ "id": "health-first-1", "ops": [ { "do": "news", "mode": "all", "unlock": 1 }, { "do": "health", "warm": 1 }, { "do": "probe", "path": "/road/", "find": ["yf-rt-map", "yf-stale"] }, { "do": "probe", "path": "/", "find": ["讲座交流"] } ] }
+{ "id": "usage-1130", "ops": [ { "do": "log", "name": "yf_news_log", "n": 1 } ] }
