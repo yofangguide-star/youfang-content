@@ -1,4 +1,4 @@
 {
-  "id": "news-ls-1",
-  "ops": [ { "do": "news", "ls": 1 } ]
+  "id": "news-triage-test-1",
+  "ops": [ { "do": "news", "triage": "1News" }, { "do": "news", "triage": "interest" } ]
 }
