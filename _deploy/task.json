@@ -1,1 +1,1 @@
-{ "id": "news-check-1001", "ops": [ { "do": "news", "latest": 1 }, { "do": "log", "name": "yf_news_log", "n": 30 } ] }
+{ "id": "usage-1", "ops": [ { "do": "log", "name": "yf_news_log", "n": 1 } ] }
