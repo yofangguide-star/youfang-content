@@ -1,4 +1,7 @@
 {
-  "id": "news-triage-test-1",
-  "ops": [ { "do": "news", "triage": "1News" }, { "do": "news", "triage": "interest" } ]
+  "id": "news-recap-check-1",
+  "ops": [
+    { "do": "probe", "path": "/", "find": ["本周要闻回顾", "今日要闻", "周末政府部门不发稿"] },
+    { "do": "news", "triage": "1News" }
+  ]
 }
