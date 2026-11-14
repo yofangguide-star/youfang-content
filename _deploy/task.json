@@ -1,1 +1,1 @@
-{ "id": "road-where-3", "ops": [ { "do": "probe", "path": "/road/?isl=n", "find": ["位置：", "附近："], "show": "封路 2 处", "shown": 1 }, { "do": "probe", "path": "/road/?isl=n", "find": ["附近："], "show": "附近：", "shown": 3 } ] }
+{ "id": "road-branches-1", "ops": [ { "do": "probe", "path": "/road/?isl=n", "find": ["位置：", "附近：", "影响："], "show": "封闭SH", "shown": 3 }, { "do": "probe", "path": "/road/auckland-to-whitianga/", "find": ["奥克兰到Whitianga", "SH25"] }, { "do": "probe", "path": "/road/", "find": ["yf-rt-map"] } ] }
