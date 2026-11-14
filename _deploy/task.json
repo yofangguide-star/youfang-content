@@ -1,4 +1,4 @@
 {
-  "id": "thin-count-1",
-  "ops": [ { "do": "fp" } ]
+  "id": "export-merchants-1",
+  "ops": [ { "do": "export", "offset": 0, "n": 40, "thin": 1 } ]
 }
