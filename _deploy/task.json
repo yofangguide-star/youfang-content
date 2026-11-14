@@ -1,7 +1,4 @@
 {
-  "id": "probe-go-card-home-1",
-  "ops": [
-    { "do": "probe", "path": "/go/?yf_card=1", "find": ["本地活动", "今天去哪", "canvas"] },
-    { "do": "probe", "path": "/", "find": ["本地活动", "今天去哪"] }
-  ]
+  "id": "nzta-fields-1",
+  "ops": [ { "do": "nzta", "geo": 1 } ]
 }
