@@ -1,4 +1,1 @@
-{ "id": "road-where-2", "ops": [
-  { "do": "probe", "path": "/road/?isl=all", "find": ["封路"], "show": "封路SH", "shown": 4 },
-  { "do": "probe", "path": "/road/?isl=all", "find": ["延误SH"], "show": "延误SH", "shown": 12 }
-] }
+{ "id": "road-where-3", "ops": [ { "do": "probe", "path": "/road/?isl=n", "find": ["位置：", "附近："], "show": "封路 2 处", "shown": 1 }, { "do": "probe", "path": "/road/?isl=n", "find": ["附近："], "show": "附近：", "shown": 3 } ] }
