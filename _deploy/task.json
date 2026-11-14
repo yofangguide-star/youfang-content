@@ -1,4 +1,4 @@
 {
-  "id": "news-runnow-1",
-  "ops": [ { "do": "news", "mode": "all", "unlock": 1 } ]
+  "id": "news-ls-1",
+  "ops": [ { "do": "news", "ls": 1 } ]
 }
