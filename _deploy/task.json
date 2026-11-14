@@ -1,4 +1,10 @@
 {
-  "id": "news-broad-check-1",
-  "ops": [ { "do": "news", "triage": "1News" }, { "do": "news", "triage": "RNZ中文" } ]
+  "id": "news-read-check-1",
+  "ops": [
+    { "do": "probe", "path": "/?p=5643", "find": ["data-read-lead", "data-big", "对华人的影响"] },
+    { "do": "probe", "path": "/?p=5644", "find": ["data-read-lead", "data-big", "对华人的影响"] },
+    { "do": "probe", "path": "/?p=5646", "find": ["data-read-lead", "data-big", "对华人的影响"] },
+    { "do": "probe", "path": "/?p=5649", "find": ["data-read-lead", "data-big", "对华人的影响"] },
+    { "do": "probe", "path": "/?p=5631", "find": ["data-read-play", "data-big"] }
+  ]
 }
