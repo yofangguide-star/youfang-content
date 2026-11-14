@@ -1,1 +1,1 @@
-{ "id": "usage-1130", "ops": [ { "do": "log", "name": "yf_news_log", "n": 1 } ] }
+{ "id": "home-road-both-1", "ops": [ { "do": "probe", "path": "/", "find": ["南岛路况", "北岛路况", "isl=n", "isl=s"] }, { "do": "probe", "path": "/road/?isl=n", "find": ["yf-rt-map", "整岛清单"] } ] }
