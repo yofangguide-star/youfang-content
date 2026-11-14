@@ -1,10 +1,4 @@
 {
-  "id": "fp-redo-and-noindex-check-1",
-  "ops": [
-    { "do": "fp", "force": 1 },
-    { "do": "probe", "path": "/merchants/", "find": ["商家"] },
-    { "do": "probe", "path": "/road/?from=christchurch", "find": ["出发地："] },
-    { "do": "probe", "path": "/go/", "find": ["本地活动"] },
-    { "do": "probe", "path": "/advertise/", "find": ["有方"] }
-  ]
+  "id": "thin-count-1",
+  "ops": [ { "do": "fp" } ]
 }
