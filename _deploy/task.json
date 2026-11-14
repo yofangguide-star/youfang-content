@@ -1,4 +1,8 @@
 {
-  "id": "export-merchants-1",
-  "ops": [ { "do": "export", "offset": 0, "n": 40, "thin": 1 } ]
+  "id": "readbiz-sample-1",
+  "ops": [
+    { "do": "readbiz", "id": 5191, "len": 2200 },
+    { "do": "readbiz", "id": 5195, "len": 2200 },
+    { "do": "readbiz", "id": 5201, "len": 2200 }
+  ]
 }
