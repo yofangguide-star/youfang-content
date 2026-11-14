@@ -1,1 +1,5 @@
-{ "id": "recap-check-0909", "ops": [ { "do": "probe", "path": "/", "find": ["本周要闻回顾", "今日要闻", "周末政府部门不发稿"] }, { "do": "news", "latest": 1 } ] }
+{ "id": "big-list-check-1", "ops": [
+  { "do": "probe", "path": "/news/", "find": ["yf-bigbar", "data-big", "post-type-archive-yf_news"] },
+  { "do": "probe", "path": "/", "find": ["yf-bigbtn", "本周要闻回顾"] },
+  { "do": "probe", "path": "/wp-content/themes/youfang-theme/assets/app.css", "find": ["yf-bigbar", "tax-yf_news_type .yf-li-title"] }
+] }
