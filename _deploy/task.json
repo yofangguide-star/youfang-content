@@ -1,1 +1,1 @@
-{ "id": "news-unsee-1", "ops": [ { "do": "news", "unsee": 40 }, { "do": "news", "mode": "all", "unlock": 1 } ] }
+{ "id": "news-run-2", "ops": [ { "do": "news", "mode": "all", "unlock": 1 }, { "do": "news", "latest": 1 } ] }
