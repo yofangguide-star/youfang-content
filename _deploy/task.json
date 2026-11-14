@@ -1,8 +1,13 @@
 {
-  "id": "readbiz-sample-1",
+  "id": "tidy-and-fullcheck-1",
   "ops": [
-    { "do": "readbiz", "id": 5191, "len": 2200 },
-    { "do": "readbiz", "id": 5195, "len": 2200 },
-    { "do": "readbiz", "id": 5201, "len": 2200 }
+    { "do": "tidy" },
+    { "do": "probe", "path": "/", "find": ["本地活动", "有方", "yf-today-card"] },
+    { "do": "probe", "path": "/guide/", "find": ["办事指南", "yf-gtab"] },
+    { "do": "probe", "path": "/merchants/", "find": ["商家"] },
+    { "do": "probe", "path": "/road/", "find": ["yf-rt-map"] },
+    { "do": "probe", "path": "/go/", "find": ["本地活动"] },
+    { "do": "probe", "path": "/submit/?type=merchant", "find": ["店名"] },
+    { "do": "probe", "path": "/claim/", "find": ["认领"] }
   ]
 }
