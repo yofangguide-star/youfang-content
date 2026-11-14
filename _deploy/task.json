@@ -1,4 +1,4 @@
 {
-  "id": "srcstat-1",
-  "ops": [ { "do": "export", "n": 1, "srcstat": 1 } ]
+  "id": "merch-akl-dry-1",
+  "ops": [ { "do": "merch", "file": "merchants.csv", "dry": 1 } ]
 }
