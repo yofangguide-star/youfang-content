@@ -1,7 +1,7 @@
 {
-  "id": "merch-akl-live-1",
+  "id": "merch-akl-verify-1",
   "ops": [
-    { "do": "merch", "file": "merchants.csv" },
-    { "do": "fp" }
+    { "do": "merch", "file": "merchants.csv", "dry": 1 },
+    { "do": "export", "offset": 278, "n": 10 }
   ]
 }
