@@ -1,7 +1,6 @@
 {
-  "id": "merch-akl-verify-1",
+  "id": "merch-page-check-1",
   "ops": [
-    { "do": "merch", "file": "merchants.csv", "dry": 1 },
-    { "do": "export", "offset": 278, "n": 10 }
+    { "do": "probe", "path": "/?p=5651", "find": ["Opal Dental", "牙医", "普通话", "Te Atatū", "09 834 6359", "ACC"] }
   ]
 }
