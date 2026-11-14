@@ -1,5 +1,1 @@
-{ "id": "big-list-check-1", "ops": [
-  { "do": "probe", "path": "/news/", "find": ["yf-bigbar", "data-big", "post-type-archive-yf_news"] },
-  { "do": "probe", "path": "/", "find": ["yf-bigbtn", "本周要闻回顾"] },
-  { "do": "probe", "path": "/wp-content/themes/youfang-theme/assets/app.css", "find": ["yf-bigbar", "tax-yf_news_type .yf-li-title"] }
-] }
+{ "id": "news-check-0922", "ops": [ { "do": "log", "name": "yf_news_log", "n": 12 }, { "do": "news", "ls": 1 } ] }
