@@ -1,6 +1,7 @@
 {
-  "id": "probe-go-v2-1",
+  "id": "probe-go-card-home-1",
   "ops": [
-    { "do": "probe", "path": "/go/", "find": ["本地活动", "今天去哪", "yf-go-row", "yf-go-next", "可报名", "往后两周"] }
+    { "do": "probe", "path": "/go/?yf_card=1", "find": ["本地活动", "今天去哪", "canvas"] },
+    { "do": "probe", "path": "/", "find": ["本地活动", "今天去哪"] }
   ]
 }
