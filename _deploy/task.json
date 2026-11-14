@@ -1,10 +1,1 @@
-{ "id": "names-and-leads-1", "ops": [
-  { "do": "probe", "path": "/road/christchurch-to-queenstown/", "find": ["Geraldine", "杰拉尔丁", "克伦威尔（Cromwell）", "基督城到皇后镇"] },
-  { "do": "probe", "path": "/?p=5631", "find": ["yf-gpro", "问一句"] },
-  { "do": "probe", "path": "/?p=5636", "find": ["yf-gpro", "问一句"] },
-  { "do": "probe", "path": "/?p=5637", "find": ["yf-gpro", "问一句"] },
-  { "do": "probe", "path": "/?p=5638", "find": ["yf-gpro", "问一句"] },
-  { "do": "probe", "path": "/?p=5639", "find": ["yf-gpro", "问一句"] },
-  { "do": "probe", "path": "/?p=5642", "find": ["yf-gpro", "问一句"] },
-  { "do": "probe", "path": "/?p=5641", "find": ["yf-gpro", "问一句"] }
-] }
+{ "id": "mbar-check-1", "ops": [ { "do": "probe", "path": "/merchant/", "find": ["商家登录", "忘记密码"] } ] }
