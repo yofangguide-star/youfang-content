@@ -1,7 +1,8 @@
 {
-  "id": "probe-road-1",
+  "id": "road-bust-1",
   "ops": [
-    { "do": "probe", "path": "/road/", "find": ["yf-rt-map", "常走的几条路", "自己选两个地方", "整岛清单", "基督城 → 皇后镇", "yf-rt-e is-closed", "yf-rt-e is-delay"] },
-    { "do": "probe", "path": "/road/christchurch-to-queenstown/", "find": ["基督城到皇后镇", "SH1 → SH79 → SH8 → SH6", "经过：", "yf-rt-map", "封路", "反方向"] }
+    { "do": "road" },
+    { "do": "probe", "path": "/road/", "find": ["yf-rt-e is-closed", "yf-rt-e is-delay", "yf-rd-closed", "yf-rd-delay"] },
+    { "do": "probe", "path": "/road/christchurch-to-queenstown/", "find": ["没有封路", "yf-rd-closed", "yf-rd-delay", "绕行：", "预计恢复"] }
   ]
 }
