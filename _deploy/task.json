@@ -1,1 +1,1 @@
-{ "id": "home-road-both-1", "ops": [ { "do": "probe", "path": "/", "find": ["南岛路况", "北岛路况", "isl=n", "isl=s"] }, { "do": "probe", "path": "/road/?isl=n", "find": ["yf-rt-map", "整岛清单"] } ] }
+{ "id": "police-triage-1", "ops": [ { "do": "news", "triage": "Police" } ] }
