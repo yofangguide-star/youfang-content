@@ -1,7 +1,8 @@
 {
-  "id": "rename-go-local-events-1",
+  "id": "probe-go-slug-1",
   "ops": [
-    { "do": "page", "slug": "go", "title": "本地活动" },
-    { "do": "probe", "path": "/go/", "find": ["本地活动", "今天去哪", "yf-go-row", "可报名", "往后两周", "市政府"] }
+    { "do": "probe", "path": "/?page_id=5505", "find": ["本地活动", "yf-go-row", "可报名", "往后两周"] },
+    { "do": "probe", "path": "/go/", "find": ["yf-go-row"] },
+    { "do": "probe", "path": "/go-2/", "find": ["yf-go-row"] }
   ]
 }
