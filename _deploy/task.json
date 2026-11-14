@@ -1,1 +1,7 @@
-{"id": "probe-20261115-001956", "ops": [{"do": "probe", "path": "/go/", "find": ["今天去哪", "yf-go-row", "近期活动"]}, {"do": "probe", "path": "/guide/", "find": ["yf-gtab", "30 秒看完"]}]}
+{
+  "id": "rename-go-local-events-1",
+  "ops": [
+    { "do": "page", "slug": "go", "title": "本地活动" },
+    { "do": "probe", "path": "/go/", "find": ["本地活动", "今天去哪", "yf-go-row", "可报名", "往后两周", "市政府"] }
+  ]
+}
