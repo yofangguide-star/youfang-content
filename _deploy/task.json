@@ -1,8 +1,10 @@
 {
-  "id": "fp-backfill-1",
+  "id": "fp-redo-and-noindex-check-1",
   "ops": [
-    { "do": "fp" },
-    { "do": "city", "cities": { "auckland": "奥克兰", "wellington": "惠灵顿", "hamilton": "汉密尔顿", "tauranga": "陶朗加", "queenstown": "皇后镇", "dunedin": "但尼丁", "timaru": "蒂马鲁", "nelson": "尼尔森", "palmerston-north": "北帕默斯顿", "rotorua": "罗托鲁瓦", "invercargill": "因弗卡吉尔", "napier": "内皮尔" } },
-    { "do": "probe", "path": "/submit/?type=merchant", "find": ["免费建店铺页", "店名"] }
+    { "do": "fp", "force": 1 },
+    { "do": "probe", "path": "/merchants/", "find": ["商家"] },
+    { "do": "probe", "path": "/road/?from=christchurch", "find": ["出发地："] },
+    { "do": "probe", "path": "/go/", "find": ["本地活动"] },
+    { "do": "probe", "path": "/advertise/", "find": ["有方"] }
   ]
 }
