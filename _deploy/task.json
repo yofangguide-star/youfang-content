@@ -1,1 +1,1 @@
-{ "id": "news-check-0922", "ops": [ { "do": "log", "name": "yf_news_log", "n": 12 }, { "do": "news", "ls": 1 } ] }
+{ "id": "news-unsee-1", "ops": [ { "do": "news", "unsee": 40 }, { "do": "news", "mode": "all", "unlock": 1 } ] }
