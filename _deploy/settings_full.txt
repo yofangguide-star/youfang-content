@@ -1,0 +1,1277 @@
+<?php
+/**
+ * Settings: prices, which features are paid, cities, review mode. Everything adjustable later.
+ */
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
+function yf_feature_list() {
+	return array(
+		'services' => '服务项目价目表',
+		'report'   => '每月数据报告',
+		'xhs'      => '小红书素材生成',
+		'badge'    => '会员标识',
+		'no_peers' => '页面不显示同行推荐',
+	);
+}
+
+function yf_setting_defaults() {
+	return array(
+		'review_mode'     => 'manual', // manual: everything waits for approval. auto: trusted rules publish directly.
+		'notify_email'    => get_option( 'admin_email' ),
+		'contact_email'   => 'support@youfang.co.nz', // 对外公开的联系邮箱，换域名只改这里
+		'inbound_email'   => 'news@yofangguide.com',    // 官方邮件订阅收到这个地址，Cloudflare 转给网站
+		'entity_name'     => '',                        // 运营主体全名，出现在免责声明、隐私政策、收据上
+		'gst_number'      => '',                        // 收据上的 GST 号，留空就不显示 GST
+		'open_cities'     => array( 'christchurch' ),
+		'city_threshold'  => 20,
+		'featured_slots'  => 3,
+		'price_member'    => '',
+		'early_off'       => 50,
+		'price_promo'     => '',
+		'price_featured'  => '',
+		'price_newsletter'=> '',
+		'price_eventtop'  => '',
+		'paid_features'   => array( 'services', 'report', 'xhs', 'badge', 'no_peers' ),
+		'min_wage'        => '23.95',
+		'ts_site'         => '',
+		'ts_secret'       => '',
+	);
+}
+
+function yf_setting( $key ) {
+	$s = wp_parse_args( (array) get_option( 'yf_settings', array() ), yf_setting_defaults() );
+	return isset( $s[ $key ] ) ? $s[ $key ] : null;
+}
+
+/**
+ * Whether a merchant may use a feature: free features for all, paid ones for members.
+ */
+/** Always member-only, whatever the settings page says. */
+function yf_member_forced() {
+	return array( 'posting', 'booking', 'coursereg', 'coupon' );
+}
+
+/**
+ * Every member feature, for the membership page, the buy page and the shop's manage page.
+ * key => [ name, one-line benefit, coming soon ].
+ */
+function yf_member_features() {
+	$out  = array(
+		'posting'   => array( '发优惠、课程、招聘、活动', '在有方发布优惠、课程、招聘和活动信息，出现在对应频道。', false ),
+		'booking'   => array( '在线预约 / 订位', '客人在你的店铺页选时间提交预约（餐厅是订位），你确认后自动通知客人。', false ),
+		'coursereg' => array( '课程报名', '你的课程页面可以在线报名，名单在管理页查看、导出 Excel。', false ),
+		'coupon'    => array( '店铺优惠券', '优惠显示在你的店铺页，并出现在首页“本周商家优惠”。', false ),
+	);
+	$info = yf_feature_info();
+	$paid = (array) yf_setting( 'paid_features' );
+	foreach ( yf_feature_list() as $k => $label ) {
+		if ( in_array( $k, $paid, true ) ) {
+			$out[ $k ] = array( $label, $info[ $k ][0] ?? '', ! empty( $info[ $k ][1] ) );
+		}
+	}
+	$out['rank'] = array( '分类列表里排在前面', '在你的行业列表里排在非会员商家前面。', false );
+	return $out;
+}
+
+function yf_merchant_can( $post_id, $feature ) {
+	if ( in_array( $feature, yf_member_forced(), true ) ) {
+		return yf_is_member( $post_id );
+	}
+	$paid = (array) yf_setting( 'paid_features' );
+	if ( ! in_array( $feature, $paid, true ) ) {
+		return true;
+	}
+	return yf_is_member( $post_id );
+}
+
+add_action(
+	'admin_menu',
+	function () {
+		add_menu_page( '有方设置', '有方设置', 'manage_options', 'yf-settings', 'yf_settings_page', 'dashicons-admin-generic', 3 );
+	}
+);
+
+function yf_settings_page() {
+	if ( ! current_user_can( 'manage_options' ) ) {
+		return;
+	}
+	if ( isset( $_POST['yf_settings_nonce'] ) && wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['yf_settings_nonce'] ) ), 'yf_settings' ) ) {
+		$in  = wp_unslash( $_POST );
+		$new = array(
+			'review_mode'      => ( isset( $in['review_mode'] ) && 'auto' === $in['review_mode'] ) ? 'auto' : 'manual',
+			'notify_email'     => sanitize_email( $in['notify_email'] ?? '' ),
+			'contact_email'    => sanitize_email( $in['contact_email'] ?? '' ),
+			'inbound_email'    => sanitize_email( $in['inbound_email'] ?? '' ),
+			'entity_name'      => sanitize_text_field( $in['entity_name'] ?? '' ),
+			'gst_number'       => sanitize_text_field( $in['gst_number'] ?? '' ),
+			'open_cities'      => array_map( 'sanitize_key', (array) ( $in['open_cities'] ?? array() ) ),
+			'city_threshold'   => absint( $in['city_threshold'] ?? 20 ),
+			'featured_slots'   => absint( $in['featured_slots'] ?? 3 ),
+			'price_member'     => sanitize_text_field( $in['price_member'] ?? '' ),
+			'early_off'        => min( 90, absint( $in['early_off'] ?? 50 ) ),
+			'price_promo'      => sanitize_text_field( $in['price_promo'] ?? '' ),
+			'price_featured'   => sanitize_text_field( $in['price_featured'] ?? '' ),
+			'price_newsletter' => sanitize_text_field( $in['price_newsletter'] ?? '' ),
+			'price_eventtop'   => sanitize_text_field( $in['price_eventtop'] ?? '' ),
+			'paid_features'    => array_values( array_intersect( array_keys( yf_feature_list() ), array_map( 'sanitize_key', (array) ( $in['paid_features'] ?? array() ) ) ) ),
+			'min_wage'         => sanitize_text_field( $in['min_wage'] ?? '' ),
+			'ts_site'          => sanitize_text_field( trim( $in['ts_site'] ?? '' ) ),
+			'ts_secret'        => '' !== trim( $in['ts_secret'] ?? '' ) ? sanitize_text_field( trim( $in['ts_secret'] ) ) : (string) yf_setting( 'ts_secret' ),
+		);
+		update_option( 'yf_settings', $new );
+		update_option( 'yf_lock_on', empty( $in['lock_on'] ) ? 0 : 1, true );
+		if ( empty( $in['lock_on'] ) && ! get_option( 'yf_launched' ) ) { // First time the site opens to everyone.
+			update_option( 'yf_launched', current_time( 'Y-m-d' ), false );
+			do_action( 'yf_launch' );
+		}
+		// 行业置顶: price and number of slots for every industry, edited in one table.
+		foreach ( (array) ( $in['yf_top'] ?? array() ) as $tid => $row ) {
+			$tid = absint( $tid );
+			if ( ! $tid || ! term_exists( $tid, 'merchant_category' ) ) {
+				continue;
+			}
+			update_term_meta( $tid, 'yf_top_price', sanitize_text_field( $row['price'] ?? '' ) );
+			if ( isset( $row['slots'] ) && '' !== trim( (string) $row['slots'] ) ) {
+				update_term_meta( $tid, 'yf_top_slots', absint( $row['slots'] ) );
+			}
+			if ( isset( $row['feat'] ) ) {
+				$keys = array_keys( yf_member_features() );
+				$pick = array();
+				foreach ( (array) $row['feat'] as $one ) {
+					$one = sanitize_key( $one );
+					if ( $one && in_array( $one, $keys, true ) && ! in_array( $one, $pick, true ) ) {
+						$pick[] = $one;
+					}
+				}
+				update_term_meta( $tid, 'yf_feat_top', $pick );
+			}
+		}
+		echo '<div class="notice notice-success"><p>已保存。</p></div>';
+	}
+	$cities = get_terms( array( 'taxonomy' => 'yf_city', 'hide_empty' => false ) );
+	$open   = (array) yf_setting( 'open_cities' );
+	$paid   = (array) yf_setting( 'paid_features' );
+	?>
+	<div class="wrap">
+		<h1>有方设置</h1>
+		<form method="post">
+			<?php wp_nonce_field( 'yf_settings', 'yf_settings_nonce' ); ?>
+			<table class="form-table" role="presentation">
+				<tr><th scope="row">审核方式</th><td>
+					<label><input type="radio" name="review_mode" value="manual" <?php checked( yf_setting( 'review_mode' ), 'manual' ); ?>> 所有提交等待审核后发布（试运行期）</label><br>
+					<label><input type="radio" name="review_mode" value="auto" <?php checked( yf_setting( 'review_mode' ), 'auto' ); ?>> 符合规则的自动发布，可疑的才等待审核</label>
+				</td></tr>
+				<tr><th scope="row"><label for="notify_email">通知邮箱</label></th><td><input class="regular-text" id="notify_email" name="notify_email" value="<?php echo esc_attr( yf_setting( 'notify_email' ) ); ?>"></td></tr>
+				<tr><th scope="row"><label for="contact_email">对外联系邮箱</label></th><td><input class="regular-text" id="contact_email" name="contact_email" value="<?php echo esc_attr( yf_setting( 'contact_email' ) ); ?>"> 帮助中心、页脚、邮件回复地址都用它。换域名时改这一处就够。</td></tr>
+				<tr><th scope="row"><label for="inbound_email">邮件收稿地址</label></th><td><input class="regular-text" id="inbound_email" name="inbound_email" value="<?php echo esc_attr( yf_setting( 'inbound_email' ) ); ?>"> 用它去订阅官方邮件，Cloudflare 转给网站。</td></tr>
+				<tr><th scope="row"><label for="entity_name">运营主体</label></th><td><input class="regular-text" id="entity_name" name="entity_name" value="<?php echo esc_attr( yf_setting( 'entity_name' ) ); ?>" placeholder="例如：Youfang Limited"> 公司全名，显示在免责声明、隐私政策、用户协议和收据上。</td></tr>
+				<tr><th scope="row"><label for="gst_number">GST 号</label></th><td><input class="regular-text" id="gst_number" name="gst_number" value="<?php echo esc_attr( yf_setting( 'gst_number' ) ); ?>"> 留空则收据上不显示 GST。</td></tr>
+				<tr><th scope="row">已开放的城市频道</th><td>
+					<?php foreach ( $cities as $c ) : ?>
+						<label style="margin-right:16px"><input type="checkbox" name="open_cities[]" value="<?php echo esc_attr( $c->slug ); ?>" <?php checked( in_array( $c->slug, $open, true ) ); ?>> <?php echo esc_html( $c->name ); ?>（<?php echo (int) yf_city_merchant_count( $c->slug ); ?> 家商家）</label>
+					<?php endforeach; ?>
+				</td></tr>
+				<tr><th scope="row"><label for="city_threshold">商家满多少家自动开放城市</label></th><td><input type="number" id="city_threshold" name="city_threshold" value="<?php echo esc_attr( yf_setting( 'city_threshold' ) ); ?>"></td></tr>
+				<tr><th scope="row"><label for="featured_slots">每个城市首页焦点位数量</label></th><td><input type="number" id="featured_slots" name="featured_slots" value="<?php echo esc_attr( yf_setting( 'featured_slots' ) ); ?>"></td></tr>
+				<tr><th scope="row"><label for="early_off">创始会员折扣（%）</label></th><td><input type="number" id="early_off" name="early_off" min="0" max="90" style="width:70px" value="<?php echo esc_attr( yf_setting( 'early_off' ) ); ?>"> 免费会员期内开通 12 个月会员打几折的“减”数，50 就是 5 折。开通过的商家只要不断档，以后续费 12 个月也一直是这个价。填 0 关闭。</td></tr>
+				<tr><th scope="row">价格（NZD，留空表示未定价）</th><td>
+					会员 / 月 <input name="price_member" size="6" value="<?php echo esc_attr( yf_setting( 'price_member' ) ); ?>">
+					精选商家 / 月 <input name="price_promo" size="6" value="<?php echo esc_attr( yf_setting( 'price_promo' ) ); ?>">
+					首页焦点位 / 月 <input name="price_featured" size="6" value="<?php echo esc_attr( yf_setting( 'price_featured' ) ); ?>">
+					本周推荐 / 周 <input name="price_newsletter" size="6" value="<?php echo esc_attr( yf_setting( 'price_newsletter' ) ); ?>">
+					活动置顶 / 周 <input name="price_eventtop" size="6" value="<?php echo esc_attr( yf_setting( 'price_eventtop' ) ); ?>">
+				</td></tr>
+				<tr><th scope="row">行业置顶（每个行业单独定价）</th><td>
+					<table class="widefat striped" style="max-width:1000px">
+						<thead><tr><th>行业大类</th><th>价格 / 月（NZD）</th><th>位置数量</th><th colspan="3">这个行业先看到哪三项会员功能</th></tr></thead>
+						<tbody>
+						<?php
+						$yf_tops = get_terms( array( 'taxonomy' => 'merchant_category', 'parent' => 0, 'hide_empty' => false ) );
+						foreach ( is_wp_error( $yf_tops ) ? array() : $yf_tops as $yf_tt ) :
+							?>
+							<tr>
+								<td><?php echo esc_html( $yf_tt->name ); ?></td>
+								<td><input name="yf_top[<?php echo (int) $yf_tt->term_id; ?>][price]" size="8" value="<?php echo esc_attr( function_exists( 'yf_cattop_price' ) ? yf_cattop_price( $yf_tt->term_id ) : '' ); ?>" placeholder="未定价"></td>
+								<td><input type="number" min="0" style="width:70px" name="yf_top[<?php echo (int) $yf_tt->term_id; ?>][slots]" value="<?php echo esc_attr( function_exists( 'yf_cattop_slots' ) ? yf_cattop_slots( $yf_tt->term_id ) : 3 ); ?>"></td>
+								<?php
+								$yf_fk = function_exists( 'yf_ind_feat_keys' ) ? yf_ind_feat_keys( $yf_tt->term_id ) : array();
+								for ( $yf_n = 0; $yf_n < 3; $yf_n++ ) :
+									?>
+									<td><?php echo function_exists( 'yf_feat_select' ) ? yf_feat_select( 'yf_top[' . (int) $yf_tt->term_id . '][feat][]', $yf_fk[ $yf_n ] ?? '' ) : ''; // phpcs:ignore ?></td>
+								<?php endfor; ?>
+							</tr>
+						<?php endforeach; ?>
+						</tbody>
+					</table>
+					<p class="description">价格留空时，购买页显示示例价。位置数量填 0 表示这个行业不卖置顶。<br>右边三列决定这个行业的商家在认领页和管理页先看到哪三项会员功能，其余的收进「还包含」里。价格不变，只改顺序。</p>
+				</td></tr>
+				<tr><th scope="row">哪些功能只给会员</th><td>
+					<?php foreach ( yf_feature_list() as $k => $label ) : ?>
+						<label style="display:block"><input type="checkbox" name="paid_features[]" value="<?php echo esc_attr( $k ); ?>" <?php checked( in_array( $k, $paid, true ) ); ?>> <?php echo esc_html( $label ); ?></label>
+					<?php endforeach; ?>
+					<p class="description">不勾选的功能所有商家都能免费用。</p>
+				</td></tr>
+				<tr><th scope="row"><label for="min_wage">法定最低时薪（职位审核用）</label></th><td>$<input id="min_wage" name="min_wage" size="6" value="<?php echo esc_attr( yf_setting( 'min_wage' ) ); ?>"></td></tr>
+				<tr><th scope="row">表单防机器人<br><small style="font-weight:400">Cloudflare Turnstile</small></th><td>
+					<p>站点密钥（Site Key）<br><input class="regular-text" name="ts_site" autocomplete="off" value="<?php echo esc_attr( yf_setting( 'ts_site' ) ); ?>"></p>
+					<p>保密密钥（Secret Key）<br><input class="regular-text" type="password" name="ts_secret" autocomplete="new-password" placeholder="<?php echo yf_setting( 'ts_secret' ) ? '已保存，留空保持不变' : '粘贴保密密钥'; ?>"></p>
+					<p class="description">两个都填好后，入驻发布、认领纠错下架、留言、评价、订阅这几个表单会自动加上人机验证。要关掉，把站点密钥清空保存即可。当前状态：<b><?php echo yf_ts_on() ? '已开启' : '未开启'; ?></b></p>
+				</td></tr>
+				<tr><th scope="row">网站上锁<br><small style="font-weight:400">上线前测试用</small></th><td>
+					<label><input type="checkbox" name="lock_on" value="1" <?php checked( (int) get_option( 'yf_lock_on' ), 1 ); ?>> 上锁：外人只看到“即将上线”，搜索引擎不收录</label>
+					<p class="description">自己测试的设备，打开一次这个解锁链接就会记住（一年）：<br><code><?php echo esc_html( yf_lock_link() ); ?></code><br>正式上线时，取消勾选并保存即可。</p>
+				</td></tr>
+			</table>
+			<?php submit_button( '保存设置' ); ?>
+		</form>
+	</div>
+	<?php
+}
+
+function yf_city_merchant_count( $slug ) {
+	$t = get_term_by( 'slug', $slug, 'yf_city' );
+	if ( ! $t ) {
+		return 0;
+	}
+	$q = new WP_Query(
+		array(
+			'post_type'      => 'city_merchant',
+			'post_status'    => 'publish',
+			'fields'         => 'ids',
+			'posts_per_page' => 1,
+			'tax_query'      => array( array( 'taxonomy' => 'yf_city', 'field' => 'term_id', 'terms' => $t->term_id ) ),
+		)
+	);
+	return (int) $q->found_posts;
+}
+
+/* ---------- Free vs member plans: shown to merchants so they know what membership adds ---------- */
+
+/**
+ * Short benefit line for each feature, and which ones are not built yet.
+ */
+function yf_feature_info() {
+	return array(
+		'services' => array( '逐项录入服务与价格，自动生成中英文对照表格，并作为在线预约的可选项目。', false ),
+		'report'   => array( '每月一封邮件，告诉你多少人看过、打过电话，和上个月比较。', false ),
+		'xhs'      => array( '一键生成小红书图文素材。', true ),
+		'badge'    => array( '店名旁边显示“会员商家”。', false ),
+		'no_peers' => array( '你的页面底部不再显示其他同类商家。', false ),
+	);
+}
+
+/**
+ * Comparison of the free and member plans, used on the membership page and in the help centre.
+ */
+function yf_plans_table() {
+	$paid = (array) yf_setting( 'paid_features' );
+	$info = yf_feature_info();
+	$free = array(
+		'商家主页：店名、介绍、营业时间、网站',
+		'一键打电话、复制微信号、WhatsApp',
+		'地址、地图和一键导航',
+		'上传照片',
+		'上传菜单或价目表照片，顾客到店前就能看到价格',
+		'放微信、小红书二维码，顾客扫码就加上',
+		'自动生成英文页面，Kiwi 客人和 Google 都能搜到你',
+		'出现在分类列表和搜索结果里',
+		'本月浏览和点击次数',
+		'随时自己修改资料',
+		'邀请顾客写评价',
+		'顾客可以收藏你的店，随时找回',
+		'在线留言（客人留言发到你的邮箱）',
+		'发二手闲置、招租求租',
+	);
+	$rows = '';
+	foreach ( $free as $f ) {
+		$rows .= '<tr><td>' . esc_html( $f ) . '</td><td class="yes">✓</td><td class="yes">✓</td></tr>';
+	}
+	foreach ( yf_member_features() as $k => $f ) {
+		$soon  = $f[2] ? ' <small class="yf-soon">即将推出</small>' : '';
+		$desc  = $f[1] ? '<br><small>' . esc_html( $f[1] ) . '</small>' : '';
+		$rows .= '<tr><td><b>' . esc_html( $f[0] ) . '</b>' . $soon . $desc . '</td><td class="no">—</td><td class="yes">✓</td></tr>';
+	}
+	ob_start();
+	?>
+	<div class="yf-plans">
+		<div class="yf-plans-scroll">
+			<table class="yf-plans-table">
+				<thead><tr><th>功能</th><th>免费版</th><th>会员版</th></tr></thead>
+				<tbody><?php echo $rows; // phpcs:ignore ?></tbody>
+			</table>
+		</div>
+		<p class="yf-grow"><b>有方还在持续开发。你在会员期内上线的新功能，会直接加到你的会员里，不额外收费。</b></p>
+		<p class="yf-note"><?php echo esc_html( function_exists( 'yf_trial_offer' ) && yf_trial_offer() ? yf_trial_offer() . '。' : '' ); ?>到期后想继续用会员功能，在店铺管理页“会员”里开通<?php echo '' !== (string) yf_setting( 'price_member' ) ? '（' . esc_html( yf_setting( 'price_member' ) ) . ' NZD / 月）' : ''; ?>，不会自动扣费。不开通也不影响店铺页面正常展示。</p>
+	</div>
+	<?php
+	return ob_get_clean();
+}
+add_shortcode( 'yf_plans', 'yf_plans_table' );
+
+/**
+ * Block on the merchant's private manage page: current plan and the member features they don't have yet.
+ */
+function yf_manage_plan_block( $id ) {
+	$member = function_exists( 'yf_is_member' ) && yf_is_member( $id );
+	$trial  = $member && function_exists( 'yf_member_in_trial' ) && yf_member_in_trial( $id );
+	$until  = (string) get_post_meta( $id, 'yf_member_until', true );
+	$out    = '<section class="yf-plan-box" aria-labelledby="yf-plan-h"><h3 id="yf-plan-h">会员功能</h3>';
+	if ( $trial ) {
+		$out .= '<p>你现在是<b>免费会员</b>（认领赠送），到 ' . esc_html( $until ) . '。下面这些功能现在都能用；到期后会停用，想继续用就开通会员，不会自动扣费。</p>';
+	} elseif ( $member ) {
+		$out .= '<p>你是<b>会员</b>，到 ' . esc_html( $until ) . '。下面这些功能都能用。</p>';
+	} else {
+		$out .= '<p>你现在是<b>免费版</b>。开通会员后可以用下面这些功能：</p>';
+	}
+	$out .= '<ul class="yf-locked">';
+	list( $yf_pt, $yf_pr ) = function_exists( 'yf_feat_split' ) ? yf_feat_split( yf_ind_root_of( $id ) ) : array( array(), yf_member_features() );
+	foreach ( ( $yf_pt + $yf_pr ) as $k => $f ) {
+		$ok   = $member && ! $f[2];
+		$out .= '<li><span class="yf-lock" aria-hidden="true">' . ( $ok ? '✓' : ( $f[2] ? '…' : '🔒' ) ) . '</span><span><b>' . esc_html( $f[0] ) . '</b>' . ( $f[2] ? ' <small class="yf-soon">即将推出</small>' : '' ) . ( $f[1] ? '<br><small>' . esc_html( $f[1] ) . '</small>' : '' ) . '</span></li>';
+	}
+	$out .= '</ul><p class="yf-note">' . ( function_exists( 'yf_buy_url' ) ? '<a href="' . esc_url( yf_buy_url( $id, array( 'pick' => 'member' ) ) . '#buy-member' ) . '">' . ( $member ? '续费会员 →' : '开通会员 →' ) . '</a> · ' : '' ) . '<a href="' . esc_url( home_url( '/membership/' ) ) . '">免费版和会员版的区别 →</a></p></section>';
+	return $out;
+}
+
+/* ===== Cloudflare Turnstile: bot check on the public forms. Off until both keys are saved. ===== */
+function yf_ts_on() {
+	return '' !== (string) yf_setting( 'ts_site' ) && '' !== (string) yf_setting( 'ts_secret' );
+}
+
+function yf_ts_field() {
+	if ( ! yf_ts_on() ) {
+		return '';
+	}
+	static $loaded = false;
+	$out = '';
+	if ( ! $loaded ) {
+		$loaded = true;
+		$out    = '<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>';
+	}
+	return $out . '<div class="cf-turnstile" data-sitekey="' . esc_attr( yf_setting( 'ts_site' ) ) . '" data-appearance="interaction-only" data-language="zh-cn" style="margin:4px 0"></div>';
+}
+
+function yf_ts_ok() {
+	if ( ! yf_ts_on() ) {
+		return true;
+	}
+	static $result = null;
+	if ( null !== $result ) {
+		return $result;
+	}
+	$token = isset( $_POST['cf-turnstile-response'] ) ? sanitize_text_field( wp_unslash( $_POST['cf-turnstile-response'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification
+	if ( '' === $token ) {
+		$result = false;
+		return $result;
+	}
+	$r = wp_remote_post(
+		'https://challenges.cloudflare.com/turnstile/v0/siteverify',
+		array(
+			'timeout' => 10,
+			'body'    => array(
+				'secret'   => yf_setting( 'ts_secret' ),
+				'response' => $token,
+				'remoteip' => function_exists( 'yf_client_ip' ) ? yf_client_ip() : '',
+			),
+		)
+	);
+	if ( is_wp_error( $r ) ) {
+		$result = true; // Cloudflare unreachable: let the other checks (honeypot, timer, rate limit) decide.
+		return $result;
+	}
+	$body   = json_decode( wp_remote_retrieve_body( $r ), true );
+	$result = ! empty( $body['success'] );
+	return $result;
+}
+/* ===== Pre-launch lock: visitors see a "coming soon" page; devices that opened the unlock link see the real site. ===== */
+function yf_lock_key() {
+	$k = (string) get_option( 'yf_lock_key' );
+	if ( '' === $k ) {
+		$k = wp_generate_password( 24, false, false );
+		update_option( 'yf_lock_key', $k, false );
+	}
+	return $k;
+}
+
+function yf_lock_link() {
+	return add_query_arg( 'yf_pv', yf_lock_key(), home_url( '/' ) );
+}
+
+function yf_lock_passed() {
+	if ( is_user_logged_in() ) {
+		return true;
+	}
+	$c = isset( $_COOKIE['yf_pv'] ) ? sanitize_text_field( wp_unslash( $_COOKIE['yf_pv'] ) ) : '';
+	return '' !== $c && hash_equals( hash_hmac( 'sha256', 'pv', yf_lock_key() ), $c );
+}
+
+/**
+ * While locked, a shop owner still gets in with the private link we send them:
+ * the manage/edit pages and preview (link carries id + token), their own page afterwards
+ * (remembered in a cookie), and the merchant login. Nothing else on the site opens.
+ */
+function yf_lock_owner_sig( $id ) {
+	return substr( hash_hmac( 'sha256', 'pm' . (int) $id, yf_lock_key() ), 0, 16 );
+}
+
+function yf_lock_owner_pass() {
+	// phpcs:disable WordPress.Security.NonceVerification
+	$ok_ids = array();
+	if ( ! empty( $_COOKIE['yf_pm'] ) ) {
+		foreach ( explode( ',', sanitize_text_field( wp_unslash( $_COOKIE['yf_pm'] ) ) ) as $pair ) {
+			$b = explode( ':', $pair );
+			if ( 2 === count( $b ) && hash_equals( yf_lock_owner_sig( (int) $b[0] ), $b[1] ) ) {
+				$ok_ids[] = (int) $b[0];
+			}
+		}
+	}
+	$id = isset( $_GET['id'] ) ? absint( $_GET['id'] ) : 0;
+	$t  = isset( $_GET['t'] ) ? sanitize_text_field( wp_unslash( $_GET['t'] ) ) : '';
+	if ( ! $id && ! empty( $_GET['yf_preview'] ) && is_singular() ) {
+		$id = (int) get_queried_object_id();
+	}
+	$pass = false;
+	if ( $id && $t && function_exists( 'yf_token_ok' ) && yf_token_ok( $id, $t ) ) {
+		$pass = true;
+		if ( ! in_array( $id, $ok_ids, true ) ) {
+			$ok_ids[] = $id;
+			$val      = implode( ',', array_map( function ( $i ) { return $i . ':' . yf_lock_owner_sig( $i ); }, array_slice( $ok_ids, -10 ) ) );
+			setcookie( 'yf_pm', $val, array( 'expires' => time() + 90 * DAY_IN_SECONDS, 'path' => '/', 'secure' => is_ssl(), 'httponly' => true, 'samesite' => 'Lax' ) );
+		}
+	}
+	if ( ! $pass && is_singular() && in_array( (int) get_queried_object_id(), $ok_ids, true ) ) {
+		$pass = true;
+	}
+	if ( ! $pass && is_page( 'merchant' ) ) {
+		$pass = true; // Login page and the logged-in list of their own shops.
+	}
+	if ( ! $pass && is_singular() && function_exists( 'yf_m_current' ) && yf_m_current() ) {
+		$pass = in_array( (int) get_queried_object_id(), array_map( function ( $p ) { return (int) $p->ID; }, yf_m_items( yf_m_current() ) ), true );
+	}
+	return $pass;
+	// phpcs:enable
+}
+
+add_filter(
+	'wp_robots',
+	function ( $robots ) {
+		if ( get_option( 'yf_lock_on' ) ) {
+			$robots['noindex']  = true;
+			$robots['nofollow'] = true;
+		}
+		return $robots;
+	}
+);
+
+add_filter(
+	'robots_txt',
+	function ( $txt ) {
+		return get_option( 'yf_lock_on' ) ? "User-agent: *\nDisallow: /\n" : $txt;
+	},
+	99
+);
+
+add_action(
+	'template_redirect',
+	function () {
+		if ( ! get_option( 'yf_lock_on' ) ) {
+			return;
+		}
+		nocache_headers();
+		header( 'X-Robots-Tag: noindex, nofollow' );
+		$try = isset( $_GET['yf_pv'] ) ? sanitize_text_field( wp_unslash( $_GET['yf_pv'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification
+		if ( '' !== $try && hash_equals( yf_lock_key(), $try ) ) {
+			setcookie( 'yf_pv', hash_hmac( 'sha256', 'pv', yf_lock_key() ), array( 'expires' => time() + YEAR_IN_SECONDS, 'path' => '/', 'secure' => is_ssl(), 'httponly' => true, 'samesite' => 'Lax' ) );
+			wp_safe_redirect( remove_query_arg( 'yf_pv' ) );
+			exit;
+		}
+		if ( yf_lock_passed() || yf_lock_owner_pass() ) {
+			return;
+		}
+		status_header( 503 );
+		header( 'Retry-After: 86400' );
+		header( 'Content-Type: text/html; charset=utf-8' );
+		echo '<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>有方 · 即将上线</title>'
+			. '<style>body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#F5F7F6;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;color:#15171C;padding:16px;box-sizing:border-box}.b{text-align:center;max-width:420px}.l{font-size:44px;font-weight:900;color:#0B7A63;margin:0}.s{color:#5B6270;margin:6px 0 28px}h1{font-size:22px;margin:0 0 10px}p{line-height:1.8;margin:0}</style></head>'
+			. '<body><div class="b"><p class="l">有方</p><p class="s">新西兰华人生活信息</p><h1>即将上线</h1><p>我们正在做最后的准备，很快和大家见面。</p><p style="margin-top:14px;color:#5B6270;font-size:14px">联系我们：' . esc_html( yf_setting( 'contact_email' ) ) . '</p></div></body></html>';
+		exit;
+	},
+	0
+);
+
+
+/* =====================================================================
+ * 按行业挑会员功能。价格不变，但每个行业先看到和自己相关的那几项，
+ * 其余的收进「还包含」里，免得保险顾问盯着菜单功能觉得花冤枉钱。
+ * 顺序存在行业大类的 term meta 'yf_feat_top'，在「有方设置」里改。
+ * ===================================================================== */
+
+function yf_ind_feat_default() {
+	return array(
+		'教育培训' => array( 'coursereg', 'posting', 'services' ),
+		'餐饮购物' => array( 'coupon', 'booking', 'posting' ),
+		'房产家居' => array( 'services', 'booking', 'report' ),
+		'医疗健康' => array( 'booking', 'services', 'coupon' ),
+		'社区组织' => array( 'posting', 'badge', 'rank' ),
+		'生活服务' => array( 'services', 'booking', 'posting' ),
+		'汽车交通' => array( 'services', 'booking', 'posting' ),
+		'留学移民' => array( 'services', 'booking', 'posting' ),
+		'财税金融' => array( 'services', 'booking', 'report' ),
+		'旅游出行' => array( 'posting', 'booking', 'coupon' ),
+		'法律服务' => array( 'services', 'booking', 'badge' ),
+		'购物零售' => array( 'coupon', 'posting', 'xhs' ),
+		'运动健身' => array( 'coursereg', 'posting', 'coupon' ),
+		'商业服务' => array( 'services', 'posting', 'report' ),
+		'娱乐休闲' => array( 'booking', 'posting', 'coupon' ),
+	);
+}
+
+/** 行业大类（merchant_category 的顶级项）：term_id => 名称。 */
+function yf_ind_roots() {
+	$out  = array();
+	$tops = get_terms( array( 'taxonomy' => 'merchant_category', 'parent' => 0, 'hide_empty' => false ) );
+	foreach ( ( is_wp_error( $tops ) ? array() : (array) $tops ) as $t ) {
+		$out[ (int) $t->term_id ] = $t->name;
+	}
+	return $out;
+}
+
+/** 一家店属于哪个行业大类。 */
+function yf_ind_root_of( $merchant_id ) {
+	foreach ( (array) wp_get_post_terms( (int) $merchant_id, 'merchant_category', array( 'fields' => 'ids' ) ) as $tid ) {
+		$anc = (array) get_ancestors( (int) $tid, 'merchant_category', 'taxonomy' );
+		return $anc ? (int) end( $anc ) : (int) $tid;
+	}
+	return 0;
+}
+
+/** 这个行业大类主打的会员功能键。 */
+function yf_ind_feat_keys( $term_id ) {
+	$term_id = (int) $term_id;
+	if ( ! $term_id ) {
+		return array();
+	}
+	$saved = get_term_meta( $term_id, 'yf_feat_top', true );
+	if ( is_array( $saved ) ) {
+		return array_values( array_filter( $saved ) );
+	}
+	$t = get_term( $term_id, 'merchant_category' );
+	$d = yf_ind_feat_default();
+	return ( $t && ! is_wp_error( $t ) && isset( $d[ $t->name ] ) ) ? $d[ $t->name ] : array();
+}
+
+/** 会员功能表拆成两半：array( 主打, 其余 )。没设置主打就全在「其余」里。 */
+function yf_feat_split( $term_id ) {
+	$all = yf_member_features();
+	$top = array();
+	foreach ( yf_ind_feat_keys( $term_id ) as $k ) {
+		if ( isset( $all[ $k ] ) ) {
+			$top[ $k ] = $all[ $k ];
+			unset( $all[ $k ] );
+		}
+	}
+	return array( $top, $all );
+}
+
+/** 「有方设置」里那三个下拉用的选项。 */
+function yf_feat_select( $name, $cur ) {
+	$out = '<select name="' . esc_attr( $name ) . '" style="max-width:150px"><option value="">—</option>';
+	foreach ( yf_member_features() as $k => $f ) {
+		$out .= '<option value="' . esc_attr( $k ) . '"' . selected( $k, $cur, false ) . '>' . esc_html( $f[0] ) . '</option>';
+	}
+	return $out . '</select>';
+}
+
+/* ==========================================================================
+ * 代码同步（GitHub）
+ *
+ * 为什么要这个：以前每次改代码都要 Oscar 开着电脑、开着浏览器，我一段段把
+ * 代码贴进去，又慢又容易贴错。接上 GitHub 之后，我在本地改好推上去，
+ * 网站自己拉下来，整个过程不用他在场。顺带白得一份版本历史，改坏能退回。
+ *
+ * 两个方向：
+ *   拉取（pull）—— GitHub → 网站。日常用这个。
+ *   回灌（push）—— 网站 → GitHub。只在对齐基线时用一次。
+ *
+ * 安全：只动 youfang-core 和 youfang-theme 两个目录，只认白名单后缀，
+ * 每次拉取前先把现有文件打包备份到 uploads，保留最近 5 份。
+ * ========================================================================== */
+
+const YF_GH_REPO = 'yofangguide-star/youfang-site';
+
+function yf_gh_token() {
+	return (string) get_option( 'yf_gh_token' );
+}
+
+/** 本地两个目录。键就是仓库里的顶层目录名。 */
+function yf_gh_roots() {
+	return array(
+		'youfang-core'  => WP_PLUGIN_DIR . '/youfang-core',
+		'youfang-theme' => get_theme_root() . '/youfang-theme',
+	);
+}
+
+/** 只写这些后缀，其它一律跳过。 */
+function yf_gh_ok_ext( $p ) {
+	return (bool) preg_match( '/\.(php|css|js|html|json|txt|md|svg|png|jpg|jpeg|gif|webp|woff2?)$/i', $p );
+}
+
+/** 暂时不许覆盖的文件。app.css 本地版本比线上少一段，回灌之前不能盖。 */
+function yf_gh_skip() {
+	return (array) apply_filters( 'yf_gh_skip', array() );
+}
+
+function yf_gh_api( $path, $args = array() ) {
+	$t = yf_gh_token();
+	if ( ! $t ) {
+		return new WP_Error( 'no_token', '还没填 GitHub token' );
+	}
+	$args = wp_parse_args(
+		$args,
+		array(
+			'timeout' => 45,
+			'headers' => array(),
+		)
+	);
+	$args['headers'] = array_merge(
+		array(
+			'Authorization'        => 'Bearer ' . $t,
+			'Accept'               => 'application/vnd.github+json',
+			'X-GitHub-Api-Version' => '2022-11-28',
+			'User-Agent'           => 'youfang-sync',
+		),
+		$args['headers']
+	);
+	return wp_remote_request( 'https://api.github.com' . $path, $args );
+}
+
+/** 拉取前先备份，留最近 5 份。 */
+function yf_gh_backup() {
+	if ( ! class_exists( 'ZipArchive' ) ) {
+		return '（这台服务器没有 ZipArchive，跳过备份）';
+	}
+	$up  = wp_upload_dir();
+	$dir = trailingslashit( $up['basedir'] ) . 'yf-backup';
+	wp_mkdir_p( $dir );
+	$file = $dir . '/code-' . gmdate( 'Ymd-His' ) . '.zip';
+	$zip  = new ZipArchive();
+	if ( true !== $zip->open( $file, ZipArchive::CREATE ) ) {
+		return '（备份失败，没有继续）';
+	}
+	foreach ( yf_gh_roots() as $name => $root ) {
+		if ( ! is_dir( $root ) ) {
+			continue;
+		}
+		$it = new RecursiveIteratorIterator( new RecursiveDirectoryIterator( $root, FilesystemIterator::SKIP_DOTS ) );
+		foreach ( $it as $f ) {
+			if ( $f->isFile() && yf_gh_ok_ext( $f->getPathname() ) ) {
+				$zip->addFile( $f->getPathname(), $name . '/' . ltrim( str_replace( $root, '', $f->getPathname() ), '/\\' ) );
+			}
+		}
+	}
+	$zip->close();
+	$old = glob( $dir . '/code-*.zip' );
+	if ( is_array( $old ) && count( $old ) > 5 ) {
+		sort( $old );
+		foreach ( array_slice( $old, 0, count( $old ) - 5 ) as $x ) {
+			wp_delete_file( $x );
+		}
+	}
+	return basename( $file );
+}
+
+/** GitHub → 网站。 */
+function yf_gh_pull() {
+	$r = yf_gh_api( '/repos/' . YF_GH_REPO . '/zipball/main', array( 'timeout' => 90 ) );
+	if ( is_wp_error( $r ) ) {
+		return $r;
+	}
+	if ( 200 !== wp_remote_retrieve_response_code( $r ) ) {
+		return new WP_Error( 'http', 'GitHub 返回 ' . wp_remote_retrieve_response_code( $r ) . '：' . wp_remote_retrieve_body( $r ) );
+	}
+	if ( ! class_exists( 'ZipArchive' ) ) {
+		return new WP_Error( 'nozip', '这台服务器没有 ZipArchive，没法解压' );
+	}
+	$tmp = wp_tempnam( 'yfgh' );
+	file_put_contents( $tmp, wp_remote_retrieve_body( $r ) ); // phpcs:ignore
+	$zip = new ZipArchive();
+	if ( true !== $zip->open( $tmp ) ) {
+		wp_delete_file( $tmp );
+		return new WP_Error( 'badzip', '下载的包打不开' );
+	}
+
+	$backup  = yf_gh_backup();
+	$roots   = yf_gh_roots();
+	$skip    = yf_gh_skip();
+	$written = array();
+	$skipped = array();
+	$diag    = array( 'entries' => $zip->numFiles, 'cand' => 0, 'same' => 0, 'failed' => array(), 'roots' => $roots );
+
+	for ( $i = 0; $i < $zip->numFiles; $i++ ) {
+		$name = $zip->getNameIndex( $i );
+		if ( '/' === substr( $name, -1 ) ) {
+			continue;
+		}
+		// zipball 的第一层是 "owner-repo-sha/"，去掉。
+		$rel = (string) preg_replace( '#^[^/]+/#', '', $name );
+		if ( '' === $rel ) {
+			continue;
+		}
+		$top = strtok( $rel, '/' );
+		if ( ! isset( $roots[ $top ] ) || ! yf_gh_ok_ext( $rel ) ) {
+			continue;
+		}
+		if ( in_array( $rel, $skip, true ) ) {
+			$skipped[] = $rel;
+			continue;
+		}
+		$dest = $roots[ $top ] . substr( $rel, strlen( $top ) );
+		// 防目录穿越。
+		if ( 0 !== strpos( wp_normalize_path( $dest ), wp_normalize_path( $roots[ $top ] ) ) ) {
+			continue;
+		}
+		$data = $zip->getFromIndex( $i );
+		if ( false === $data ) {
+			continue;
+		}
+		++$diag['cand'];
+		if ( file_exists( $dest ) && md5_file( $dest ) === md5( $data ) ) {
+			++$diag['same'];
+			continue; // 没变就不写。
+		}
+		wp_mkdir_p( dirname( $dest ) );
+		if ( yf_gh_write( $dest, $data ) ) {
+			$written[] = $rel;
+		} else {
+			$diag['failed'][] = $rel . '（' . ( isset( $GLOBALS['yf_gh_why'] ) ? $GLOBALS['yf_gh_why'] : '原因不明' ) . '）';
+		}
+	}
+	$zip->close();
+	wp_delete_file( $tmp );
+	update_option( 'yf_gh_last', array( 'at' => time(), 'n' => count( $written ), 'files' => array_slice( $written, 0, 50 ) ), false );
+	return array( 'written' => $written, 'skipped' => $skipped, 'backup' => $backup, 'diag' => $diag );
+}
+
+/** 网站 → GitHub。只在对齐基线时用。 */
+function yf_gh_push( $only = '' ) {
+	$out = array( 'ok' => array(), 'fail' => array() );
+	foreach ( yf_gh_roots() as $name => $root ) {
+		if ( ! is_dir( $root ) ) {
+			continue;
+		}
+		$it = new RecursiveIteratorIterator( new RecursiveDirectoryIterator( $root, FilesystemIterator::SKIP_DOTS ) );
+		foreach ( $it as $f ) {
+			if ( ! $f->isFile() || ! yf_gh_ok_ext( $f->getPathname() ) ) {
+				continue;
+			}
+			$rel = $name . '/' . ltrim( str_replace( $root, '', wp_normalize_path( $f->getPathname() ) ), '/' );
+			if ( $only && false === strpos( $rel, $only ) ) {
+				continue;
+			}
+			$body = array(
+				'message' => '从服务器回灌：' . $rel,
+				'content' => base64_encode( (string) file_get_contents( $f->getPathname() ) ), // phpcs:ignore
+				'branch'  => 'main',
+			);
+			$cur = yf_gh_api( '/repos/' . YF_GH_REPO . '/contents/' . $rel . '?ref=main' );
+			if ( ! is_wp_error( $cur ) && 200 === wp_remote_retrieve_response_code( $cur ) ) {
+				$j = json_decode( wp_remote_retrieve_body( $cur ), true );
+				if ( ! empty( $j['sha'] ) ) {
+					if ( ! empty( $j['content'] ) && base64_decode( str_replace( "\n", '', $j['content'] ) ) === file_get_contents( $f->getPathname() ) ) { // phpcs:ignore
+						continue; // 一样就不传。
+					}
+					$body['sha'] = $j['sha'];
+				}
+			}
+			$r = yf_gh_api(
+				'/repos/' . YF_GH_REPO . '/contents/' . $rel,
+				array( 'method' => 'PUT', 'body' => wp_json_encode( $body ), 'headers' => array( 'Content-Type' => 'application/json' ), 'timeout' => 60 )
+			);
+			$code = is_wp_error( $r ) ? 0 : wp_remote_retrieve_response_code( $r );
+			if ( in_array( $code, array( 200, 201 ), true ) ) {
+				$out['ok'][] = $rel;
+			} else {
+				$out['fail'][] = $rel . '（' . ( is_wp_error( $r ) ? $r->get_error_message() : $code ) . '）';
+			}
+		}
+	}
+	return $out;
+}
+
+/* ----- 后台：代码同步 ----- */
+
+add_action(
+	'admin_menu',
+	function () {
+		add_submenu_page( 'yf-settings', '代码同步', '代码同步', 'manage_options', 'yf-sync', 'yf_gh_page' );
+	},
+	30
+);
+
+function yf_gh_page() {
+	if ( ! current_user_can( 'manage_options' ) ) {
+		return;
+	}
+	$msg = '';
+	if ( isset( $_POST['yf_gh_nonce'] ) && wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['yf_gh_nonce'] ) ), 'yf_gh' ) ) {
+		if ( isset( $_POST['yf_gh_token_in'] ) ) {
+			$t = trim( sanitize_text_field( wp_unslash( $_POST['yf_gh_token_in'] ) ) );
+			if ( '' !== $t ) {
+				update_option( 'yf_gh_token', $t, false );
+				$msg = '<div class="notice notice-success"><p>token 已保存。</p></div>';
+			}
+		}
+		if ( ! empty( $_POST['yf_gh_do_pull'] ) ) {
+			$r = yf_gh_pull();
+			if ( is_wp_error( $r ) ) {
+				$msg = '<div class="notice notice-error"><p>拉取失败：' . esc_html( $r->get_error_message() ) . '</p></div>';
+			} else {
+				$msg = '<div class="notice notice-success"><p>拉取完成，更新了 <b>' . count( $r['written'] ) . '</b> 个文件。备份：' . esc_html( $r['backup'] ) . '</p>'
+					. '<p>诊断：包里 ' . (int) $r['diag']['entries'] . ' 项，候选 ' . (int) $r['diag']['cand'] . ' 个，内容相同 ' . (int) $r['diag']['same'] . ' 个，写失败 ' . count( $r['diag']['failed'] ) . ' 个'
+					. ( $r['diag']['failed'] ? '：' . esc_html( implode( '、', array_slice( $r['diag']['failed'], 0, 5 ) ) ) : '' )
+					. '<br>插件目录：' . esc_html( $r['diag']['roots']['youfang-core'] ) . '<br>主题目录：' . esc_html( $r['diag']['roots']['youfang-theme'] ) . '</p>'
+					. ( $r['written'] ? '<p>' . esc_html( implode( '、', array_slice( $r['written'], 0, 30 ) ) ) . '</p>' : '<p>没有文件需要更新。</p>' )
+					. ( $r['skipped'] ? '<p>按设置跳过：' . esc_html( implode( '、', $r['skipped'] ) ) . '</p>' : '' ) . '</div>';
+			}
+		}
+		if ( ! empty( $_POST['yf_gh_do_push'] ) ) {
+			$only = isset( $_POST['yf_gh_only'] ) ? sanitize_text_field( wp_unslash( $_POST['yf_gh_only'] ) ) : '';
+			$r    = yf_gh_push( $only );
+			$msg  = '<div class="notice notice-success"><p>回灌完成：成功 <b>' . count( $r['ok'] ) . '</b> 个'
+				. ( $r['fail'] ? '，失败 <b>' . count( $r['fail'] ) . '</b> 个：' . esc_html( implode( '、', array_slice( $r['fail'], 0, 10 ) ) ) : '' ) . '</p></div>';
+		}
+		if ( ! empty( $_POST['yf_gh_newsecret'] ) ) {
+			update_option( 'yf_gh_secret', wp_generate_password( 32, false ), false );
+			$msg = '<div class="notice notice-success"><p>自动拉取密钥已重新生成。</p></div>';
+		}
+	}
+	$tok  = yf_gh_token();
+	$last = get_option( 'yf_gh_last' );
+	$sec  = (string) get_option( 'yf_gh_secret' );
+
+	echo '<div class="wrap"><h1>代码同步</h1>';
+	echo wp_kses_post( $msg );
+	echo '<p>仓库：<b>' . esc_html( YF_GH_REPO ) . '</b>　分支：<b>main</b></p>';
+	if ( is_array( $last ) ) {
+		echo '<p>上次拉取：<b>' . esc_html( wp_date( 'Y-m-d H:i', (int) $last['at'] ) ) . '</b>，更新了 ' . (int) $last['n'] . ' 个文件。</p>';
+	}
+
+	echo '<form method="post">';
+	wp_nonce_field( 'yf_gh', 'yf_gh_nonce' );
+
+	echo '<h2>1. GitHub token</h2>';
+	echo '<p>' . ( $tok ? '已填（' . esc_html( substr( $tok, 0, 7 ) ) . '…），要换就填新的：' : '<b>还没填。</b>' ) . '</p>';
+	echo '<p><input type="password" name="yf_gh_token_in" class="regular-text" autocomplete="off" placeholder="github_pat_..."> ';
+	submit_button( '保存 token', 'secondary', 'submit', false );
+	echo '</p>';
+	echo '<p class="description">在 GitHub → Settings → Developer settings → Personal access tokens → <b>Fine-grained tokens</b> 生成，'
+		. 'Repository access 选 <b>' . esc_html( YF_GH_REPO ) . '</b>，Permissions 里 <b>Contents</b> 给 <b>Read and write</b>。</p>';
+
+	echo '<hr><h2>2. 从 GitHub 拉取（日常用这个）</h2>';
+	echo '<p class="description">把 GitHub 上的最新代码覆盖到网站。<b>拉取前会自动把现有文件打包备份</b>，保留最近 5 份，在 uploads/yf-backup 里。</p>';
+	$skip = yf_gh_skip();
+	if ( $skip ) {
+		echo '<p class="description">当前跳过不覆盖：<b>' . esc_html( implode( '、', $skip ) ) . '</b></p>';
+	}
+	echo '<p>';
+	echo '<input type="hidden" name="yf_gh_do_pull" value="0">';
+	submit_button( '从 GitHub 拉取', 'primary', 'yf_gh_do_pull', false, $tok ? array() : array( 'disabled' => 'disabled' ) );
+	echo '</p>';
+
+	echo '<hr><h2>3. 回灌到 GitHub（只在对齐基线时用）</h2>';
+	echo '<p class="description">把<b>网站上现在的文件</b>传到 GitHub，覆盖仓库里的版本。用来把线上有、仓库里没有的内容补回去。</p>';
+	echo '<p><label>只传路径里包含这段的文件（留空＝全部）：<br><input type="text" name="yf_gh_only" class="regular-text" placeholder="app.css"></label></p>';
+	echo '<p>';
+	submit_button( '回灌到 GitHub', 'secondary', 'yf_gh_do_push', false, $tok ? array() : array( 'disabled' => 'disabled' ) );
+	echo '</p>';
+
+	echo '<hr><h2>4. 自动拉取</h2>';
+	if ( $sec ) {
+		echo '<p>把这个地址配到 GitHub Actions 里，推代码后网站会自动拉：</p>';
+		echo '<p><code style="user-select:all">' . esc_html( rest_url( 'yf/v1/pull' ) . '?key=' . $sec ) . '</code></p>';
+	} else {
+		echo '<p>还没生成密钥。</p>';
+	}
+	echo '<p>';
+	submit_button( $sec ? '重新生成密钥' : '生成密钥', 'secondary', 'yf_gh_newsecret', false );
+	echo '</p></form></div>';
+}
+
+/* ----- 自动拉取的接口 ----- */
+
+add_action(
+	'rest_api_init',
+	function () {
+		register_rest_route(
+			'yf/v1',
+			'/pull',
+			array(
+				'methods'             => 'POST,GET',
+				'permission_callback' => '__return_true',
+				'callback'            => function ( $req ) {
+					$sec = (string) get_option( 'yf_gh_secret' );
+					$key = (string) $req->get_param( 'key' );
+					if ( ! $sec || ! $key || ! hash_equals( $sec, $key ) ) {
+						return new WP_REST_Response( array( 'ok' => false, 'err' => 'bad key' ), 403 );
+					}
+					$r = yf_gh_pull();
+					if ( is_wp_error( $r ) ) {
+						return new WP_REST_Response( array( 'ok' => false, 'err' => $r->get_error_message() ), 500 );
+					}
+					return new WP_REST_Response( array( 'ok' => true, 'written' => count( $r['written'] ), 'skipped' => $r['skipped'] ), 200 );
+				},
+			)
+		);
+	}
+);
+
+
+/**
+ * 写一个文件。
+ *
+ * 这台服务器上哪条路行得通不好说，所以三条都试，哪条成了算哪条：
+ * 1. 对已有文件用 r+ 打开再清空重写（不在目录里新建文件）。
+ * 2. WordPress 自己的插件/主题文件编辑器（后台改代码走的就是这条，它能写）。
+ * 3. file_put_contents 直接写。
+ *
+ * 失败时把每条的原因记在 $GLOBALS['yf_gh_why']，拉取页面会把它显示出来。
+ */
+function yf_gh_write( $dest, $data ) {
+	$why = array();
+
+	// 1. 覆盖已有文件。
+	if ( file_exists( $dest ) ) {
+		$f = @fopen( $dest, 'r+' ); // phpcs:ignore
+		if ( $f ) {
+			@flock( $f, LOCK_EX ); // phpcs:ignore
+			@ftruncate( $f, 0 ); // phpcs:ignore
+			$w = @fwrite( $f, $data ); // phpcs:ignore
+			@fflush( $f ); // phpcs:ignore
+			@flock( $f, LOCK_UN ); // phpcs:ignore
+			@fclose( $f ); // phpcs:ignore
+			if ( false !== $w && strlen( $data ) === $w ) {
+				yf_gh_flush( $dest );
+				return true;
+			}
+			$why[] = 'r+写不全';
+		} else {
+			$why[] = 'r+打不开';
+		}
+	} else {
+		$why[] = '文件不存在';
+	}
+
+	// 2. WordPress 文件编辑器。
+	$r = yf_gh_write_editor( $dest, $data );
+	if ( true === $r ) {
+		yf_gh_flush( $dest );
+		return true;
+	}
+	$why[] = '编辑器:' . $r;
+
+	// 3. 直接写。
+	if ( false !== @file_put_contents( $dest, $data ) ) { // phpcs:ignore
+		yf_gh_flush( $dest );
+		return true;
+	}
+	$e     = error_get_last();
+	$why[] = 'fpc:' . ( $e ? mb_substr( (string) $e['message'], -60 ) : '?' );
+
+	$GLOBALS['yf_gh_why'] = implode( ' / ', $why );
+	return false;
+}
+
+/** 写完把 opcache 里的旧字节码丢掉，不然下一个请求跑的还是旧代码。 */
+function yf_gh_flush( $dest ) {
+	if ( function_exists( 'opcache_invalidate' ) ) {
+		@opcache_invalidate( $dest, true ); // phpcs:ignore
+	}
+	clearstatcache( true, $dest );
+}
+
+/** 走 WordPress 自己的文件编辑器写。成功返回 true，否则返回一句原因。 */
+function yf_gh_write_editor( $dest, $data ) {
+	if ( ! function_exists( 'wp_edit_theme_plugin_file' ) ) {
+		require_once ABSPATH . 'wp-admin/includes/file.php';
+	}
+	if ( ! function_exists( 'wp_edit_theme_plugin_file' ) ) {
+		return '找不到函数';
+	}
+	$d    = wp_normalize_path( $dest );
+	$plug = wp_normalize_path( WP_PLUGIN_DIR . '/youfang-core/' );
+	$them = wp_normalize_path( get_theme_root() . '/youfang-theme/' );
+	if ( 0 === strpos( $d, $plug ) ) {
+		$args = array(
+			'plugin'     => 'youfang-core/youfang-core.php',
+			'file'       => 'youfang-core/' . substr( $d, strlen( $plug ) ),
+			'newcontent' => $data,
+		);
+	} elseif ( 0 === strpos( $d, $them ) ) {
+		$args = array(
+			'theme'      => 'youfang-theme',
+			'file'       => substr( $d, strlen( $them ) ),
+			'newcontent' => $data,
+		);
+	} else {
+		return '路径不对';
+	}
+	$r = wp_edit_theme_plugin_file( $args );
+	if ( is_wp_error( $r ) ) {
+		return $r->get_error_code();
+	}
+	return true;
+}
+
+/* ----- 内容任务接口 -----
+ * 让 GitHub Actions 替我执行数据操作（发文章、改分类、清测试数据），
+ * 这样我不用占用 Oscar 的浏览器。
+ *
+ * 流程：我把任务写进公开内容仓库的 _deploy/task.json，Actions 调这个接口，
+ * 接口自己去 GitHub 把任务取下来执行，执行结果在响应里返回（Actions 日志里能看到）。
+ *
+ * 安全约束，写死在代码里，任务文件改不了：
+ *   - 只认 yf_gh_secret 这把钥匙
+ *   - 只能操作 yf_ 开头的自有内容类型和 city_merchant，碰不到 page/post/用户/设置
+ *   - 删除只进回收站（trash），不做彻底删除
+ *   - 一次最多 100 个操作
+ */
+
+const YF_TASK_URL   = 'https://raw.githubusercontent.com/yofangguide-star/youfang-content/main/_deploy/task.json';
+const YF_TASK_TYPES = array( 'yf_guide', 'yf_news', 'yf_ride', 'yf_deal', 'yf_help', 'yf_event', 'yf_job', 'yf_course', 'yf_free', 'yf_rent', 'yf_biz', 'city_merchant' );
+const YF_TASK_TAXES = array( 'yf_guide_topic', 'merchant_category', 'yf_news_type', 'yf_city' );
+
+function yf_task_type_ok( $id ) {
+	return in_array( get_post_type( (int) $id ), YF_TASK_TYPES, true );
+}
+
+/** 取任务文件。加时间戳绕开 CDN 缓存，并返回 etag 供日志核对。 */
+function yf_task_fetch() {
+	$r = wp_remote_get(
+		YF_TASK_URL . '?v=' . time(),
+		array( 'timeout' => 20, 'headers' => array( 'Cache-Control' => 'no-cache' ) )
+	);
+	if ( is_wp_error( $r ) ) {
+		return $r;
+	}
+	if ( 200 !== (int) wp_remote_retrieve_response_code( $r ) ) {
+		return new WP_Error( 'yf_task_http', '取任务文件失败：HTTP ' . wp_remote_retrieve_response_code( $r ) );
+	}
+	$body = wp_remote_retrieve_body( $r );
+	$json = json_decode( $body, true );
+	if ( ! is_array( $json ) ) {
+		return new WP_Error( 'yf_task_json', '任务文件不是合法 JSON' );
+	}
+	return array( 'json' => $json, 'hash' => substr( md5( $body ), 0, 8 ) );
+}
+
+/** 执行一批操作，返回每条的结果。 */
+function yf_task_run( $ops ) {
+	$log = array();
+	$n   = 0;
+	foreach ( (array) $ops as $op ) {
+		if ( ++$n > 100 ) {
+			$log[] = '超过 100 个操作，后面的没执行';
+			break;
+		}
+		$do = isset( $op['do'] ) ? sanitize_key( $op['do'] ) : '';
+
+		if ( 'trash' === $do ) {
+			foreach ( (array) ( $op['ids'] ?? array() ) as $id ) {
+				$id = (int) $id;
+				if ( ! $id || ! yf_task_type_ok( $id ) ) {
+					$log[] = 'trash ' . $id . ' 跳过（类型不允许或不存在）';
+					continue;
+				}
+				$log[] = 'trash ' . $id . ' ' . ( wp_trash_post( $id ) ? '成功' : '失败' );
+			}
+			continue;
+		}
+
+		if ( 'terms' === $do ) {
+			$id  = (int) ( $op['id'] ?? 0 );
+			$tax = isset( $op['tax'] ) ? sanitize_key( $op['tax'] ) : '';
+			if ( ! $id || ! yf_task_type_ok( $id ) || ! in_array( $tax, YF_TASK_TAXES, true ) ) {
+				$log[] = 'terms ' . $id . ' 跳过（类型或分类法不允许）';
+				continue;
+			}
+			$ids = array_map( 'intval', (array) ( $op['terms'] ?? array() ) );
+			$r   = wp_set_object_terms( $id, $ids, $tax );
+			$log[] = 'terms ' . $id . ' ' . $tax . ' ' . ( is_wp_error( $r ) ? '失败：' . $r->get_error_message() : '成功' );
+			continue;
+		}
+
+		if ( 'meta' === $do ) {
+			$id = (int) ( $op['id'] ?? 0 );
+			if ( ! $id || ! yf_task_type_ok( $id ) ) {
+				$log[] = 'meta ' . $id . ' 跳过（类型不允许）';
+				continue;
+			}
+			foreach ( (array) ( $op['set'] ?? array() ) as $k => $v ) {
+				$k = sanitize_key( $k );
+				// 只许改 yf_ 开头的自有字段，碰不到 WordPress 和别的插件的。
+				if ( 0 !== strpos( $k, 'yf_' ) ) {
+					$log[] = 'meta ' . $id . ' ' . $k . ' 跳过（字段名必须 yf_ 开头）';
+					continue;
+				}
+				update_post_meta( $id, $k, is_scalar( $v ) ? (string) $v : wp_json_encode( $v ) );
+				$log[] = 'meta ' . $id . ' ' . $k . ' 已写入';
+			}
+			continue;
+		}
+
+		if ( 'guide' === $do ) {
+			$title = isset( $op['title'] ) ? sanitize_text_field( (string) $op['title'] ) : '';
+			if ( '' === $title || empty( $op['content'] ) ) {
+				$log[] = 'guide 跳过（缺标题或正文）';
+				continue;
+			}
+			// 标题一样的就改那一篇，不新建 —— 防止像之前那样发出重复。
+			$old = get_posts(
+				array(
+					'post_type'        => 'yf_guide',
+					'post_status'      => array( 'publish', 'draft', 'pending', 'private' ),
+					'title'            => $title,
+					'posts_per_page'   => 1,
+					'fields'           => 'ids',
+					'suppress_filters' => true,
+				)
+			);
+			$data = array(
+				'post_type'    => 'yf_guide',
+				'post_title'   => $title,
+				'post_content' => wp_kses_post( (string) $op['content'] ),
+				'post_status'  => in_array( ( $op['status'] ?? 'publish' ), array( 'publish', 'draft' ), true ) ? $op['status'] : 'draft',
+			);
+			if ( $old ) {
+				$data['ID'] = (int) $old[0];
+				$id         = wp_update_post( $data, true );
+				$act        = '更新';
+			} else {
+				$id  = wp_insert_post( $data, true );
+				$act = '新建';
+			}
+			if ( is_wp_error( $id ) ) {
+				$log[] = 'guide「' . $title . '」失败：' . $id->get_error_message();
+				continue;
+			}
+			$id = (int) $id;
+			foreach ( array( 'yf_summary' => 'summary', 'yf_guide_src' => 'src', 'yf_guide_checked' => 'checked', 'yf_guide_step' => 'step', 'yf_guide_leads' => 'leads' ) as $meta => $key ) {
+				if ( array_key_exists( $key, $op ) ) {
+					update_post_meta( $id, $meta, (string) $op[ $key ] );
+				}
+			}
+			if ( isset( $op['cat'] ) ) {
+				wp_set_object_terms( $id, array_map( 'intval', (array) $op['cat'] ), 'merchant_category' );
+			}
+			if ( isset( $op['topic'] ) ) {
+				wp_set_object_terms( $id, array_map( 'intval', (array) $op['topic'] ), 'yf_guide_topic' );
+			}
+			$log[] = 'guide「' . $title . '」' . $act . '成功 id=' . $id;
+			continue;
+		}
+
+		$log[] = '未知操作：' . $do;
+	}
+	return $log;
+}
+
+add_action(
+	'rest_api_init',
+	function () {
+		register_rest_route(
+			'yf/v1',
+			'/task',
+			array(
+				'methods'             => 'POST',
+				'permission_callback' => '__return_true',
+				'callback'            => function ( $req ) {
+					$sec = (string) get_option( 'yf_gh_secret' );
+					$key = (string) $req->get_param( 'key' );
+					if ( ! $sec || ! $key || ! hash_equals( $sec, $key ) ) {
+						return new WP_REST_Response( array( 'ok' => false, 'err' => 'bad key' ), 403 );
+					}
+					$t = yf_task_fetch();
+					if ( is_wp_error( $t ) ) {
+						return new WP_REST_Response( array( 'ok' => false, 'err' => $t->get_error_message() ), 500 );
+					}
+					$json = $t['json'];
+					// 任务文件里要带一个 id，执行过的 id 不再执行 —— 避免 Actions 重跑时把同一批操作做两遍。
+					$tid  = isset( $json['id'] ) ? sanitize_text_field( (string) $json['id'] ) : '';
+					$done = (array) get_option( 'yf_task_done', array() );
+					if ( '' === $tid ) {
+						return new WP_REST_Response( array( 'ok' => false, 'err' => '任务文件缺 id' ), 400 );
+					}
+					if ( in_array( $tid, $done, true ) ) {
+						return new WP_REST_Response( array( 'ok' => true, 'skipped' => '这个任务已经执行过了', 'id' => $tid ), 200 );
+					}
+					$log    = yf_task_run( $json['ops'] ?? array() );
+					$done[] = $tid;
+					update_option( 'yf_task_done', array_slice( $done, -50 ), false );
+					return new WP_REST_Response( array( 'ok' => true, 'id' => $tid, 'hash' => $t['hash'], 'log' => $log ), 200 );
+				},
+			)
+		);
+	}
+);
+
+/* ----- 不让 Google 收录的页面 -----
+ * 两类：
+ *   1. 还没有内容的板块 —— 空板块被收录是负分，有内容了会自动放开，不用手改
+ *   2. 功能页 —— 会员、发布表单、广告页，收录了没意义还浪费抓取预算
+ *
+ * 发的是 X-Robots-Tag HTTP 头，不是 meta 标签。原因：页面里的 robots 标签被
+ * All in One SEO 接管了，去改它的内部钩子会把别的页面的标签弄坏（试过）。
+ * HTTP 头是 Google 正式支持的方式，不依赖任何插件，两者同时存在时按更严格的算。
+ */
+
+function yf_noindex_slugs() {
+	return apply_filters(
+		'yf_noindex_slugs',
+		array( 'advertise', 'manage', 'member', 'submit', 'post', 'account', 'login', 'register', 'checkout', 'inquiry', 'order', 'orders' )
+	);
+}
+
+/** 这个页面该不该进索引。 */
+function yf_should_noindex() {
+	if ( is_admin() ) {
+		return false;
+	}
+	global $wp_query;
+
+	// 空板块、空分类页：一条内容都没有。有内容了自动放开。
+	if ( is_post_type_archive() || is_tax() || is_category() || is_tag() ) {
+		if ( empty( $wp_query->found_posts ) ) {
+			return true;
+		}
+	}
+
+	// 功能页按 slug。
+	if ( is_page() ) {
+		$slug = (string) get_post_field( 'post_name', get_queried_object_id() );
+		if ( in_array( $slug, yf_noindex_slugs(), true ) ) {
+			return true;
+		}
+	}
+
+	if ( is_search() ) {
+		return true;
+	}
+
+	return false;
+}
+
+add_action(
+	'template_redirect',
+	function () {
+		// 整站锁着的时候上面那个 lock 已经发过头了，不用重复。
+		if ( get_option( 'yf_lock_on' ) || headers_sent() ) {
+			return;
+		}
+		if ( yf_should_noindex() ) {
+			header( 'X-Robots-Tag: noindex', true );
+		}
+	},
+	99
+);
