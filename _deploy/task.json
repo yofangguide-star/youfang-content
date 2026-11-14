@@ -1,7 +1,6 @@
 {
-  "id": "fix-go-status-1",
+  "id": "probe-go-v2-1",
   "ops": [
-    { "do": "page", "slug": "go", "title": "本地活动", "status": "publish" },
-    { "do": "probe", "path": "/go/", "find": ["本地活动", "今天去哪", "yf-go-row", "可报名", "往后两周", "市政府"] }
+    { "do": "probe", "path": "/go/", "find": ["本地活动", "今天去哪", "yf-go-row", "yf-go-next", "可报名", "往后两周"] }
   ]
 }
