@@ -1,1 +1,3 @@
-{ "id": "mbar-check-1", "ops": [ { "do": "probe", "path": "/merchant/", "find": ["商家登录", "忘记密码"] } ] }
+{ "id": "road-where-1", "ops": [
+  { "do": "probe", "path": "/road/?isl=all", "find": ["位置：", "走不通或要绕行的线", "会被耽误的线", "yf-rd-closed", "yf-rd-delay"], "show": "位置：", "shown": 12 }
+] }
