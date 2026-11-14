@@ -1,9 +1,7 @@
 {
-  "id": "probe-road-2",
+  "id": "trash-traffic-draft-1",
   "ops": [
-    { "do": "probe", "path": "/road/?from=christchurch", "find": ["出发地：", "基督城", "换出发地", "yf-rt-map"] },
-    { "do": "probe", "path": "/road/?from=christchurch&to=auckland", "find": ["要坐渡轮", "第一段", "第二段", "Interislander"] },
-    { "do": "probe", "path": "/road/auckland-to-wellington/", "find": ["奥克兰到惠灵顿", "经过：", "反方向"] },
-    { "do": "probe", "path": "/road/queenstown-to-milford/", "find": ["皇后镇到米尔福德峡湾", "SH6 → SH94"] }
+    { "do": "trash", "ids": [5648] },
+    { "do": "probe", "path": "/road/", "find": ["yf-rt-map", "常走的几条路"] }
   ]
 }
