@@ -1,1 +1,1 @@
-{"id": "page-20261114-235108", "ops": [{"do": "page", "slug": "traffic", "title": "路况和封路", "status": "draft", "content": "[yf_traffic]"}]}
+{"id": "probe-20261115-001956", "ops": [{"do": "probe", "path": "/go/", "find": ["今天去哪", "yf-go-row", "近期活动"]}, {"do": "probe", "path": "/guide/", "find": ["yf-gtab", "30 秒看完"]}]}
