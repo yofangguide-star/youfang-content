@@ -1,6 +1,4 @@
 {
-  "id": "merch-page-check-1",
-  "ops": [
-    { "do": "probe", "path": "/?p=5651", "find": ["Opal Dental", "牙医", "普通话", "Te Atatū", "09 834 6359", "ACC"] }
-  ]
+  "id": "news-log-1",
+  "ops": [ { "do": "log", "name": "yf_news_log", "n": 30 } ]
 }
