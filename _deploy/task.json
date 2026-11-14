@@ -1,4 +1,4 @@
 {
-  "id": "news-log-1",
-  "ops": [ { "do": "log", "name": "yf_news_log", "n": 30 } ]
+  "id": "news-status-1",
+  "ops": [ { "do": "log", "name": "yf_news_log", "n": 3 } ]
 }
