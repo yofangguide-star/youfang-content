@@ -1,1 +1,1 @@
-{"id": "test-20261114-234138", "ops": [{"do": "meta", "id": 5636, "set": {"yf_task_probe": "ok-234138"}}]}
+{"id": "guidetest-20261114-234231", "ops": [{"do": "guide", "title": "【接口自测】这是一篇草稿，验证完会删掉", "content": "<p>测试内容。</p>", "status": "draft", "summary": "自测用", "checked": "2026-11-14", "topic": [295], "cat": [131]}]}
