@@ -1,1 +1,1 @@
-{"id":"gomkt-1115b","ops":[{"do":"probe","path":"/go/","find":["Riccarton Sunday","Riccarton 周日","Lyttelton","Opawa","Farmers","Mt Pleasant Farmers","Christchurch Farmers","Riccarton House"]},{"do":"terms","tax":"yf_city","list":1}]}
+{"id":"citylist-1115","ops":[{"do":"city","cities":{"christchurch":"基督城"}},{"do":"probe","path":"/","find":["yf-citysel","data-city"],"show":"?city=","shown":12}]}
