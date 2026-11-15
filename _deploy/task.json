@@ -1,1 +1,1 @@
-{"id":"weekly-1115a","ops":[{"do":"wx","fresh":1},{"do":"weekly","preview":1},{"do":"probe","path":"/","find":["有方周报","周四傍晚","name=\"action\" value=\"yf_subscribe\"","带人有礼"]}]}
+{"id":"weekly-1115b","ops":[{"do":"weekly"}]}
