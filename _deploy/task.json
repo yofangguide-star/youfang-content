@@ -1,1 +1,1 @@
-{"id":"gomkt-1115","ops":[{"do":"probe","path":"/go/","find":["集市","市集","夜市","Market","market","农夫"],"show":"集市","shown":10},{"do":"probe","path":"/go/","find":["x"],"show":"市集","shown":6},{"do":"probe","path":"/go/","find":["x"],"show":"Market","shown":8}]}
+{"id":"gomkt-1115b","ops":[{"do":"probe","path":"/go/","find":["Riccarton Sunday","Riccarton 周日","Lyttelton","Opawa","Farmers","Mt Pleasant Farmers","Christchurch Farmers","Riccarton House"]},{"do":"terms","tax":"yf_city","list":1}]}
