@@ -1,1 +1,24 @@
-{ "id": "claim-header-2", "ops": [ { "do": "probe", "path": "/news/", "find": ["yf-claimlink", "认领店铺"] }, { "do": "probe", "path": "/merchant/", "find": ["yf-mfind", "找我的店", "已经认领过？在这里登录"] } ] }
+{
+ "id": "review-try-1",
+ "ops": [
+  {
+   "do": "review",
+   "try": [
+    "类型：租房\n标题：Riccarton 单间出租 靠近 Westfield\n正文：三房 townhouse 出租一间，带家具，步行到 Riccarton Mall 5 分钟，包水电网，限女生，不养宠物。可以随时来看房。\nrent：260\narea：Riccarton\nphone：021 555 0188",
+    "类型：租房\n标题：市中心豪华公寓超低价\n正文：两房公寓只要每周 150，我人在国外没法带看，先转两周押金到我账户，钥匙邮寄给你。加我 WhatsApp +44 7700 900123\nrent：150\narea：City",
+    "类型：招聘\n标题：餐馆招服务员\n正文：中餐馆招兼职服务员，周末晚班，时薪 18 现金，不用报税，要求会国语。\njobtype：兼职\narea：Addington\nphone：03 555 0142",
+    "类型：二手闲置\n标题：九成新婴儿车\n正文：Mountain Buggy 婴儿车，用了半年，孩子大了用不上。Ilam 自取。\nprice：180\narea：Ilam\nphone：022 555 0167",
+    "类型：二手闲置\n标题：招聘销售精英月入过万\n正文：加入我们团队，发展下线，轻松月入过万，拉三个人就回本。微信 abc12345",
+    "类型：课程\n标题：雅思保过班\n正文：一对一雅思辅导，保证 7 分，不过全额退款，另可协助办理留学签证，包签。\narea：Riccarton\nphone：021 555 0199",
+    "类型：商家入驻\n标题：Sunny Hair Studio 阳光发型\n正文：Riccarton 的华人理发店，剪发、烫染、接发，周二到周日营业。\naddress：12 Rotherham Street, Riccarton\nphone：03 555 0111\n行业：美容美发"
+   ]
+  },
+  {
+   "do": "probe",
+   "path": "/",
+   "find": [
+    "有方"
+   ]
+  }
+ ]
+}
