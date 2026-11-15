@@ -1,1 +1,1 @@
-{"id":"ef-q-2","ops":[{"do":"ef","loc":"christchurch","multi":[{"start_date":"2026-11-16","end_date":"2026-12-02 23:59:59","order":"date"},{"start_date":"2026-11-16","end_date":"2026-12-02 23:59:59","rows":"20","offset":"20","order":"date"}]},{"do":"ef","loc":"christchurch","q":{"start_date":"2026-11-16","end_date":"2026-12-02 23:59:59","rows":"20","offset":"20","order":"date","fields":"event:(id,name,datetime_start)"}}]}
+{"id":"ef-sync-chc-2","ops":[{"do":"efdata","city":"christchurch","sync":1,"tr":3,"show":6}]}
