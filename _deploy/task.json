@@ -1,1 +1,1 @@
-{"id":"ef-recut-1","ops":[{"do":"efdata","recut":1,"tr":3},{"do":"probe","path":"/go/","find":["yf-go-more","11/18","11月18日 周三","Wildlife Photographer of the Year 2026","展开这一天其余"]},{"do":"probe","path":"/go/?city=auckland","find":["yf-go-more","yf-go-row"]}]}
+{"id":"news-status-1116","ops":[{"do":"news","srcs":1},{"do":"news","latest":8},{"do":"news","drafts":1},{"do":"inbox","n":15}]}
