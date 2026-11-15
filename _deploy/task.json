@@ -1,1 +1,1 @@
-{"id":"ef-sync-chc-1","ops":[{"do":"efdata","city":"christchurch","sync":1,"tr":2,"show":8}]}
+{"id":"ef-q-1","ops":[{"do":"ef","loc":"christchurch","multi":[{},{"start_date":"2026-11-16"},{"start_date":"2026-11-16","end_date":"2026-12-02"},{"start_date":"2026-11-16","end_date":"2026-12-02 23:59:59"},{"start_date":"2026-11-16 00:00:00","end_date":"2026-12-02 23:59:59"},{"end_date":"2026-12-02"}]}]}
