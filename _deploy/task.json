@@ -1,1 +1,1 @@
-{"id":"akl-stop-1115","ops":[{"do":"news","delsrc":["ourauckland.aucklandcouncil.govt.nz/rss"]},{"do":"news","unpub":["ourauckland.aucklandcouncil.govt.nz"]},{"do":"news","bysrc":1}]}
+{"id":"ef-test-1115a","ops":[{"do":"ef","loc":"christchurch"},{"do":"ef","loc":"auckland"}]}
