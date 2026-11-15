@@ -1,9 +1,1 @@
-{ "id": "shops-suggest-1", "ops": [
- { "do": "probe", "path": "/wp-json/yf/v1/shops?q=dental", "find": ["\"title\"", "unclaimed", "Opal Dental"] },
- { "do": "probe", "path": "/wp-json/yf/v1/shops?q=%E4%B8%AD%E5%8C%BB", "find": ["\"title\""] },
- { "do": "probe", "path": "/wp-json/yf/v1/shops?q=joy", "find": ["\"title\"", "\"unclaimed\":false"] },
- { "do": "probe", "path": "/merchants/", "find": ["yf-dirtop", "data-shops=", "免费认领", "免费入驻"] },
- { "do": "probe", "path": "/", "find": ["data-shops="] },
- { "do": "probe", "path": "/?s=dental&pt=city_merchant", "find": ["还没人认领", "上面没有你的店"] },
- { "do": "probe", "path": "/wp-content/themes/youfang-theme/assets/app.js", "find": ["data-shops", "yf-sug"] }
-] }
+{"id":"leadshow-1115a","ops":[{"do":"probe","path":"/?p=5651","find":["yf-claim-card","人看过这个页面","人点了电话","免费认领"]},{"do":"probe","path":"/?p=5650","find":["人看过这个页面","人点了电话"]}]}
