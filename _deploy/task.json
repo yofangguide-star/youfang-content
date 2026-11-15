@@ -1,1 +1,1 @@
-{"id":"rep-1115a","ops":[{"do":"news","drafts":1},{"do":"news","latest":12},{"do":"probe","path":"/?p=5651","find":["yf-report","告诉我们"]},{"do":"probe","path":"/help/","find":["yf-report"],"show":"youfang.co.nz/help/","shown":6},{"do":"reports"}]}
+{"id":"rep-1115b","ops":[{"do":"reports","sim":"new"},{"do":"news","retitle":{"5655":"新西兰大选最终结果11月27日公布，组阁仍待特别票"}},{"do":"news","show":5660},{"do":"news","drop":[5188]}]}
