@@ -1,1 +1,1 @@
-{"id":"rent-sync-1","ops":[{"do":"rent","sync":1,"posts":1,"dry":1},{"do":"page","slug":"rent","title":"各城市房租行情","content":"[yf_rent]","status":"draft"}]}
+{"id":"rent-page-pub-1","ops":[{"do":"page","slug":"rent","status":"publish"},{"do":"probe","path":"/rent/","find":["yf-rent-big","$550","各城市对照","CC BY 3.0 NZ","yf-rent-spark","polyline"]},{"do":"probe","path":"/rent/?city=auckland","find":["$640","奥克兰 · 2026 年 9 月"]}]}
