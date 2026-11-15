@@ -1,1 +1,1 @@
-{ "id": "ruzhu-header-1", "ops": [ { "do": "probe", "path": "/news/", "find": ["yf-claimlink", "商家入驻", "认领店铺"] }, { "do": "probe", "path": "/merchant/", "find": ["商家入驻，全部免费", "新建店铺页", "找我的店"], "show": "商家入驻，全部免费", "shown": 1 } ] }
+{ "id": "duo-header-1", "ops": [ { "do": "probe", "path": "/news/", "find": ["yf-duo", "认领店铺", "商家入驻"] }, { "do": "probe", "path": "/merchant/", "find": ["yf-mtwo", "先找，找到了就认领", "免费入驻 →", "找我的店"], "show": "先找，找到了就认领", "shown": 1 }, { "do": "probe", "path": "/", "find": ["yf-own-half", "没找到？入驻"] } ] }
