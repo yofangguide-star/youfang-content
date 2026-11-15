@@ -1,1 +1,1 @@
-{"id":"zero-risk-1115d","ops":[{"do":"news","delsrc":["newsline.ccc.govt.nz"]}]}
+{"id":"ccc-pause-1115","ops":[{"do":"probe","path":"/go/","find":["本地活动正在整理中","yf-go-row","生成今天的分享图"]},{"do":"probe","path":"/","find":["设置垃圾桶提醒","本地活动"]},{"do":"probe","path":"/go/?yf_card=1","find":["<canvas","还没有抓到活动"]},{"do":"health"}]}
