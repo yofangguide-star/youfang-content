@@ -1,1 +1,1 @@
-{ "id": "leads-1", "ops": [ { "do": "leads" } ] }
+{ "id": "ruzhu-header-1", "ops": [ { "do": "probe", "path": "/news/", "find": ["yf-claimlink", "商家入驻", "认领店铺"] }, { "do": "probe", "path": "/merchant/", "find": ["商家入驻，全部免费", "新建店铺页", "找我的店"], "show": "商家入驻，全部免费", "shown": 1 } ] }
