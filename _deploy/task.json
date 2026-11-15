@@ -1,1 +1,1 @@
-{"id":"gobtn-1115","ops":[{"do":"probe","path":"/go/","find":["yf-cardbtn","生成今天的分享图"]},{"do":"probe","path":"/jobs/","find":["yf-cardbtn"]},{"do":"probe","path":"/deals/","find":["yf-cardbtn"]}]}
+{"id":"roadcard-1115","ops":[{"do":"probe","path":"/?yf_card=road","find":["<canvas","var D =","现在没有内容"]},{"do":"probe","path":"/road/","find":["生成路况分享图"]},{"do":"probe","path":"/?yf_card=all","find":["国道路况"]}]}
