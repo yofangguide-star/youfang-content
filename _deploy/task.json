@@ -1,1 +1,1 @@
-{"id":"datanews-fuel-dry1","ops":[{"do":"datanews","run":"fuel","dry":1},{"do":"peek","url":"https://api.geonet.org.nz/quake?MMI=4","n":700}]}
+{"id":"datanews-go-1","ops":[{"do":"datanews","run":"quake","dry":1},{"do":"datanews","run":"fuel"},{"do":"news","latest":3}]}
