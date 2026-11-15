@@ -1,1 +1,1 @@
-{"id":"rent-map-1","ops":[{"do":"rent","map":1}]}
+{"id":"rent-areas-1","ops":[{"do":"rent","areas":1,"area":"1","city":"christchurch"}]}
