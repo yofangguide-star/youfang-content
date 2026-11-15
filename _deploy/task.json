@@ -1,1 +1,1 @@
-{"id":"localnews-1115d","ops":[{"do":"news","unsee":1},{"do":"news","mode":"all"},{"do":"probe","path":"/?city=auckland","find":["奥克兰本地","yf-localnews"]},{"do":"probe","path":"/","find":["奥克兰本地","rubbish","垃圾桶"]}]}
+{"id":"localnews-1115e","ops":[{"do":"news","ls":1}]}
