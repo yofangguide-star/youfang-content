@@ -1,1 +1,1 @@
-{"id":"news-try-1116b","ops":[{"do":"news","try":["政府公告 Beehive | https://www.beehive.govt.nz/releases/feed","MBIE | https://www.mbie.govt.nz/about/news/rss","海关 | https://www.customs.govt.nz/about-us/news/media-releases | prefix=/about-us/news/media-releases/"]}]}
+{"id":"rank-note-probe","ops":[{"do":"probe","path":"/merchants/","find":["商家怎么排序","yf-rank-note"]},{"do":"probe","path":"/merchant/","find":["商家怎么排序"]}]}
