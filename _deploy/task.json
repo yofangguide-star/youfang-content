@@ -1,1 +1,1 @@
-{"id":"rent-keys-1","ops":[{"do":"rent","keys":"325200","city":"christchurch"}]}
+{"id":"rent-areas-3","ops":[{"do":"rent","areas":1,"area":"325200","city":"christchurch","keys":"325200"}]}
