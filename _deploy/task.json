@@ -1,1 +1,9 @@
-{ "id": "duo-header-1", "ops": [ { "do": "probe", "path": "/news/", "find": ["yf-duo", "认领店铺", "商家入驻"] }, { "do": "probe", "path": "/merchant/", "find": ["yf-mtwo", "先找，找到了就认领", "免费入驻 →", "找我的店"], "show": "先找，找到了就认领", "shown": 1 }, { "do": "probe", "path": "/", "find": ["yf-own-half", "没找到？入驻"] } ] }
+{ "id": "shops-suggest-1", "ops": [
+ { "do": "probe", "path": "/wp-json/yf/v1/shops?q=dental", "find": ["\"title\"", "unclaimed", "Opal Dental"] },
+ { "do": "probe", "path": "/wp-json/yf/v1/shops?q=%E4%B8%AD%E5%8C%BB", "find": ["\"title\""] },
+ { "do": "probe", "path": "/wp-json/yf/v1/shops?q=joy", "find": ["\"title\"", "\"unclaimed\":false"] },
+ { "do": "probe", "path": "/merchants/", "find": ["yf-dirtop", "data-shops=", "免费认领", "免费入驻"] },
+ { "do": "probe", "path": "/", "find": ["data-shops="] },
+ { "do": "probe", "path": "/?s=dental&pt=city_merchant", "find": ["还没人认领", "上面没有你的店"] },
+ { "do": "probe", "path": "/wp-content/themes/youfang-theme/assets/app.js", "find": ["data-shops", "yf-sug"] }
+] }
