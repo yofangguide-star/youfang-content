@@ -1,1 +1,1 @@
-{"id":"cardpub-1115b","ops":[{"do":"probe","path":"/go/","find":["me=0ad7","yf_card=1"]},{"do":"probe","path":"/road/","find":["me=0ad7","yf_card=roads"]},{"do":"probe","path":"/news/","find":["me=0ad7","yf_card=news"]},{"do":"probe","path":"/go/?yf_card=1","find":["复制小红书文案","长按图片保存"]},{"do":"probe","path":"/go/?yf_card=1&me=0ad7318f99cb6999","find":["复制小红书文案"]}]}
+{"id":"gocta-1115","ops":[{"do":"probe","path":"/go/?yf_card=1","find":["扫码看近期全部活动","扫码看今天全部活动"]}]}
