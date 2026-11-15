@@ -1,1 +1,1 @@
-{"id":"peek-rent-1","ops":[{"do":"peek","url":"https://www.tenancy.govt.nz/assets/Uploads/Tenancy/Rental-bond-data/detailed-monthly-tla-tenancy-november-2026.csv","n":900},{"do":"peek","url":"https://www.tenancy.govt.nz/assets/Uploads/Tenancy/Rental-bond-data/detailed-quarterly-tenancy-q1-2020q3-november-2026.csv","n":900}]}
+{"id":"peek-rent-2","ops":[{"do":"peek","url":"https://www.tenancy.govt.nz/assets/Uploads/Tenancy/Rental-bond-data/detailed-quarterly-tenancy-q1-2020q3-november-2026.csv","n":1300}]}
