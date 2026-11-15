@@ -1,1 +1,1 @@
-{"id":"ef-test-1115a","ops":[{"do":"ef","loc":"christchurch"},{"do":"ef","loc":"auckland"}]}
+{"id":"unpub-media-1116","ops":[{"do":"news","unpub":["rnz.co.nz","newsline.ccc.govt.nz","1news.co.nz","interest.co.nz","oneroof.co.nz","police.govt.nz","nzherald.co.nz","reinz.co.nz","odt.co.nz"]},{"do":"news","bysrc":1},{"do":"probe","path":"/","find":["今日要闻","本周要闻回顾","新闻正在整理中","基督城本地"]},{"do":"probe","path":"/news/","find":["yf-card","没有"]}]}
