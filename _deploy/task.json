@@ -1,1 +1,1 @@
-{"id":"peek-rent-2","ops":[{"do":"peek","url":"https://www.tenancy.govt.nz/assets/Uploads/Tenancy/Rental-bond-data/detailed-quarterly-tenancy-q1-2020q3-november-2026.csv","n":1300}]}
+{"id":"rent-sync-1","ops":[{"do":"rent","sync":1,"posts":1,"dry":1},{"do":"page","slug":"rent","title":"各城市房租行情","content":"[yf_rent]","status":"draft"}]}
