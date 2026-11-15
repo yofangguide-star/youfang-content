@@ -1,1 +1,1 @@
-{"id":"peek-1116a","ops":[{"do":"peek","url":"https://www.mbie.govt.nz/assets/Data-Files/Energy/Weekly-fuel-price-monitoring/weekly-table.csv","n":700},{"do":"peek","url":"https://api.geonet.org.nz/quake?MMI=4","n":900}]}
+{"id":"datanews-fuel-dry1","ops":[{"do":"datanews","run":"fuel","dry":1},{"do":"peek","url":"https://api.geonet.org.nz/quake?MMI=4","n":700}]}
