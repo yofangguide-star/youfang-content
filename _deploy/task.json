@@ -1,1 +1,1 @@
-{"id":"datanews-go-1","ops":[{"do":"datanews","run":"quake","dry":1},{"do":"datanews","run":"fuel"},{"do":"news","latest":3}]}
+{"id":"datanews-fuel-redo1","ops":[{"do":"datanews","run":"fuel","redo":1},{"do":"news","show":5671}]}
