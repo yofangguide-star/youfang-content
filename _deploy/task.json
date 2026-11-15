@@ -1,1 +1,1 @@
-{"id":"citynews-check-1115","ops":[{"do":"news","latest":14},{"do":"probe","path":"/?city=auckland","find":["奥克兰本地"]},{"do":"probe","path":"/?city=wellington","find":["惠灵顿本地"]},{"do":"probe","path":"/?city=hamilton","find":["汉密尔顿本地"]},{"do":"probe","path":"/?city=dunedin","find":["但尼丁本地"]},{"do":"probe","path":"/?city=queenstown","find":["皇后镇本地"]},{"do":"probe","path":"/","find":["基督城本地"]}]}
+{"id":"akl-stop-1115","ops":[{"do":"news","delsrc":["ourauckland.aucklandcouncil.govt.nz/rss"]},{"do":"news","unpub":["ourauckland.aucklandcouncil.govt.nz"]},{"do":"news","bysrc":1}]}
