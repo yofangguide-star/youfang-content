@@ -1,1 +1,1 @@
-{"id":"news-show-cn-1116","ops":[{"do":"news","show":5590},{"do":"news","show":5591},{"do":"news","show":5592}]}
+{"id":"news-try-cn-1116","ops":[{"do":"news","show":5591},{"do":"news","show":5608},{"do":"news","try":["驻奥克兰总领馆 | http://auckland.china-consulate.gov.cn/chn/zytz/ | zh=1, prefix=/chn/zytz/","驻克赖斯特彻奇总领馆 | http://christchurch.china-consulate.gov.cn/chn/zytz/ | zh=1","驻克赖斯特彻奇总领馆b | http://christchurch.china-consulate.gov.cn/chn/ | zh=1","驻新西兰使馆 | http://nz.china-embassy.gov.cn/chn/zytz/ | zh=1","驻新西兰使馆b | http://nz.china-embassy.gov.cn/chn/ | zh=1"]}]}
