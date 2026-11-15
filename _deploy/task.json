@@ -1,1 +1,1 @@
-{"id":"src-clean-1116","ops":[{"do":"news","delsrc":["tenancy.govt.nz","studylink.govt.nz","auckland.china-consulate.gov.cn","christchurch.china-consulate.gov.cn","nz.china-embassy.gov.cn"]},{"do":"news","unpub":["studylink.govt.nz"]},{"do":"health"},{"do":"probe","path":"/","find":["yf-foot-src","MET Norway"]}]}
+{"id":"ef-sync-chc-1","ops":[{"do":"efdata","city":"christchurch","sync":1,"tr":2,"show":8}]}
