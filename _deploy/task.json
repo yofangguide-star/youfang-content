@@ -1,1 +1,1 @@
-{"id":"localnews-1115f","ops":[{"do":"news","unsee":2},{"do":"news","mode":"all"},{"do":"news","latest":8},{"do":"probe","path":"/?city=auckland","find":["奥克兰本地","yf-localnews"]}]}
+{"id":"localnews-1115g","ops":[{"do":"news","show":5667},{"do":"news","show":5668},{"do":"probe","path":"/","find":["奥克兰垃圾桶服务","交通拥堵每年损失","基督城本地"]},{"do":"probe","path":"/?city=auckland","find":["奥克兰垃圾桶服务","交通拥堵每年损失"]},{"do":"probe","path":"/news/?local=auckland","find":["奥克兰垃圾桶服务","奥克兰本地"]}]}
