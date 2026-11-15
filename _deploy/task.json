@@ -1,1 +1,1 @@
-{"id":"rent-areas-1","ops":[{"do":"rent","areas":1,"area":"1","city":"christchurch"}]}
+{"id":"rent-area-test-2","ops":[{"do":"probe","path":"/rental-prices/","find":["yf-rent-sa2","<option value=\"3","Riccarton","Ilam","Papanui","Stats NZ"]},{"do":"probe","path":"/rental-prices/?city=queenstown","find":["<option value=\"3","Frankton","Arrowtown","Wanaka"]}]}
