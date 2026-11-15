@@ -1,1 +1,1 @@
-{"id":"rank-note-probe5-1","ops":[{"do":"probe","path":"/merchants/","find":["商家怎么排序","yf-rank-note"]}]}
+{"id":"news-try-1116c","ops":[{"do":"news","try":["卫生部 | https://www.health.govt.nz/feeds/media-atom.xml","民防 NEMA | https://www.civildefence.govt.nz/resources/news-and-events/news-and-events/rss","民防 NEMA2 | https://www.civildefence.govt.nz/media/media-release-archive/rss","政府公告 Beehive | https://www.beehive.govt.nz/rss.xml"]}]}
