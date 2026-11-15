@@ -1,1 +1,1 @@
-{"id":"news-addsrc-health","ops":[{"do":"news","addsrc":["卫生部 Ministry of Health | https://www.health.govt.nz/feeds/media-atom.xml | every=60"]},{"do":"news","srcs":1}]}
+{"id":"inbox-comcom-1","ops":[{"do":"inbox","n":4,"links":1}]}
