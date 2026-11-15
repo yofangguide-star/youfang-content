@@ -1,1 +1,1 @@
-{"id":"news-try-gw-1116","ops":[{"do":"news","try":["大惠灵顿地区议会 | https://www.gw.govt.nz/your-region/news/ | city=wellington, prefix=/your-region/news/","海关 | https://www.customs.govt.nz/about-us/news/media-releases/ | prefix=/about-us/news/media-releases/"]},{"do":"probe","path":"/news/","find":["yf-lic"]},{"do":"inbox","n":3}]}
+{"id":"peek-1116a","ops":[{"do":"peek","url":"https://www.mbie.govt.nz/assets/Data-Files/Energy/Weekly-fuel-price-monitoring/weekly-table.csv","n":700},{"do":"peek","url":"https://api.geonet.org.nz/quake?MMI=4","n":900}]}
