@@ -1,1 +1,1 @@
-{"id":"weekend-1115b","ops":[{"do":"probe","path":"/?yf_card=weekend","find":["<canvas","\"h\":1350","免费 · "]},{"do":"weekly"}]}
+{"id":"cityurl-1115","ops":[{"do":"probe","path":"/?city=auckland","find":["/merchants/?city=auckland","/news/?city=auckland","href=\"https://youfang.co.nz/merchants/\"","city=auckland"]},{"do":"probe","path":"/merchants/?city=auckland","find":["奥克兰","Opal Dental","/go/?city=auckland","city=auckland"]},{"do":"probe","path":"/","find":["city=auckland\"","?city=christchurch"]},{"do":"probe","path":"/merchants/","find":["Opal Dental"]}]}
