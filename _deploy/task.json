@@ -1,1 +1,1 @@
-{"id":"rent-beds-2","ops":[{"do":"rent","areas":1,"beds":1}]}
+{"id":"rent-naming-probe","ops":[{"do":"health","warm":1},{"do":"probe","path":"/rent/","find":["招租求租","发布租房","发求租 / 出租","找房子的、有房出租的","yf-rentcard"]},{"do":"probe","path":"/","find":["招租求租","发布租房","发求租 / 出租"]},{"do":"probe","path":"/submit/?type=rent","find":["求租：我在找房子","招租求租"]}]}
