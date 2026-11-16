@@ -1,1 +1,1 @@
-{"id":"inbox-police-met-1","ops":[{"do":"inbox","n":8,"links":1}]}
+{"id":"gocard-desc-1","ops":[{"do":"health","warm":1},{"do":"probe","path":"/","find":["本地活动","今天的活动","个免费","演出","比赛","市集","展览"],"show":"本地活动"},{"do":"probe","path":"/?city=auckland","find":["本地活动","今天的活动"],"show":"本地活动"}]}
