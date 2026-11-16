@@ -1,1 +1,1 @@
-{"id":"partner-setup-1","ops":[{"do":"page","slug":"partner","title":"商务合作","content":"[yf_partner]","status":"publish"},{"do":"health","warm":1},{"do":"probe","path":"/partner/","find":["yf-partner-form","暂时不开放广告和商务合作","提交留言","name=\"email\""]},{"do":"probe","path":"/partner/?sent=1","find":["已经收到，谢谢您","优先和您联系"]},{"do":"probe","path":"/","find":["商务合作"]},{"do":"partner","mailtest":"news@yofangguide.com"}]}
+{"id":"inbox-police-met-1","ops":[{"do":"inbox","n":8,"links":1}]}
