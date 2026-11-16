@@ -1,1 +1,1 @@
-{"id":"hud-xlsx-1","ops":[{"do":"xlsx","url":"https://www.hud.govt.nz/assets/Property-and-Sales-data-download-July-2026.xlsx","rows":3}]}
+{"id":"src1116a","ops":[{"do":"export","n":1,"srcstat":1}]}
