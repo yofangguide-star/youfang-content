@@ -1,1 +1,5 @@
-{"id":"st1117b","ops":[{"do":"export","n":1,"count":1}]}
+{"id":"fill1117a","ops":[
+{"do":"meta","id":5234,"set":{"yf_phone":"03 341 1288","yf_address":"384 Riccarton Road, Upper Riccarton, Christchurch 8041","_yf_source_url":"https://yellow.co.nz/christchurch/bpp/dragon-garden-chinese-restaurant-579489606","_yf_notes":"Yellow 黄页，取电话和地址"}},
+{"do":"meta","id":5236,"set":{"yf_phone":"03 354 5428","yf_address":"93 Main North Road, Papanui, Christchurch 8052","_yf_source_url":"https://yellow.co.nz/christchurch/bpp/hard-wok-express-579498665","_yf_notes":"Yellow 黄页，取电话和地址"}},
+{"do":"meta","id":5233,"set":{"yf_address":"273 Stanmore Road, Richmond, Christchurch 8013","yf_hours":"周一 16:30–20:00；周二至周四 11:30–20:00/20:30；周五、六 11:30–20:30；周日 16:30–20:00","_yf_source_url":"https://sun-ning-takeaways.tuckerfox.co.nz","_yf_notes":"点餐平台页，取地址和营业时间；电话没找到"}}
+]}
