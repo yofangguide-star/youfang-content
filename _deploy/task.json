@@ -1,1 +1,1 @@
-{"id":"rent-naming-probe2","ops":[{"do":"health","warm":1},{"do":"probe","path":"/rent/","find":["招租求租",">租房<","发求租 / 出租"]},{"do":"probe","path":"/","find":["招租求租",">租房<","发求租 / 出租"]}]}
+{"id":"help-probe-1","ops":[{"do":"health","warm":1},{"do":"probe","path":"/help/","find":["会员版","主流媒体","不出售首页位置","至少一年内不收费","最近更新过资料的排在前面","Eventfinda","怎么付款","在线咨询"]},{"do":"probe","path":"/membership/","find":["会员版","创始会员"]}]}
