@@ -1,1 +1,1 @@
-{"id":"pt1117n","ops":[{"do":"probe","path":"/","find":["会员","Fatal error"]},{"do":"probe","path":"/deals/","find":["会员"]}]}
+{"id":"mi1117d","ops":[{"do":"merch"},{"do":"export","n":1,"count":1}]}
