@@ -1,1 +1,1 @@
-{"id":"pt1117e","ops":[{"do":"inbox","from":"metservice","full":1,"n":5}]}
+{"id":"pt1117f","ops":[{"do":"wx"},{"do":"probe","path":"/","find":["Fatal error","Warning:","MetService"]}]}
