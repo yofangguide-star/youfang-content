@@ -1,1 +1,1 @@
-{"id":"pt1117g","ops":[{"do":"metwarn"}]}
+{"id":"pt1117h","ops":[{"do":"inbox","from":"metservice","n":5},{"do":"news","latest":1},{"do":"log","name":"yf_news_log","n":6}]}
