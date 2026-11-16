@@ -1,1 +1,1 @@
-{"id":"gocard-desc-1","ops":[{"do":"health","warm":1},{"do":"probe","path":"/","find":["本地活动","今天的活动","个免费","演出","比赛","市集","展览"],"show":"本地活动"},{"do":"probe","path":"/?city=auckland","find":["本地活动","今天的活动"],"show":"本地活动"}]}
+{"id":"hud-xlsx-1","ops":[{"do":"xlsx","url":"https://www.hud.govt.nz/assets/Property-and-Sales-data-download-July-2026.xlsx","rows":3}]}
