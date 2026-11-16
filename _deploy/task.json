@@ -1,1 +1,1 @@
-{"id":"pt1117f","ops":[{"do":"wx"},{"do":"probe","path":"/","find":["Fatal error","Warning:","MetService"]}]}
+{"id":"pt1117g","ops":[{"do":"metwarn"}]}
