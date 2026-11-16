@@ -1,1 +1,1 @@
-{"id":"rent-areas-5","ops":[{"do":"rent","areas":1,"area":"325200","city":"christchurch","keys":"325200"}]}
+{"id":"rent-posts-go-2","ops":[{"do":"rent","posts":1},{"do":"probe","path":"/rent/","find":["yf-rent-teaser","房租行情"]},{"do":"news","latest":7}]}
