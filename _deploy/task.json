@@ -1,5 +1,1 @@
-{"id":"fill1116a","ops":[
-{"do":"meta","id":5288,"set":{"yf_phone":"021 112 6265","yf_email":"nzcacanterbury@nzchinese.org.nz","yf_address":"22 St Asaph Street, Christchurch Central, Christchurch 8011","yf_website":"https://canterbury.nzchinese.org.nz/","_yf_source_url":"https://register.charities.govt.nz/Charity/CC24319","_yf_notes":"慈善机构公开登记册 CC24319 + 协会自己的官网"}},
-{"do":"meta","id":5292,"set":{"yf_phone":"03 343 1668","yf_address":"285 Riccarton Road, Upper Riccarton, Christchurch 8041","_yf_source_url":"https://register.charities.govt.nz/Charity/CC25304","_yf_notes":"慈善机构公开登记册 CC25304"}},
-{"do":"meta","id":5191,"set":{"yf_email":"principal@rewialley.ac.nz","yf_address":"20 Twigger Street, Addington, Christchurch 8024","yf_website":"https://www.rewialley.ac.nz/","_yf_source_url":"https://register.charities.govt.nz/Charity/CC29493","_yf_notes":"慈善机构公开登记册 CC29493，登记册上没有电话"}}
-]}
+{"id":"yl1116a","ops":[{"do":"peek","url":"https://yellow.co.nz/search/?q=Shanghai+Restaurant&l=Christchurch","strip":1,"n":1500}]}
