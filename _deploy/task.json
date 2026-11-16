@@ -1,5 +1,1 @@
-{"id":"fill1117b","ops":[
-{"do":"meta","id":5191,"set":{"yf_website":"https://www.rewialley.school.nz","_yf_notes":"慈善机构公开登记册 CC29493（登记册上没有电话）；网址以登记册为准"}},
-{"do":"meta","id":5298,"set":{"yf_address":"5 O'Dea Place, Burnside, Christchurch","_yf_source_url":"https://register.charities.govt.nz/Charity/CC65319","_yf_notes":"慈善机构公开登记册 CC65319，登记册上没有电话"}},
-{"do":"meta","id":5305,"set":{"yf_address":"PO Box 8538, Riccarton, Christchurch","_yf_source_url":"https://register.charities.govt.nz/Charity/CC27555","_yf_notes":"慈善机构公开登记册 CC27555，只有通信地址，没有电话"}}
-]}
+{"id":"pt1117j","ops":[{"do":"probe","path":"/submit/","find":["会员","到期","90 天","讲座、交流会","所有人免费发"]},{"do":"probe","path":"/submit/?type=event","find":["商家会员功能","开通会员","社区组织","活动名称"]},{"do":"probe","path":"/events/","find":["讲座、说明会","发布讲座或活动","会员"]}]}
