@@ -1,1 +1,1 @@
-{"id":"pt1117h","ops":[{"do":"inbox","from":"metservice","n":5},{"do":"news","latest":1},{"do":"log","name":"yf_news_log","n":6}]}
+{"id":"pt1117i","ops":[{"do":"probe","path":"/?p=5703","find":["Heavy rain for the Tararua Range","This information is made freely available by MetService","not associated with, and does not endorse","预警会随时更新","本文为中文摘要","Fatal error","Warning:","&#8217;","大风（Wellington"]},{"do":"probe","path":"/news/?local=wellington","find":["Tararua"]},{"do":"probe","path":"/help/","find":["MetService"]}]}
