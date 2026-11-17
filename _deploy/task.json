@@ -1,1 +1,7 @@
-{"id":"qaf13","ops":[{"do":"formsim","action":"yf_mrep_off","post":{"id":5830},"tokens":{"t":5830}},{"do":"formsim","action":"yf_mrep_off","post":{"id":5830,"t":"jiatoken"}},{"do":"probe","path":"/?s=%E5%90%8C%E4%BB%81%E5%A0%82","show":"同仁堂","shown":2},{"do":"probe","path":"/?s=zzzzqqqqnothing","show":"没","shown":2}]}
+{"id":"qaf14","ops":[
+{"do":"meta","id":5830,"set":{"_yf_review_key":"selftestkey123456","_yf_feats":["inquiry","booking","review"]}},
+{"do":"formsim","action":"yf_review","post":{"id":5830,"key":"selftestkey123456","rating":"5","content":"自测评价内容，服务不错","nick":"自测","email":"selftest@youfang.co.nz"}},
+{"do":"formsim","action":"yf_review","post":{"id":5830,"key":"selftestkey123456","rating":"9","content":"自测评价内容","nick":"自测","email":"selftest@youfang.co.nz"}},
+{"do":"formsim","action":"yf_review","post":{"id":5830,"key":"错的key","rating":"5","content":"自测评价内容","nick":"自测","email":"selftest@youfang.co.nz"}},
+{"do":"formsim","action":"yf_bk","post":{"mid":5830,"id":5830,"name":"自测订位","contact":"021 000 0089","when":"2026-12-01 18:00","n":"2"}}
+]}
