@@ -1,1 +1,1 @@
-{"id":"qab2019","ops":[{"do":"formsim","action":"yf_bk","post":{"mid":5830,"name":"自测订位","contact":"021 000 0089","when":"2026-12-01 18:00","n":"2"}}]}
+{"id":"qab18854","ops":[{"do":"formsim","action":"yf_spin","post":{"id":5830},"tokens":{"t":5830}}]}
