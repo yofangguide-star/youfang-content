@@ -1,9 +1,7 @@
-{"id":"qaf5","ops":[
-{"do":"formsim","action":"yf_mlogin","post":{"do":"login","email":"selftest@youfang.co.nz","pw":"wrongpass"}},
-{"do":"formsim","action":"yf_mlogin","post":{"do":"forgot","email":"selftest@youfang.co.nz"}},
-{"do":"formsim","action":"yf_mlogin","post":{"do":"forgot","email":"nobody@example.com"}},
-{"do":"formsim","action":"yf_mlogin","post":{"do":"logout"}},
-{"do":"formsim","action":"yf_manage","post":{"do":"renew"},"tokens":{"t":5831}},
-{"do":"formsim","action":"yf_manage","post":{"do":"renew","t":"假token","id":5831}},
-{"do":"formsim","action":"yf_draft","post":{"id":5831},"tokens":{"t":5831}}
+{"id":"qaf6","ops":[
+{"do":"posts","type":"yf_event","n":2},
+{"do":"review","approve":[5831]},
+{"do":"formsim","action":"yf_manage","post":{"do":"renew","id":5831},"tokens":{"t":5831}},
+{"do":"formsim","action":"yf_manage","post":{"do":"renew","id":5831,"t":"假token"}},
+{"do":"posts","type":"yf_event","n":2}
 ]}
