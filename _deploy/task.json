@@ -1,1 +1,14 @@
-{"id":"qaf2","ops":[{"do":"review","approve":[5830,5831]}]}
+{"id":"qaf3","ops":[
+{"do":"formsim","action":"yf_ev_reg","post":{"id":5831,"name":"自测报名人","contact":"021 000 0097","n":"1"}},
+{"do":"formsim","action":"yf_ev_reg","post":{"id":5831,"name":"","contact":"021 000 0097","n":"1"}},
+{"do":"formsim","action":"yf_ev_reg","post":{"id":5831,"name":"超额测试","contact":"021 000 0096","n":"9"}},
+{"do":"formsim","action":"yf_ev_reg","post":{"id":5830,"name":"不是活动","contact":"021 000 0095","n":"1"}},
+{"do":"formsim","action":"yf_ev_reg","post":{"id":5831,"name":"没时间戳","contact":"021 000 0094","n":"1"},"nostamp":1},
+{"do":"formsim","action":"yf_subscribe","post":{"email":"selftest@youfang.co.nz"}},
+{"do":"formsim","action":"yf_subscribe","post":{"email":"不是邮箱"}},
+{"do":"formsim","action":"yf_subscribe","post":{"email":"selftest@youfang.co.nz","yf_website_url":"bot"}},
+{"do":"formsim","action":"yf_inquiry","post":{"id":5830,"name":"自测咨询","contact":"021 000 0093","topic":"随便","note":"自测"}},
+{"do":"formsim","action":"yf_report","post":{"id":5830,"why":"信息不实","note":"自测","contact":"021 000 0092"}},
+{"do":"formsim","action":"yf_mlogin","post":{"do":"send","email":"selftest@youfang.co.nz"}},
+{"do":"formsim","action":"yf_manage","post":{"email":"selftest@youfang.co.nz"}}
+]}
