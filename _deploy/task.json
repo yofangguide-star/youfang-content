@@ -1,1 +1,1 @@
-{"id":"qa1118a","ops":[{"do":"selftest"},{"do":"log","switches":1}]}
+{"id":"qa1118b","ops":[{"do":"export","srcfind":"zzzz-no-match"}]}
