@@ -1,1 +1,1 @@
-{"id": "patrol1118d", "ops": [{"do": "probe", "path": "/merchants/", "find": ["精选商家", "了解推广", "营销推广", "位置招租", "yf-fc-tag", "自测"]}, {"do": "probe", "path": "/", "find": ["自测", "精选商家", "位置招租"]}, {"do": "probe", "path": "/events/", "find": ["自测"]}, {"do": "probe", "path": "/news/", "find": ["Arthur", "果蝇", "一周回顾"]}]}
+{"id": "patrol1118e", "ops": [{"do": "export", "n": 1, "count": 1, "nophone": 1, "noph": 1}]}
