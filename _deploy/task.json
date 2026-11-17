@@ -1,8 +1,9 @@
-{"id":"qaf4","ops":[
-{"do":"formsim","action":"yf_report","post":{"id":5830,"why":"fake","note":"自测举报：电话打不通，地址也不对，确认过了","contact":"021 000 0092"}},
-{"do":"formsim","action":"yf_report","post":{"id":5830,"why":"fake","note":"太短","contact":"021 000 0092"}},
-{"do":"formsim","action":"yf_report","post":{"id":5830,"why":"不存在的理由","note":"自测举报：电话打不通，地址也不对","contact":"021 000 0092"}},
-{"do":"formsim","action":"yf_report","post":{"id":5830,"why":"fake","note":"自测举报：电话打不通，地址也不对","contact":"没有联系方式"}},
-{"do":"formsim","action":"yf_inquiry","post":{"id":5830,"name":"自测咨询","contact":"021 000 0093","topic":"问价格","note":"自测"}},
-{"do":"formsim","action":"yf_inquiry","post":{"id":5830,"name":"自测咨询","contact":"没法联系","topic":"问价格","note":"自测"}}
+{"id":"qaf5","ops":[
+{"do":"formsim","action":"yf_mlogin","post":{"do":"login","email":"selftest@youfang.co.nz","pw":"wrongpass"}},
+{"do":"formsim","action":"yf_mlogin","post":{"do":"forgot","email":"selftest@youfang.co.nz"}},
+{"do":"formsim","action":"yf_mlogin","post":{"do":"forgot","email":"nobody@example.com"}},
+{"do":"formsim","action":"yf_mlogin","post":{"do":"logout"}},
+{"do":"formsim","action":"yf_manage","post":{"do":"renew"},"tokens":{"t":5831}},
+{"do":"formsim","action":"yf_manage","post":{"do":"renew","t":"假token","id":5831}},
+{"do":"formsim","action":"yf_draft","post":{"id":5831},"tokens":{"t":5831}}
 ]}
