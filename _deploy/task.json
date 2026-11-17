@@ -1,4 +1,1 @@
-{"id":"qaf1","ops":[
-{"do":"simulate","type":"merchant","email":"selftest@youfang.co.nz","keep":1,"f":{"title":"自测店铺（勿用）","industry":"0","industry_other":"自测","area":"Riccarton","summary":"自测","content":"自测用，稍后删除","phone":"021 000 0099","address":"1 Test St","website":"https://example.co.nz"}},
-{"do":"simulate","type":"event","email":"selftest@youfang.co.nz","keep":1,"f":{"title":"自测活动（勿用）","evkind":"社团聚会","organizer":"自测","valid_until":"2026-12-20","time":"19:00","venue":"Test Hall","content":"自测用，稍后删除","phone":"021 000 0098","capacity":"3"}}
-]}
+{"id":"qaf2","ops":[{"do":"review","approve":[5830,5831]}]}
