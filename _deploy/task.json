@@ -1,1 +1,9 @@
-{"id":"qaprobe2","ops":[{"do":"probe","path":"/rides/","find":["基督城机场","Fatal error"]},{"do":"probe","path":"/helpout/","find":["搬家帮忙","Fatal error"]},{"do":"probe","path":"/","find":["自测","Fatal error"]}]}
+{"id":"qacs1","ops":[
+{"do":"claimsim","mid":5816,"kind":"fix","email":"selftest@youfang.co.nz","msg":"自测：电话写错了"},
+{"do":"claimsim","mid":5816,"kind":"remove","email":"selftest@youfang.co.nz","msg":"自测：不想展示"},
+{"do":"claimsim","mid":5816,"kind":"remove","email":"","msg":"自测：没留邮箱的下架申请"},
+{"do":"creq"},
+{"do":"probe","path":"/claim/?mid=5816","find":["认领","下架","Fatal error"]},
+{"do":"probe","path":"/claim/?mid=5816&do=remove","find":["申请下架","立即隐藏","马上隐藏","Fatal error"]},
+{"do":"probe","path":"/claim/?mid=5816&do=fix","find":["报告信息有误","Fatal error"]}
+]}
