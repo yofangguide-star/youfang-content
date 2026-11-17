@@ -1,3 +1,9 @@
-{"id":"qaf8","ops":[
-{"do":"simulate","type":"job","email":"selftest@youfang.co.nz","keep":1,"f":{"title":"自测职位（勿用）","company":"自测公司","area":"Riccarton","jobtype":"兼职","pay":"25/小时","visa":"不限","content":"自测用，稍后删除","phone":"021 000 0091"}}
+{"id":"qaf9","ops":[
+{"do":"review","approve":[5834]},
+{"do":"posts","type":"yf_job","n":1},
+{"do":"formsim","action":"yf_manage","post":{"do":"renew","id":5834},"tokens":{"t":5834}},
+{"do":"posts","type":"yf_job","n":1},
+{"do":"meta","id":5834,"set":{"yf_expires":"2026-11-10"}},
+{"do":"cron","hook":"yf_daily"},
+{"do":"posts","type":"yf_job","n":1}
 ]}
