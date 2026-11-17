@@ -1,1 +1,1 @@
-{"id":"chk1117x","ops":[{"do":"cron"}]}
+{"id":"chk1117y","ops":[{"do":"review"},{"do":"log"}]}
