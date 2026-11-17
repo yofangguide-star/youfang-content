@@ -1,14 +1,1 @@
-{"id":"qaf10","ops":[
-{"do":"formsim","action":"yf_review","post":{"id":5830,"stars":"5","who":"自测顾客","note":"自测评价，服务很好，稍后删除","contact":"021 000 0090"},"tokens":{"t":5830}},
-{"do":"formsim","action":"yf_bk","post":{"mid":5830,"name":"自测订位","contact":"021 000 0089","when":"2026-12-01 18:00","n":"2"}},
-{"do":"formsim","action":"yf_spin","post":{"id":5830},"tokens":{"t":5830}},
-{"do":"formsim","action":"yf_buy","post":{"id":5830,"slot":"focus"},"tokens":{"t":5830}},
-{"do":"formsim","action":"yf_mrep_off","post":{"id":5830},"tokens":{"t":5830}},
-{"do":"probe","path":"/?s=%E5%90%8C%E4%BB%81%E5%A0%82","find":["同仁堂","Fatal error"]},
-{"do":"probe","path":"/?s=zzzzqqqqnothing","find":["Fatal error","没有找到","没有"]},
-{"do":"probe","path":"/?s=massage","find":["Fatal error"]},
-{"do":"probe","path":"/favs/","find":["Fatal error","我的收藏"]},
-{"do":"probe","path":"/en/merchants/","find":["Fatal error"]},
-{"do":"probe","path":"/guide/","find":["Fatal error"]},
-{"do":"probe","path":"/news/","find":["Fatal error"]}
-]}
+{"id":"qab22393","ops":[{"do":"formsim","action":"yf_review","post":{"id":5830,"stars":"5","who":"自测顾客","note":"自测评价，服务很好","contact":"021 000 0090"},"tokens":{"t":5830}}]}
