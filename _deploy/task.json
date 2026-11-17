@@ -1,1 +1,1 @@
-{"id":"st1117z","ops":[{"do":"selftest"}]}
+{"id":"chk1117t","ops":[{"do":"export","n":3,"type":"yf_event"}]}
