@@ -1,6 +1,1 @@
-{"id":"qacs2","ops":[
-{"do":"simulate","type":"merchant","email":"selftest@youfang.co.nz","f":{"title":"自测网址校验","industry":"0","industry_other":"自测","area":"Riccarton","summary":"自测","content":"自测","website":"不是网址"}},
-{"do":"simulate","type":"merchant","email":"selftest@youfang.co.nz","f":{"title":"自测网址校验2","industry":"0","industry_other":"自测","area":"Riccarton","summary":"自测","content":"自测","website":"example.co.nz"}},
-{"do":"creq","mid":5816,"i":1,"go":1},
-{"do":"creq"}
-]}
+{"id":"qaclean1","ops":[{"do":"trash","ids":[5816,5821,5822,5823,5824,5825,5826,5827,5828]},{"do":"selftest"}]}
