@@ -1,1 +1,1 @@
-{"id":"hp1117c","ops":[{"do":"peek","url":"https://www.healthpoint.co.nz/gps-accident-urgent-medical-care/gp/","links":"/gp/","n":80},{"do":"peek","url":"https://www.healthpoint.co.nz/gps-accident-urgent-medical-care/gp/","strip":1,"n":900}]}
+{"id":"hp1117d","ops":[{"do":"peek","url":"https://www.healthpoint.co.nz/search/?q=mandarin&l=auckland","links":"/gp/","n":40},{"do":"peek","url":"https://www.healthpoint.co.nz/gps-accident-urgent-medical-care/gp/?region=auckland&language=mandarin","links":"/gp/","n":40}]}
