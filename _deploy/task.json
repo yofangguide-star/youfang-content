@@ -1,1 +1,6 @@
-{"id":"qarv3","ops":[{"do":"readbiz","id":5403,"path":"chain-stores","len":9000},{"do":"readbiz","id":5403,"path":"contact","len":9000},{"do":"readbiz","id":5370,"path":"contact-us","len":9000}]}
+{"id":"qafin1118","ops":[
+{"do":"meta","id":5403,"set":{"_yf_source_url":"https://tongrentang.co.nz/chain-stores","_yf_notes":"2026-11-18 基督城店电话 (03)341-8811 已在商家官网分店页核对一致，来源改为官网"}},
+{"do":"meta","id":5366,"set":{"yf_phone":"021 270 0168","_yf_source_url":"https://luckymotors.co.nz","_yf_notes":"2026-11-18 官网写明基督城店 021 270 0168；原先存的 03 385 0212 官网上没有，已更正"}},
+{"do":"meta","id":5370,"set":{"yf_phone":"0800 438 7375","_yf_source_url":"https://perlelectrical.co.nz/contact-us","_yf_notes":"2026-11-18 官网公布 0800 438 7375（另有 027 616 0433）；原先存的 021 106 2172 官网上没有，已更正"}},
+{"do":"trash","ids":[5401,5400,5399,5369,5354,5352,5337,5351,5350,5348,5347,5346,5344,5420,5421,5422,5424,5404,5405,5386,5387,5390,5391,5392,5393,5376,5368,5299,5318,5315,5236,5234]}
+]}
