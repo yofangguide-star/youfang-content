@@ -1,7 +1,1 @@
-{"id":"qaf6","ops":[
-{"do":"posts","type":"yf_event","n":2},
-{"do":"review","approve":[5831]},
-{"do":"formsim","action":"yf_manage","post":{"do":"renew","id":5831},"tokens":{"t":5831}},
-{"do":"formsim","action":"yf_manage","post":{"do":"renew","id":5831,"t":"假token"}},
-{"do":"posts","type":"yf_event","n":2}
-]}
+{"id":"qaf7","ops":[{"do":"formsim","action":"yf_manage","post":{"do":"renew","id":5831},"tokens":{"t":5831}},{"do":"formsim","action":"yf_manage","post":{"do":"renew","id":5831,"t":"jiatoken"}},{"do":"posts","type":"yf_event","n":1}]}
