@@ -1,1 +1,11 @@
-{"id":"qac31586","ops":[{"do":"formsim","action":"yf_mrep_off","post":{"id":5830},"tokens":{"t":5830}}]}
+{"id":"qaf11","ops":[
+{"do":"formsim","action":"yf_mrep_off","post":{"id":5830},"tokens":{"t":5830}},
+{"do":"formsim","action":"yf_mrep_off","post":{"id":5830,"t":"jiatoken"}},
+{"do":"formsim","action":"yf_buy","post":{"slot":"focus","id":5830},"tokens":{"t":5830}},
+{"do":"formsim","action":"yf_ev_csv","post":{"id":5831},"tokens":{"t":5831}},
+{"do":"probe","path":"/?s=%E5%90%8C%E4%BB%81%E5%A0%82","find":["同仁堂","Fatal error"]},
+{"do":"probe","path":"/?s=zzzzqqqqnothing","find":["Fatal error"]},
+{"do":"probe","path":"/favs/","find":["Fatal error","我的收藏"]},
+{"do":"probe","path":"/en/merchants/","find":["Fatal error"]},
+{"do":"probe","path":"/guide/","find":["Fatal error"]}
+]}
