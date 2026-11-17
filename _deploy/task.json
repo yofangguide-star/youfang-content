@@ -1,7 +1,1 @@
-{"id":"qaf14","ops":[
-{"do":"meta","id":5830,"set":{"_yf_review_key":"selftestkey123456","_yf_feats":["inquiry","booking","review"]}},
-{"do":"formsim","action":"yf_review","post":{"id":5830,"key":"selftestkey123456","rating":"5","content":"自测评价内容，服务不错","nick":"自测","email":"selftest@youfang.co.nz"}},
-{"do":"formsim","action":"yf_review","post":{"id":5830,"key":"selftestkey123456","rating":"9","content":"自测评价内容","nick":"自测","email":"selftest@youfang.co.nz"}},
-{"do":"formsim","action":"yf_review","post":{"id":5830,"key":"错的key","rating":"5","content":"自测评价内容","nick":"自测","email":"selftest@youfang.co.nz"}},
-{"do":"formsim","action":"yf_bk","post":{"mid":5830,"id":5830,"name":"自测订位","contact":"021 000 0089","when":"2026-12-01 18:00","n":"2"}}
-]}
+{"id":"qaf15","ops":[{"do":"meta","id":5830,"set":{"_yf_feats":["inquiry","booking","review"]}},{"do":"formsim","action":"yf_bk","post":{"id":5830,"name":"自测订位","contact":"021 000 0089","date":"2026-12-01","time":"18:00","n":"2"}},{"do":"formsim","action":"yf_bk","post":{"id":5830,"name":"","contact":"021 000 0089","date":"2026-12-01","time":"18:00","n":"2"}}]}
