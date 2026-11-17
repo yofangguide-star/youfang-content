@@ -1,1 +1,1 @@
-{"id":"qamob2","ops":[{"do":"mobile","path":"/road/"},{"do":"mobile","path":"/rental-prices/"},{"do":"mobile","path":"/membership/"},{"do":"mobile","path":"/claim/?mid=5403"},{"do":"mobile","path":"/submit/?type=merchant"}]}
+{"id":"qafinal1","ops":[{"do":"probe","path":"/?p=5403","find":["北京同仁堂","Fatal error","认领"]},{"do":"mobile","path":"/?p=5403"},{"do":"probe","path":"/merchants/","find":["Fatal error"]},{"do":"probe","path":"/city/queenstown/","find":["Fatal error"]},{"do":"probe","path":"/city/hamilton/","find":["Fatal error"]}]}
