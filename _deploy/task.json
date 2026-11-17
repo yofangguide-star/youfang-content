@@ -1,1 +1,1 @@
-{"id":"ac1117c","ops":[{"do":"peek","url":"https://www.acupuncture.org.nz/find-a-practitioner/","strip":1,"n":1500},{"do":"peek","url":"https://www.acupuncture.org.nz/find-a-practitioner/","links":"","n":40}]}
+{"id":"ac1117d","ops":[{"do":"peek","url":"https://www.acupuncture.org.nz/find-a-practitioner/","strip":1,"n":3000,"find":"Region"},{"do":"peek","url":"https://www.chinesemedicinecouncil.org.nz/Public/Public-Register/Find-a-Practitioner.aspx","strip":1,"n":1200}]}
