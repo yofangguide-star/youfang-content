@@ -1,1 +1,1 @@
-{"id":"qab22393","ops":[{"do":"formsim","action":"yf_review","post":{"id":5830,"stars":"5","who":"自测顾客","note":"自测评价，服务很好","contact":"021 000 0090"},"tokens":{"t":5830}}]}
+{"id":"qab2019","ops":[{"do":"formsim","action":"yf_bk","post":{"mid":5830,"name":"自测订位","contact":"021 000 0089","when":"2026-12-01 18:00","n":"2"}}]}
