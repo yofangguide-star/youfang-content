@@ -1,1 +1,1 @@
-{"id":"hp1117d","ops":[{"do":"peek","url":"https://www.healthpoint.co.nz/search/?q=mandarin&l=auckland","links":"/gp/","n":40},{"do":"peek","url":"https://www.healthpoint.co.nz/gps-accident-urgent-medical-care/gp/?region=auckland&language=mandarin","links":"/gp/","n":40}]}
+{"id":"ac1117a","ops":[{"do":"peek","url":"https://www.acupuncture.org.nz/find-an-acupuncturist/","strip":1,"n":1200},{"do":"peek","url":"https://www.acupuncture.org.nz/find-an-acupuncturist/","links":"member","n":30}]}
