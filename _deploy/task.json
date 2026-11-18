@@ -1,1 +1,1 @@
-{"id":"qg1118c","ops":[{"do":"terms","id":5843,"tax":"yf_guide_topic","terms":["开公司与自雇"]},{"do":"posts","type":"yf_guide","n":3},{"do":"probe","path":"/guide/","find":["WOF","注册公司","11 条"]}]}
+{"id":"qg1118d","ops":[{"do":"guide","title":"在新西兰注册公司：名字怎么占、董事有什么硬条件、要多久","topic":["开公司与自雇"],"content":"占位","status":"publish"}]}
