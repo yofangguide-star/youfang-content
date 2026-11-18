@@ -1,1 +1,1 @@
-{"id":"qchk1118pm","ops":[{"do":"selftest"},{"do":"health","warm":1},{"do":"partner","n":3},{"do":"creq"}]}
+{"id":"qchk1118pm2","ops":[{"do":"partner","n":3},{"do":"health","warm":1}]}
