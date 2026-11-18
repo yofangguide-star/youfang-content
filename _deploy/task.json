@@ -1,1 +1,1 @@
-{"id":"qgchk2","ops":[{"do":"probe","path":"/guide/","show":"银行开户","shown":2},{"do":"probe","path":"/?p=5664","find":["核对于"]}]}
+{"id":"qgchk3","ops":[{"do":"probe","path":"/?p=5839","find":["核对于","官方出处","anz.co.nz","ird.govt.nz"],"show":"官方出处","shown":1},{"do":"probe","path":"/?p=5664","find":["核对于","官方出处"]},{"do":"mobile","path":"/?p=5839"}]}
