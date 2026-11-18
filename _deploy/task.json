@@ -1,1 +1,1 @@
-{"id":"qcount1118","ops":[{"do":"posts","type":"yf_guide","n":3},{"do":"posts","type":"post","n":3},{"do":"probe","path":"/","show":"在新西兰","shown":2},{"do":"probe","path":"/guide/","show":"篇","shown":2}]}
+{"id":"qg1","ops":[{"do":"probe","path":"/?p=5639","show":"IRD","shown":6}]}
