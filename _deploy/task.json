@@ -1,1 +1,1 @@
-{"id":"qg1118e","ops":[{"do":"terms","id":5843,"tax":"yf_guide_topic","terms":["开公司与自雇"],"make":1},{"do":"probe","path":"/?p=5843","find":["开公司与自雇","Limited","183 天","资料来源"]},{"do":"probe","path":"/?p=5842","find":["2027 年 11 月 1 日","28 天","资料来源"]}]}
+{"id":"pt1118a","ops":[{"do":"selftest"},{"do":"health","warm":1},{"do":"log","name":"yf_news_log","n":40}]}
