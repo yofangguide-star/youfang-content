@@ -1,1 +1,1 @@
-{"id":"qpro7","ops":[{"do":"terms","id":5840,"tax":"merchant_category","terms":["法律服务"]},{"do":"terms","id":5664,"tax":"merchant_category","terms":["法律服务"]},{"do":"probe","path":"/?p=5664","find":["需要咨询专业人士","去咨询","自测律师行"],"show":"需要咨询专业人士","shown":1}]}
+{"id":"qclean3","ops":[{"do":"trash","ids":[5840]},{"do":"probe","path":"/?p=5664","find":["需要咨询专业人士","自测律师行"]},{"do":"selftest"}]}
