@@ -1,1 +1,1 @@
-{"id":"qgchk1","ops":[{"do":"probe","path":"/?p=5839","find":["45%","Fatal error","刚到新西兰","核对于"],"show":"非申报","shown":2},{"do":"probe","path":"/guide/","find":["银行开户","9 条","8 条"]}]}
+{"id":"qgchk2","ops":[{"do":"probe","path":"/guide/","show":"银行开户","shown":2},{"do":"probe","path":"/?p=5664","find":["核对于"]}]}
