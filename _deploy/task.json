@@ -1,1 +1,1 @@
-{"id":"pt1118e","ops":[{"do":"metwarn","redo":2,"run":1},{"do":"probe","path":"/?p=5703","find":["已解除","Great Barrier","仅作记录","预警会随时更新"]},{"do":"probe","path":"/news/","find":["Fatal error","气象局"]},{"do":"selftest"}]}
+{"id":"pt1118f","ops":[{"do":"inbox","from":"blogtrottr","n":2,"full":1},{"do":"news","ls":1}]}
