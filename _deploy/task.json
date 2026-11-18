@@ -1,1 +1,1 @@
-{"id":"qchk1118pm2","ops":[{"do":"partner","n":3},{"do":"health","warm":1}]}
+{"id":"qcount1118","ops":[{"do":"posts","type":"yf_guide","n":3},{"do":"posts","type":"post","n":3},{"do":"probe","path":"/","show":"在新西兰","shown":2},{"do":"probe","path":"/guide/","show":"篇","shown":2}]}
