@@ -1,1 +1,1 @@
-{"id":"qng2","ops":[{"do":"probe","path":"/?p=5070","find":["Nigel","nigel"],"show":"Nigel","shown":3}]}
+{"id":"qng3","ops":[{"do":"rename","id":5070,"title":"Agile","slug":"agile"},{"do":"meta","id":5070,"set":{"_yf_source_url":"https://adviser.loanmarket.co.nz/agile","_yf_notes":"2026-11-19 原来用的是店主个人名字 Nigel，按 Oscar 要求改成商号 Agile（正式品牌 Loan Market Agile）"}},{"do":"probe","path":"/?s=nigel","find":["找到 1 条","没有找到"]},{"do":"probe","path":"/?s=agile","find":["Agile","找到"]}]}
