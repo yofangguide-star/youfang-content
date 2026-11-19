@@ -1,1 +1,1 @@
-{"id":"qfixcourse","ops":[{"do":"meta","id":5846,"set":{"_yf_shop":"4851","yf_capacity":"10"}},{"do":"trash","ids":[5848]},{"do":"probe","path":"/?p=5846","find":["在线报名","报名截止","名额","JOY"],"show":"在线报名","shown":1}]}
+{"id":"qreg1","ops":[{"do":"probe","path":"/manage/?id=4851&t=OXvBlik2gWLeQEm5LOA8FXGmkn8JHsiY","find":["编织袋制作","人报名","这个店铺发布的信息"],"show":"编织袋制作","shown":1},{"do":"meta","id":5846,"get":["_yf_token"]}]}
