@@ -1,1 +1,1 @@
-{"id":"qdiag1","ops":[{"do":"meta","id":5846,"get":["yf_shop","yf_capacity","yf_reg_until","yf_provider","_yf_email"]},{"do":"probe","path":"/","find":["课程培训"]}]}
+{"id":"qfixcourse","ops":[{"do":"meta","id":5846,"set":{"_yf_shop":"4851","yf_capacity":"10"}},{"do":"trash","ids":[5848]},{"do":"probe","path":"/?p=5846","find":["在线报名","报名截止","名额","JOY"],"show":"在线报名","shown":1}]}
