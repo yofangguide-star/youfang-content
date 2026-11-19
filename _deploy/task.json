@@ -1,1 +1,1 @@
-{"id":"qbk3","ops":[{"do":"formsim","action":"yf_draft","post":{"do":"discard","id":4851},"tokens":{"t":4851}},{"do":"probe","path":"/manage/?id=4851&t=OXvBlik2gWLeQEm5LOA8FXGmkn8JHsiY","find":["还没有发布"]}]}
+{"id":"qpw1","ops":[{"do":"probe","path":"/manage/?id=4851&t=OXvBlik2gWLeQEm5LOA8FXGmkn8JHsiY","find":["密码","课程报名","报名名额"],"show":"密码","shown":2},{"do":"probe","path":"/manage/?id=4851&t=OXvBlik2gWLeQEm5LOA8FXGmkn8JHsiY","show":"课程报名","shown":1}]}
