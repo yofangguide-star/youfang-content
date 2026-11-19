@@ -1,1 +1,1 @@
-{"id":"qfin1120c","ops":[{"do":"posts","type":"yf_course","n":2},{"do":"probe","path":"/courses/","find":["课程培训","教育培训"]}]}
+{"id":"pt1120a","ops":[{"do":"selftest"},{"do":"health","warm":1}]}
