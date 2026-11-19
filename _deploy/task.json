@@ -1,1 +1,1 @@
-{"id":"qfin1120b","ops":[{"do":"formsim","action":"yf_manage","post":{"do":"republish","id":5846},"tokens":{"t":5846}},{"do":"posts","type":"yf_course","n":2}]}
+{"id":"qfin1120c","ops":[{"do":"posts","type":"yf_course","n":2},{"do":"probe","path":"/courses/","find":["课程培训","教育培训"]}]}
