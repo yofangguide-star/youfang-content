@@ -1,1 +1,1 @@
-{"id":"qcourse5","ops":[{"do":"posts","type":"city_merchant","n":60}]}
+{"id":"qdiag1","ops":[{"do":"meta","id":5846,"get":["yf_shop","yf_capacity","yf_reg_until","yf_provider","_yf_email"]},{"do":"probe","path":"/","find":["课程培训"]}]}
