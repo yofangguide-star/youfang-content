@@ -1,1 +1,1 @@
-{"id":"qcourse1","ops":[{"do":"posts","type":"yf_course","n":5},{"do":"probe","path":"/courses/","find":["编织","Fatal error"],"show":"编织","shown":2}]}
+{"id":"qcourse2","ops":[{"do":"posts","type":"city_merchant","n":4}]}
