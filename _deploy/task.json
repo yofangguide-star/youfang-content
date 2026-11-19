@@ -1,1 +1,1 @@
-{"id":"qpeer3","ops":[{"do":"probe","path":"/?p=5403","find":["同类商家","合心堂"]},{"do":"probe","path":"/?p=5070","find":["同类商家"]},{"do":"probe","path":"/claim/?mid=5070","find":["同行","会员"]},{"do":"selftest"}]}
+{"id":"qluck1","ops":[{"do":"probe","path":"/lucky/","find":["转盘","未找到"]},{"do":"probe","path":"/submit/?type=merchant","find":["转盘","抽奖"]},{"do":"probe","path":"/claim/?mid=5070","find":["转盘","抽奖"]},{"do":"selftest"}]}
