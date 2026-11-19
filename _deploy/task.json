@@ -1,1 +1,1 @@
-{"id":"qreg1","ops":[{"do":"probe","path":"/manage/?id=4851&t=OXvBlik2gWLeQEm5LOA8FXGmkn8JHsiY","find":["编织袋制作","人报名","这个店铺发布的信息"],"show":"编织袋制作","shown":1},{"do":"meta","id":5846,"get":["_yf_token"]}]}
+{"id":"qc1120","ops":[{"do":"simulate","type":"course","email":"nobody-selftest@example.com","f":{"title":"自测个人课程（勿用）","provider":"自测老师","subject":"钢琴","area":"Riccarton","content":"自测用，稍后删除","phone":"021 000 0055"}},{"do":"probe","path":"/?p=5846","find":["JOY Car Rental","在线报名"],"show":"机构或老师","shown":1},{"do":"probe","path":"/submit/","find":["课程、培训班"]}]}
