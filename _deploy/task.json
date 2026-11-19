@@ -1,1 +1,4 @@
-{"id":"qbk2","ops":[{"do":"probe","path":"/merchants/joy%e7%a7%9f%e8%bd%a6/?yf_preview=1&t=OXvBlik2gWLeQEm5LOA8FXGmkn8JHsiY","find":["自测草稿","确认发布","客人还看不到","返回修改"]},{"do":"probe","path":"/manage/?id=4851&t=OXvBlik2gWLeQEm5LOA8FXGmkn8JHsiY","find":["还没有发布","放弃这份修改"]}]}
+{"id":"qbk2b","ops":[
+{"do":"probe","path":"/?p=4851&yf_preview=1&t=OXvBlik2gWLeQEm5LOA8FXGmkn8JHsiY","find":["自测草稿","确认发布","客人还看不到","返回修改"]},
+{"do":"probe","path":"/manage/?id=4851&t=OXvBlik2gWLeQEm5LOA8FXGmkn8JHsiY","find":["还没有发布","放弃这份修改"]}
+]}
