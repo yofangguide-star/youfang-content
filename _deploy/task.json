@@ -1,1 +1,1 @@
-{"id":"pt1120c","ops":[{"do":"news","drafts":1},{"do":"efdata"},{"do":"creq"},{"do":"review"},{"do":"reports"},{"do":"inbox"},{"do":"leads"},{"do":"weekly"},{"do":"rent"},{"do":"metwarn"},{"do":"news","triage":"驻新西兰使馆"}]}
+{"id":"pt1120d","ops":[{"do":"review","show":5846},{"do":"review","show":5849},{"do":"posts","type":"yf_news","n":30}]}
