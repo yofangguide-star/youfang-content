@@ -1,1 +1,1 @@
-{"id":"qpw1","ops":[{"do":"probe","path":"/manage/?id=4851&t=OXvBlik2gWLeQEm5LOA8FXGmkn8JHsiY","find":["密码","课程报名","报名名额"],"show":"密码","shown":2},{"do":"probe","path":"/manage/?id=4851&t=OXvBlik2gWLeQEm5LOA8FXGmkn8JHsiY","show":"课程报名","shown":1}]}
+{"id":"qcourse1","ops":[{"do":"posts","type":"yf_course","n":5},{"do":"probe","path":"/courses/","find":["编织","Fatal error"],"show":"编织","shown":2}]}
