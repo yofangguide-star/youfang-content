@@ -1,1 +1,1 @@
-{"id":"qpeer2","ops":[{"do":"probe","path":"/merchants/?ind=%E7%A7%9F%E8%BD%A6","show":"租车","shown":2},{"do":"probe","path":"/?p=4851","show":"租车","shown":1}]}
+{"id":"qpeer3","ops":[{"do":"probe","path":"/?p=5403","find":["同类商家","合心堂"]},{"do":"probe","path":"/?p=5070","find":["同类商家"]},{"do":"probe","path":"/claim/?mid=5070","find":["同行","会员"]},{"do":"selftest"}]}
