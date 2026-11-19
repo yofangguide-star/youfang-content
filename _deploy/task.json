@@ -1,1 +1,1 @@
-{"id":"qluck1","ops":[{"do":"probe","path":"/lucky/","find":["转盘","未找到"]},{"do":"probe","path":"/submit/?type=merchant","find":["转盘","抽奖"]},{"do":"probe","path":"/claim/?mid=5070","find":["转盘","抽奖"]},{"do":"selftest"}]}
+{"id":"qbk1","ops":[{"do":"formsim","action":"yf_manage","post":{"do":"bk_cfg","id":4851,"mode":"service","days":[1,2,3],"hours":"09:00-12:00","step":"60","cap":"2","party":"4","lead":"3","ahead":"14","note":"自测草稿"},"tokens":{"t":4851}},{"do":"probe","path":"/?p=4851","find":["自测草稿","预览"]},{"do":"probe","path":"/manage/?id=4851","find":["还没有发布"]}]}
