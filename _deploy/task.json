@@ -1,1 +1,1 @@
-{"id":"qmem3","ops":[{"do":"probe","path":"/claim/?mid=5070","find":["会员","认领之后你还能用","还有","全部免费开放"]},{"do":"probe","path":"/membership/","find":["会员","免费版","NZD","全部免费"]},{"do":"probe","path":"/?p=4851","find":["同类商家"],"show":"同类商家","shown":1}]}
+{"id":"qpeer2","ops":[{"do":"probe","path":"/merchants/?ind=%E7%A7%9F%E8%BD%A6","show":"租车","shown":2},{"do":"probe","path":"/?p=4851","show":"租车","shown":1}]}
