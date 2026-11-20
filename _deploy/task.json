@@ -1,1 +1,1 @@
-{"id":"gv3","ops":[{"do":"probe","path":"/guide/","show":"条 ·","shown":1},{"do":"probe","path":"/?post_type=yf_guide&p=5861","find":["KiwiSaver","宣誓声明","核对于","需要咨询专业人士"]}]}
+{"id":"gv4","ops":[{"do":"meta","id":5861,"get":["yf_guide_checked","yf_summary","yf_guide_src"]}]}
