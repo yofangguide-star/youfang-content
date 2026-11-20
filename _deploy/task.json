@@ -1,1 +1,1 @@
-{"id":"ver3","ops":[{"do":"probe","path":"/submit/?type=deal","as":"rental@joycarrental.co.nz","find":["已登录","退出 / 换账号","JOY Car Rental","发布到哪家店","readonly"]},{"do":"probe","path":"/submit/?type=deal","find":["已登录","readonly","发布到哪家店"]}]}
+{"id":"ver4","ops":[{"do":"probe","path":"/submit/?type=event","find":["要用店铺的名义发","免费入驻","登录商家中心","活动名称","无需注册"]},{"do":"probe","path":"/submit/?type=event","as":"rental@joycarrental.co.nz","find":["要用店铺的名义发","主办方","JOY Car Rental","readonly"]}]}
