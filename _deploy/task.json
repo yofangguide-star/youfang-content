@@ -1,11 +1,8 @@
-{"id":"sw1","ops":[
-{"do":"probe","path":"/merchants/","find":["会员","特权","等级","VIP","转盘","推荐有礼"]},
-{"do":"probe","path":"/jobs/","find":["会员","特权","等级"]},
-{"do":"probe","path":"/courses/","find":["会员","特权","等级","课程培训","教育培训"]},
-{"do":"probe","path":"/deals/","find":["会员","特权"]},
-{"do":"probe","path":"/events/","find":["会员","特权"]},
-{"do":"probe","path":"/guide/","find":["会员","特权"]},
-{"do":"probe","path":"/news/","find":["会员","特权"]},
-{"do":"probe","path":"/submit/","find":["会员","特权","等级","商家中心"]},
-{"do":"probe","path":"/manage/","find":["会员","特权"]}
+{"id":"sw2","ops":[
+{"do":"probe","path":"/merchant/","as":"rental@joycarrental.co.nz","find":["会员","特权","等级","转盘","推荐有礼","编织袋","JOY Car Rental","西红柿","退出"]},
+{"do":"probe","path":"/merchant/","find":["登录","密码","注册"]},
+{"do":"probe","path":"/?post_type=yf_course&p=5846","find":["报名","会员","课程培训","JOY"]},
+{"do":"probe","path":"/?post_type=yf_course&p=5846","as":"rental@joycarrental.co.nz","find":["报名","会员"]},
+{"do":"probe","path":"/merchants/joy-car-rental/","find":["会员","特权","等级","同行","同类商家","二维码","分享"]},
+{"do":"probe","path":"/merchants/joy-car-rental/","as":"rental@joycarrental.co.nz","find":["会员","特权","管理","同类商家"]}
 ]}
