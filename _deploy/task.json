@@ -1,1 +1,1 @@
-{"id":"ver2","ops":[{"do":"probe","path":"/submit/?type=course","as":"rental@joycarrental.co.nz","find":["readonly","JOY Car Rental","你登录的邮箱","店名要改请到店铺管理页","rental@joycarrental.co.nz"]},{"do":"probe","path":"/submit/?type=course","find":["readonly","你登录的邮箱"]}]}
+{"id":"ver3","ops":[{"do":"probe","path":"/submit/?type=deal","as":"rental@joycarrental.co.nz","find":["已登录","退出 / 换账号","JOY Car Rental","发布到哪家店","readonly"]},{"do":"probe","path":"/submit/?type=deal","find":["已登录","readonly","发布到哪家店"]}]}
