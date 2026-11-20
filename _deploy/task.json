@@ -1,5 +1,1 @@
-{"id":"sw8","ops":[
-{"do":"probe","path":"/?post_type=city_merchant&p=4851","find":["会员","特权","等级","同类商家","分享","二维码","编织袋","到期"]},
-{"do":"probe","path":"/?post_type=city_merchant&p=4851","as":"rental@joycarrental.co.nz","find":["会员","特权","管理","同类商家"]},
-{"do":"probe","path":"/?post_type=city_merchant&p=5804","find":["会员","认领","同类商家","特权"]}
-]}
+{"id":"sw8a","ops":[{"do":"probe","path":"/?post_type=city_merchant&p=4851","find":["会员","同类商家"]}]}
