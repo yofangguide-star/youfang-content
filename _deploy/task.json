@@ -1,1 +1,1 @@
-{"id":"try2","ops":[{"do":"review","tier":"merchant","try":["类型：优惠\n标题：五折\n正文：本周五折\n优惠内容：买一送一\n城市：基督城"]}]}
+{"id":"en1","ops":[{"do":"probe","path":"/en/","find":["未找到","Youfang"]},{"do":"probe","path":"/en/merchants/","find":["未找到"]}]}
