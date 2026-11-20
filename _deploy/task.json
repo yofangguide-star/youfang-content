@@ -1,1 +1,1 @@
-{"id":"old1","ops":[{"do":"posts","type":"post","n":30}]}
+{"id":"old2","ops":[{"do":"posts","type":"post","n":60,"skip":30}]}
