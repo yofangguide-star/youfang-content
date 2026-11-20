@@ -1,1 +1,1 @@
-{"id":"rvd2","ops":[{"do":"meta","id":5857,"body":1,"get":["yf_nick","yf_rating","_yf_email"]},{"do":"meta","id":5478,"body":1,"get":["yf_nick","yf_rating","_yf_email"]},{"do":"meta","id":5835,"body":1,"get":["yf_nick","yf_rating"]}]}
+{"id":"rvf","ops":[{"do":"meta","id":4851,"get":["_yf_review_key"]}]}
