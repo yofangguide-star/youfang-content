@@ -1,1 +1,1 @@
-{"id":"sw10","ops":[{"do":"probe","path":"/submit/?type=course","as":"rental@joycarrental.co.nz","find":["发布到哪家店","JOY Car Rental","联系电话或微信","邮箱"]},{"do":"probe","path":"/submit/?type=course","find":["发布到哪家店","先认领","联系电话或微信"]}]}
+{"id":"ver2","ops":[{"do":"probe","path":"/submit/?type=course","as":"rental@joycarrental.co.nz","find":["readonly","JOY Car Rental","你登录的邮箱","店名要改请到店铺管理页","rental@joycarrental.co.nz"]},{"do":"probe","path":"/submit/?type=course","find":["readonly","你登录的邮箱"]}]}
