@@ -1,1 +1,5 @@
-{"id":"sw7b","ops":[{"do":"probe","path":"/courses/%E7%BC%96%E7%BB%87%E8%A2%8B%E5%88%B6%E4%BD%9C/","find":["/merchants/","机构或老师","报名截止","名额"]}]}
+{"id":"sw8","ops":[
+{"do":"probe","path":"/?post_type=city_merchant&p=4851","find":["会员","特权","等级","同类商家","分享","二维码","编织袋","到期"]},
+{"do":"probe","path":"/?post_type=city_merchant&p=4851","as":"rental@joycarrental.co.nz","find":["会员","特权","管理","同类商家"]},
+{"do":"probe","path":"/?post_type=city_merchant&p=5804","find":["会员","认领","同类商家","特权"]}
+]}
