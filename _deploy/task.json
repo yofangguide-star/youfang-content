@@ -1,1 +1,1 @@
-{"id":"g2","ops":[{"do":"meta","id":5842,"body":1,"get":["yf_summary"]}]}
+{"id":"g3","ops":[{"do":"meta","id":5842,"get":["yf_guide_src","yf_guide_checked","yf_guide_step","yf_guide_leads"]},{"do":"terms","id":5842}]}
