@@ -1,1 +1,11 @@
-{"id":"acc2","ops":[{"do":"accts"}]}
+{"id":"sw1","ops":[
+{"do":"probe","path":"/merchants/","find":["会员","特权","等级","VIP","转盘","推荐有礼"]},
+{"do":"probe","path":"/jobs/","find":["会员","特权","等级"]},
+{"do":"probe","path":"/courses/","find":["会员","特权","等级","课程培训","教育培训"]},
+{"do":"probe","path":"/deals/","find":["会员","特权"]},
+{"do":"probe","path":"/events/","find":["会员","特权"]},
+{"do":"probe","path":"/guide/","find":["会员","特权"]},
+{"do":"probe","path":"/news/","find":["会员","特权"]},
+{"do":"probe","path":"/submit/","find":["会员","特权","等级","商家中心"]},
+{"do":"probe","path":"/manage/","find":["会员","特权"]}
+]}
