@@ -1,1 +1,1 @@
-{"id":"mp1","ops":[{"do":"probe","path":"/manage/?id=4851&t=OXvBlik2gWLeQEm5LOA8FXGmkn8JHsiY","find":["老年disco","编织袋","西红柿","会员到","会员","推荐有礼","课程报名","已报名"]}]}
+{"id":"ver1","ops":[{"do":"probe","path":"/manage/?id=4851&t=OXvBlik2gWLeQEm5LOA8FXGmkn8JHsiY","find":["会员到","推荐有礼","会员","老年disco","已有"]},{"do":"probe","path":"/submit/?type=event","find":["联系电话或微信"]}]}
