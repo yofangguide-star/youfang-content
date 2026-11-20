@@ -1,1 +1,1 @@
-{"id":"pt1121i","ops":[{"do":"news","publish":[5704,5806,5836,5837]},{"do":"news","latest":1},{"do":"probe","path":"/news/","find":["金融体系保持稳健","吉斯伯恩","AI指引","吸烟率","Fatal error"]},{"do":"selftest"}]}
+{"id":"old1","ops":[{"do":"posts","type":"post","n":30}]}
