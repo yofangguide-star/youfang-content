@@ -1,4 +1,1 @@
-{"id":"sw7","ops":[
-{"do":"probe","path":"/courses/%E7%BC%96%E7%BB%87%E8%A2%8B%E5%88%B6%E4%BD%9C/","find":["/merchants/","机构或老师","报名截止","名额"]},
-{"do":"merch","q":"JOY"}
-]}
+{"id":"sw7b","ops":[{"do":"probe","path":"/courses/%E7%BC%96%E7%BB%87%E8%A2%8B%E5%88%B6%E4%BD%9C/","find":["/merchants/","机构或老师","报名截止","名额"]}]}
