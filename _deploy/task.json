@@ -1,1 +1,1 @@
-{"id":"g3","ops":[{"do":"meta","id":5842,"get":["yf_guide_src","yf_guide_checked","yf_guide_step","yf_guide_leads"]},{"do":"terms","id":5842}]}
+{"id":"g4","ops":[{"do":"probe","path":"/guide/","find":["办事指南","WOF","注册公司"],"show":"WOF","shown":2}]}
