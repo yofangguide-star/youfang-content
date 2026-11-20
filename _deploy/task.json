@@ -1,1 +1,1 @@
-{"id":"ver5","ops":[{"do":"probe","path":"/submit/?type=course","find":["要用店铺的名义发","课程名称","登录商家中心"]},{"do":"probe","path":"/jobs/","find":["招聘职位","求职招聘"]}]}
+{"id":"rk","ops":[{"do":"posts","type":"yf_rent","n":8}]}
