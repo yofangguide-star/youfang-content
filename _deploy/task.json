@@ -1,1 +1,1 @@
-{"id":"fixcat","ops":[{"do":"terms","id":5858,"cat":["汽车交通"]}]}
+{"id":"fixcat2","ops":[{"do":"terms","id":5858,"tax":"merchant_category","terms":["汽车交通"]}]}
