@@ -1,1 +1,1 @@
-{"id":"ver4","ops":[{"do":"probe","path":"/submit/?type=event","find":["要用店铺的名义发","免费入驻","登录商家中心","活动名称","无需注册"]},{"do":"probe","path":"/submit/?type=event","as":"rental@joycarrental.co.nz","find":["要用店铺的名义发","主办方","JOY Car Rental","readonly"]}]}
+{"id":"ver5","ops":[{"do":"probe","path":"/submit/?type=course","find":["要用店铺的名义发","课程名称","登录商家中心"]},{"do":"probe","path":"/jobs/","find":["招聘职位","求职招聘"]}]}
