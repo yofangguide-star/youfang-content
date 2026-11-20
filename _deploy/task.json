@@ -1,1 +1,1 @@
-{"id":"en1","ops":[{"do":"probe","path":"/en/","find":["未找到","Youfang"]},{"do":"probe","path":"/en/merchants/","find":["未找到"]}]}
+{"id":"en2","ops":[{"do":"probe","path":"/","find":["hreflang","/en/","EN<"]},{"do":"probe","path":"/merchants/","find":["hreflang","/en/"]}]}
