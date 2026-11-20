@@ -1,1 +1,1 @@
-{"id":"cats2","ops":[{"do":"probe","path":"/merchants/","show":"行业","shown":2}]}
+{"id":"fixcat","ops":[{"do":"terms","id":5858,"cat":["汽车交通"]}]}
