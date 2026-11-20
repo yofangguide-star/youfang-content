@@ -1,1 +1,1 @@
-{"id":"inv1","ops":[{"do":"posts","type":"city_merchant","n":6},{"do":"probe","path":"/","find":["会员","幸运","转盘","特权","等级"]},{"do":"probe","path":"/","as":"oscar.zdh@gmail.com","find":["商家中心","会员","特权"]}]}
+{"id":"acc1","ops":[{"do":"accts"}]}
