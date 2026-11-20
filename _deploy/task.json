@@ -1,1 +1,1 @@
-{"id":"ver6","ops":[{"do":"probe","path":"/rent/","find":["房屋招租","招租求租","求租","发布房源","房租行情"]},{"do":"probe","path":"/events/","find":["入驻商家、社团和机构","演唱会","无需注册"]}]}
+{"id":"rv1","ops":[{"do":"probe","path":"/submit/?type=merchant","find":["店铺显示名","公司注册名","Trading Name","NZBN","大家乐","最长 48 小时"]}]}
