@@ -1,1 +1,1 @@
-{"id":"chk5846b","ops":[{"do":"meta","id":5846,"get":["_yf_taken_down","_yf_expired","_yf_reject_reason","_yf_shop","yf_reg_until"]}]}
+{"id":"rep5846","ops":[{"do":"formsim","action":"yf_manage","post":{"do":"republish","id":5846},"tokens":{"t":5846}},{"do":"meta","id":5846,"get":["_yf_taken_down"]}]}
