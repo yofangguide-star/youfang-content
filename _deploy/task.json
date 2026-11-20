@@ -1,1 +1,1 @@
-{"id":"ver1","ops":[{"do":"probe","path":"/manage/?id=4851&t=OXvBlik2gWLeQEm5LOA8FXGmkn8JHsiY","find":["会员到","推荐有礼","会员","老年disco","已有"]},{"do":"probe","path":"/submit/?type=event","find":["联系电话或微信"]}]}
+{"id":"sw9","ops":[{"do":"probe","path":"/?post_type=city_merchant&p=5804","find":["认领","会员","特权","同类商家","站内咨询"]},{"do":"probe","path":"/help/","find":["会员","特权","等级","转盘","推荐有礼"]}]}
