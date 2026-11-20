@@ -1,1 +1,1 @@
-{"id":"ev1","ops":[{"do":"meta","id":5855,"get":["_yf_shop","_yf_email","yf_phone"]},{"do":"accts"}]}
+{"id":"tok","ops":[{"do":"meta","id":4851,"get":["_yf_token"]}]}
