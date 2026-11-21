@@ -1,1 +1,1 @@
-{"id":"w7","ops":[{"do":"probe","path":"/submit/","raw":"店铺"}]}
+{"id":"w8","ops":[{"do":"probe","path":"/submit/","find":["店铺","认领商家","入驻商家发布"]},{"do":"probe","path":"/merchant/","find":["店铺"]}]}
