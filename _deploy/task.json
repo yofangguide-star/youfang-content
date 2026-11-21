@@ -1,1 +1,1 @@
-{"id":"pic","ops":[{"do":"formsim","action":"yf_submit","post":{"yf_type":"free","yf_title":"测试无图沙发","yf_content":"这是一条用来测试照片必填的信息，正文写够长度以通过字数检查。","yf_f":{"price":"sale","amount":"120","phone":"021 123 456"},"yf_email":"oscar.zdh@gmail.com","yf_city":"christchurch"}}]}
+{"id":"pic2","ops":[{"do":"formsim","action":"yf_submit","post":{"yf_type":"free","yf_title":"测试无图沙发","yf_content":"这是一条用来测试照片必填的信息，正文写够长度以通过字数检查。","yf_f":{"price":"sale","amount":"120","phone":"021 123 456"},"yf_email":"oscar.zdh@gmail.com","yf_city":"christchurch","yf_agree":"1"}}]}
