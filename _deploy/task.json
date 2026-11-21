@@ -1,1 +1,1 @@
-{"id":"c1","ops":[{"do":"cron"}]}
+{"id":"c2","ops":[{"do":"cron","hook":"yf_daily"}]}
