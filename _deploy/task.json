@@ -1,1 +1,1 @@
-{"id":"g3","ops":[{"do":"log","kind":"review","n":14}]}
+{"id":"g4","ops":[{"do":"posts","type":"yf_job","n":4,"fields":["id","title","date","status"]},{"do":"posts","type":"city_merchant","n":4,"fields":["id","title","date","status"]}]}
