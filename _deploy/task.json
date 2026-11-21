@@ -1,1 +1,1 @@
-{"id":"r7","ops":[{"do":"meta","id":5884,"set":{"yf_ridekind":"车找人"}},{"do":"meta","id":5885,"set":{"yf_ridekind":"人找车"}},{"do":"meta","id":5886,"set":{"yf_ridekind":"车找人"}}]}
+{"id":"r8","ops":[{"do":"probe","path":"/rides/","find":["车找人","人找车","有车","找车"]}]}
