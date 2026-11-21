@@ -1,1 +1,1 @@
-{"id":"n12","ops":[{"do":"news","try":["基督城新闻线RSS | https://newsline.ccc.govt.nz/rss | city=christchurch","RNZ坎特伯雷 | https://www.rnz.co.nz/rss/canterbury.xml | city=christchurch media=1"]}]}
+{"id":"n13","ops":[{"do":"news","try":["基督城星报 | https://www.star.kiwi/news/ | city=christchurch media=1","基督城征求意见 | https://ccc.govt.nz/the-council/consultations-and-submissions/haveyoursay | city=christchurch"]}]}
