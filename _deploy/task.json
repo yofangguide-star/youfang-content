@@ -1,1 +1,1 @@
-{"id":"n17","ops":[{"do":"news","addsrc":["基督城市政府 | https://newsline.ccc.govt.nz/news/stories | city=christchurch, every=120","基督城市政府征求意见 | https://ccc.govt.nz/the-council/consultations-and-submissions/haveyoursay | city=christchurch, every=360"]}]}
+{"id":"n18","ops":[{"do":"news","try":["奥克兰市政府 | https://ourauckland.aucklandcouncil.govt.nz/news/ | city=auckland","惠灵顿市政府 | https://wellington.govt.nz/news-and-events/news-and-information | city=wellington"]}]}
