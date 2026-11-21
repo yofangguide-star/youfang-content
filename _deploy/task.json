@@ -1,1 +1,1 @@
-{"id":"w1","ops":[{"do":"probe","path":"/submit/?type=course","find":["入驻商家发布","店铺的名义","名义","最长 24 小时"]}]}
+{"id":"w2","ops":[{"do":"accts"}]}
