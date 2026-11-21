@@ -1,1 +1,1 @@
-{"id":"k4","ops":[{"do":"probe","path":"/manage/?id=5888&t=lzVdSJgiLgCYDiTbfzoOdibDaMfHJlV4","find":["原密码","设置登录密码","已设置登录密码","已登录","修改密码"]}]}
+{"id":"k5","ops":[{"do":"mail","to":"oscar.zdh@gmail.com","kind":"approved","id":5888}]}
