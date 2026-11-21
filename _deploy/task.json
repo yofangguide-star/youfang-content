@@ -1,1 +1,1 @@
-{"id":"n7","ops":[{"do":"news","try":["基督城市政府 | https://newsline.ccc.govt.nz/news/stories | city=christchurch"]}]}
+{"id":"n8","ops":[{"do":"posts","type":"yf_news","n":25,"fields":["id","title","date","status"]}]}
