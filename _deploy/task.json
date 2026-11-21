@@ -1,1 +1,1 @@
-{"id":"s1","ops":[{"do":"probe","path":"/?s=%E6%8A%A4%E7%85%A7","find":["办事指南","没有找到"]},{"do":"probe","path":"/?s=KiwiSaver","find":["KiwiSaver","没有找到","办事指南"]}]}
+{"id":"s2","ops":[{"do":"probe","path":"/?s=%E8%B0%83%E4%BC%91","find":["公共假期","办事指南"]},{"do":"probe","path":"/?s=Talk+Teeth","find":["牙","办事指南"]}]}
