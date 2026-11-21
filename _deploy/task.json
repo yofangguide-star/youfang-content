@@ -1,1 +1,1 @@
-{"id":"r1","ops":[{"do":"posts","type":"yf_ride","n":6,"fields":["id","title","status"]}]}
+{"id":"r2","ops":[{"do":"probe","path":"/","find":["顺风车","最近的拼车和接送"],"raw":"最近的拼车和接送"}]}
