@@ -1,1 +1,1 @@
-{"id":"t1","ops":[{"do":"probe","path":"/submit/?type=ride","find":["出发时间","时间待定","07:00","22:30"]}]}
+{"id":"t2","ops":[{"do":"probe","path":"/submit/?type=ride","find":["出发城市","目的城市","出发区域","yf_city","基督城","但尼丁"]}]}
