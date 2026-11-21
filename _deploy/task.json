@@ -1,1 +1,1 @@
-{"id":"r8","ops":[{"do":"probe","path":"/rides/","find":["车找人","人找车","有车","找车"]}]}
+{"id": "patrol1122a", "ops": [{"do": "selftest"}, {"do": "health", "warm": 1}, {"do": "log", "name": "yf_news_log", "n": 40}, {"do": "news", "latest": 1}, {"do": "news", "ls": 1}, {"do": "partner", "n": 5}]}
