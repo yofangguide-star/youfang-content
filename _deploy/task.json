@@ -1,1 +1,1 @@
-{"id":"n4","ops":[{"do":"news","src":"基督城市政府","dry":1}]}
+{"id":"n5","ops":[{"do":"log","kind":"news","n":15}]}
