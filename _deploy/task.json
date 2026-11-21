@@ -1,1 +1,1 @@
-{"id":"ml","ops":[{"do":"log","n":30}]}
+{"id":"fg","ops":[{"do":"probe","path":"/merchant/?do=forgot","find":["管理我发布的信息","把链接发给我","设置密码邮件"]},{"do":"probe","path":"/merchant/","find":["把管理链接发到我邮箱","忘记密码"]}]}
