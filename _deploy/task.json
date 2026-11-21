@@ -1,1 +1,1 @@
-{"id":"g2","ops":[{"do":"probe","path":"/submit/?type=job","find":["yf-ev-gate","要用店铺的名义发","职位名称","name=\"yf_title\""]}]}
+{"id":"g3","ops":[{"do":"log","kind":"review","n":14}]}
