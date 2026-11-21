@@ -1,1 +1,1 @@
-{"id":"r5","ops":[{"do":"probe","path":"/rides/","find":["基督城 → 基督城","Riccarton → Christchurch Airport","每人","剩","yf-ride-side"]}]}
+{"id":"r6","ops":[{"do":"meta","id":5884,"get":["yf_ridekind"]},{"do":"meta","id":5885,"get":["yf_ridekind"]},{"do":"meta","id":5886,"get":["yf_ridekind"]}]}
