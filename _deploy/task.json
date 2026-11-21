@@ -1,1 +1,1 @@
-{"id":"g4","ops":[{"do":"posts","type":"yf_job","n":4,"fields":["id","title","date","status"]},{"do":"posts","type":"city_merchant","n":4,"fields":["id","title","date","status"]}]}
+{"id":"w1","ops":[{"do":"probe","path":"/submit/?type=course","find":["入驻商家发布","店铺的名义","名义","最长 24 小时"]}]}
