@@ -1,1 +1,1 @@
-{"id":"hh","ops":[{"do":"probe","path":"/helps/","find":["其他城市的搭把手","搭把手"]}]}
+{"id":"hh2","ops":[{"do":"probe","path":"/helpout/","find":["其他城市的搭把手","基督城","is-city"]}]}
