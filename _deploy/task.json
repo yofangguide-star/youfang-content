@@ -1,1 +1,1 @@
-{"id":"fg2","ops":[{"do":"probe","path":"/merchant/?do=forgot&as=guest","find":["name=\"as\"","管理我发布的信息"]}]}
+{"id":"fg3","ops":[{"do":"probe","path":"/merchant/?do=forgot&shop=4851","find":["这个邮箱名下有一家店铺","JOY Car Rental","去商家中心登录"]}]}
