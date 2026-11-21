@@ -1,9 +1,1 @@
-{"id":"f5","ops":[{"do":"guide",
-"title":"图书馆卡能白拿的东西：不只是借书",
-"topic":"免费与低价",
-"cat":["教育培训","娱乐休闲"],
-"summary":"本地居民办卡免费。除了借书，一张卡通常还能免费看电子书和有声书、读 60 多种语言的报纸杂志、看正版电影、学七十多种语言、查家谱和奖学金数据库，还有免费 WiFi 和电脑。中文书和中文报纸多数大馆都有。各地图书馆用的平台和额度不同，以当地图书馆网站为准。",
-"src":"https://www.wcl.govt.nz/services/help/elibrary-help/",
-"checked":"2026-11-21",
-"content":"<p>新西兰的公共图书馆由地方议会运营，<strong>本地居民办卡免费</strong>。很多华人家庭办了卡只用来借几本儿童绘本，其实一张卡背后的东西比书多得多，而且全部在家就能用。</p>\n<p>注意：各地图书馆选用的平台、每月额度不一样，下面写的是多数地区都有的类别，<strong>具体以你所在城市的图书馆网站为准</strong>。</p>\n\n<h2>电子书和有声书</h2>\n<p>最常见的两个平台：</p>\n<ul>\n<li><strong>Libby（OverDrive）</strong>——电子书、有声书、电子杂志，手机上装个应用就能借</li>\n<li><strong>BorrowBox</strong>——以有声书为主，也有电子书</li>\n</ul>\n<p>开车上下班、做家务的时候听有声书，是这张卡最被低估的用法。</p>\n\n<h2>报纸和杂志：60 多种语言</h2>\n<p><strong>PressReader</strong> 提供全球报刊的原版排版，覆盖 60 多种语言——<strong>包括中文报纸</strong>。部分本地报纸（如 Stuff 旗下的几家）只能在馆内看。</p>\n<p>有的图书馆还提供《纽约时报》的 24 小时通行证。</p>\n\n<h2>看电影</h2>\n<ul>\n<li><strong>Kanopy</strong>——三万多部，正版，成人会员每月有固定的观影额度</li>\n<li><strong>Beamafilm</strong>——五百多部，每月若干个片额</li>\n</ul>\n<p>都是合法免费，不是盗版网站。</p>\n\n<h2>学语言</h2>\n<p><strong>Mango Languages</strong> 这类平台覆盖七十多种语言，包含英语课程。刚来的人想练英语、或者想让孩子保持中文，这是零成本的一条路。</p>\n\n<h2>数据库</h2>\n<ul>\n<li><strong>奖学金和资助查询</strong>（如 Generosity givME / givUS）——找助学金、项目资助的时候很有用</li>\n<li><strong>家谱档案</strong>（Ancestry Library、FindMyPast）——通常<strong>只能在馆内的电脑上用</strong>，在家连不上</li>\n</ul>\n\n<h2>到馆才有的</h2>\n<ul>\n<li><strong>免费 WiFi 和公共电脑</strong>——刚落地还没装网的时候，办手续、填表、打印都靠它</li>\n<li><strong>打印复印</strong>——通常收费，但很便宜</li>\n<li><strong>免费活动</strong>——儿童故事时间、读书会、讲座、求职和数码技能工作坊，多数不收费</li>\n<li><strong>中文书刊</strong>——大一些的馆通常有中文书区</li>\n</ul>\n\n<h2>怎么办卡</h2>\n<ul>\n<li><strong>本地居民和纳税人免费</strong>；住在本辖区以外的通常要付费办卡</li>\n<li><strong>网上注册</strong>可以立即开始用线上资源；要拿实体卡，带<strong>带照片的身份证件</strong>去馆里办</li>\n<li>办卡一般需要证明你住在本地（账单、租约等），各馆要求不同</li>\n</ul>\n\n<h2>要花钱的部分</h2>\n<p>多数图书馆的 CD、DVD 外借，馆际互借，专项查询服务，以及打印，是收费的，金额各地不同。</p>"
-}]}
+{"id":"ix","ops":[{"do":"probe","path":"/guide/","show":"条 ·","shown":1}]}
