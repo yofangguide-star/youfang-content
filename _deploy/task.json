@@ -1,1 +1,1 @@
-{"id":"t2","ops":[{"do":"probe","path":"/submit/?type=ride","find":["出发城市","目的城市","出发区域","yf_city","基督城","但尼丁"]}]}
+{"id":"r1","ops":[{"do":"posts","type":"yf_ride","n":6,"fields":["id","title","status"]}]}
