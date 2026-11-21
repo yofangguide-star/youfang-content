@@ -1,1 +1,1 @@
-{"id":"r2","ops":[{"do":"probe","path":"/","find":["顺风车","最近的拼车和接送"],"raw":"最近的拼车和接送"}]}
+{"id":"r3","ops":[{"do":"meta","id":5885,"get":["yf_fromcity","yf_from","yf_tocity","yf_to"]},{"do":"meta","id":5884,"get":["yf_fromcity","yf_from","yf_tocity","yf_to"]}]}
