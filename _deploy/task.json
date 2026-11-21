@@ -1,1 +1,1 @@
-{"id":"g1","ops":[{"do":"probe","url":"https://youfang.co.nz/submit/?type=job&yf_pv=yMDhIHtuJHdnwidfuJcPfCt5","raw":"店铺的名义|yf-ev-gate|职位名称"}]}
+{"id":"g2","ops":[{"do":"probe","path":"/submit/?type=job","find":["yf-ev-gate","要用店铺的名义发","职位名称","name=\"yf_title\""]}]}
