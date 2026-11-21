@@ -1,1 +1,1 @@
-{"id":"n11","ops":[{"do":"news","try":["基督城市政府公告 | https://ccc.govt.nz/news-and-events/newsline/rss | city=christchurch","坎特伯雷ECan | https://www.ecan.govt.nz/rss/news/ | city=christchurch"]}]}
+{"id":"n12","ops":[{"do":"news","try":["基督城新闻线RSS | https://newsline.ccc.govt.nz/rss | city=christchurch","RNZ坎特伯雷 | https://www.rnz.co.nz/rss/canterbury.xml | city=christchurch media=1"]}]}
