@@ -1,1 +1,1 @@
-{"id":"r4","ops":[{"do":"meta","id":5884,"set":{"yf_fromcity":"基督城","yf_tocity":"基督城","yf_from":"Riccarton","yf_to":"Christchurch Airport"}},{"do":"rename","id":5884,"title":"基督城 → 基督城"},{"do":"rename","id":5885,"title":"但尼丁 → 但尼丁"}]}
+{"id":"r5","ops":[{"do":"probe","path":"/rides/","find":["基督城 → 基督城","Riccarton → Christchurch Airport","每人","剩","yf-ride-side"]}]}
