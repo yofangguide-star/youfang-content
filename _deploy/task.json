@@ -1,1 +1,1 @@
-{"id":"s4","ops":[{"do":"probe","path":"/?s=KiwiSaver","show":"找到","shown":1},{"do":"probe","path":"/?s=%E8%B0%83%E4%BC%91","show":"找到","shown":1}]}
+{"id":"n1","ops":[{"do":"posts","type":"yf_news","n":12}]}
