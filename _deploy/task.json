@@ -1,1 +1,1 @@
-{"id":"v4","ops":[{"do":"review","sweep":5}]}
+{"id":"v5","ops":[{"do":"meta","id":5849,"get":["_yf_ai_verdict","_yf_reject_reason"]},{"do":"meta","id":5854,"get":["_yf_ai_verdict","_yf_reject_reason"]},{"do":"meta","id":5890,"get":["_yf_ai_verdict","_yf_reject_reason"]}]}
