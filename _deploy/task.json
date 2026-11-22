@@ -1,1 +1,1 @@
-{"id":"j1","ops":[{"do":"probe","path":"/submit/?type=job","as":"rental@joycarrental.co.nz","find":["职位类别","能否担保工签","认证雇主","英文要求"]}]}
+{"id":"j2","ops":[{"do":"probe","path":"/jobs/","find":["可担保工签","所有类别","餐饮"]}]}
