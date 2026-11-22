@@ -1,1 +1,1 @@
-{"id":"q1","ops":[{"do":"probe","path":"/submit/?done=1&type=deal","find":["专属链接","自动下架","请留意你的邮箱"]},{"do":"probe","path":"/submit/?done=1&type=free","find":["专属链接","自动下架"]}]}
+{"id":"v1","ops":[{"do":"posts","type":"yf_deal","n":3,"fields":["id","title","status"]},{"do":"log","kind":"review","n":10}]}
