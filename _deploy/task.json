@@ -1,1 +1,1 @@
-{"id":"d2","ops":[{"do":"posts","type":"city_merchant","n":2,"fields":["id","title","status"]}]}
+{"id":"d3","ops":[{"do":"trash","ids":[5889]}]}
