@@ -1,1 +1,1 @@
-{"id":"m1","ops":[{"do":"probe","path":"/merchant/","as":"rental@joycarrental.co.nz","find":["我发布的信息","店铺管理","商家管理","JOY Car Rental","西红柿"]}]}
+{"id":"m2","ops":[{"do":"probe","path":"/merchant/","as":"rental@joycarrental.co.nz","find":["我发布的信息","商家管理","JOY Car Rental"]}]}
