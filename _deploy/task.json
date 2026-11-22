@@ -1,1 +1,1 @@
-{"id":"u1","ops":[{"do":"log","kind":"usage"}]}
+{"id":"x1","ops":[{"do":"news","delsrc":["https://www.rnz.co.nz/rss/national.xml","https://www.rnz.co.nz/rss/political.xml","https://www.rnz.co.nz/rss/business.xml"]}]}
