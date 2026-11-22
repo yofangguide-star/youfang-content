@@ -1,1 +1,1 @@
-{"id":"a2","ops":[{"do":"news","try":["NZTA 陆路交通 | https://www.nzta.govt.nz/feeds/media-releases/ |","统计局 Stats NZ | https://www.stats.govt.nz/rss/news |"]}]}
+{"id":"m1","ops":[{"do":"probe","path":"/merchant/","as":"rental@joycarrental.co.nz","find":["我发布的信息","店铺管理","商家管理","JOY Car Rental","西红柿"]}]}
