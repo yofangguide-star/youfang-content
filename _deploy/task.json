@@ -1,1 +1,1 @@
-{"id":"v2","ops":[{"do":"posts","type":"yf_deal","n":3,"fields":["id","title","status"]}]}
+{"id":"v3","ops":[{"do":"meta","id":5890,"get":["_yf_ai_verdict","_yf_ai_reason","_yf_ai_fails","_yf_type","_yf_shop"]}]}
