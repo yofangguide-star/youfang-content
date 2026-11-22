@@ -1,1 +1,1 @@
-{"id":"r7","ops":[{"do":"posts","type":"yf_news","n":10,"fields":["id","title","date","status"]}]}
+{"id":"r8","ops":[{"do":"log","kind":"cron"}]}
