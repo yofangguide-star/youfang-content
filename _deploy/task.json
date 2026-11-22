@@ -1,1 +1,1 @@
-{"id":"s5","ops":[{"do":"news","try":["商业委员会 Commerce Commission | https://comcom.govt.nz/news-and-media/media-releases/rss |","WorkSafe 职场安全 | https://www.worksafe.govt.nz/about-us/news-and-media/rss/ |"]}]}
+{"id":"o1","ops":[{"do":"probe","path":"/manage/?id=5890","as":"rental@joycarrental.co.nz","find":["链接无效","彻底删除这条信息","新客人首单5折","重新发布"]}]}
