@@ -1,1 +1,1 @@
-{"id":"m4","ops":[{"do":"status"}]}
+{"id":"m5","ops":[{"do":"probe","path":"/merchant/","as":"rental@joycarrental.co.nz","find":["商家中心"]}]}
