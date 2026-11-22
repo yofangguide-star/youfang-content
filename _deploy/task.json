@@ -1,1 +1,1 @@
-{"id":"x1","ops":[{"do":"cron","hook":"yf_purge_expired"}]}
+{"id":"x2","ops":[{"do":"posts","type":"yf_ride","n":5,"fields":["id","title","status"]}]}
