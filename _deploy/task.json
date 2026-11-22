@@ -1,1 +1,1 @@
-{"id":"p1","ops":[{"do":"formsim","type":"merchant","fields":{"title":"测试花店","legal_name":"Test Flower Limited","name_en":"Test Flower","industry_other":"花店","area":"Riccarton","address":"1 Test Street, Riccarton, Christchurch","phone":"03 123 4567","content":"这是一条用来测试入驻流程的假数据，测完就删。"},"email":"oscar.zdh@gmail.com","city":"christchurch"}]}
+{"id":"p2","ops":[{"do":"probe","path":"/submit/?done=1&type=merchant","find":["请留意你的邮箱","设置登录密码","48 小时","垃圾邮件"]}]}
