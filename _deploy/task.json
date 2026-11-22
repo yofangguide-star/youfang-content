@@ -1,1 +1,1 @@
-{"id":"m6","ops":[{"do":"probe","path":"/merchant/","as":"rental@joycarrental.co.nz","find":["查看商家页面","本月浏览","这个邮箱发布的信息","西红柿"]}]}
+{"id":"m7","ops":[{"do":"probe","path":"/merchant/","as":"rental@joycarrental.co.nz","find":["这家商家发布的信息","你个人发布的信息","查看商家页面","本月浏览"]}]}
