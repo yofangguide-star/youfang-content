@@ -1,1 +1,1 @@
-{"id":"ge","ops":[{"do":"probe","path":"/?p=5631","raw":"路线"}]}
+{"id":"gf","ops":[{"do":"meta","id":5631,"get":["yf_key","yf_gkey","yf_summary","yf_points"]}]}
