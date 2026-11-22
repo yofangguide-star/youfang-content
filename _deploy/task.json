@@ -1,1 +1,1 @@
-{"id":"p3","ops":[{"do":"probe","path":"/submit/?done=1&type=merchant","find":["商家入驻","免费发布信息","返回首页","请留意你的邮箱"]}]}
+{"id":"p4","ops":[{"do":"probe","path":"/submit/?type=merchant","find":["商家入驻","免费发布信息","免费建立你的商家页"]}]}
