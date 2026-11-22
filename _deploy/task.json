@@ -1,1 +1,1 @@
-{"id":"f1","ops":[{"do":"probe","path":"/free/","find":["全部城市","其他城市的二手"]}]}
+{"id":"r1","ops":[{"do":"news","try":["RNZ 新西兰广播 | https://www.rnz.co.nz/rss/national.xml |","海关 Customs | https://www.customs.govt.nz/about-us/news/ |"]}]}
