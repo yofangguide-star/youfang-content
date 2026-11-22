@@ -1,1 +1,1 @@
-{"id":"x2","ops":[{"do":"posts","type":"yf_ride","n":5,"fields":["id","title","status"]}]}
+{"id":"t9","ops":[{"do":"probe","path":"/submit/?type=deal","find":["发布发优惠","发布优惠"]},{"do":"probe","path":"/submit/?type=free","find":["发布二手闲置","发布发"]}]}
