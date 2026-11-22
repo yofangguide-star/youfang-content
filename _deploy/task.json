@@ -1,1 +1,1 @@
-{"id":"v7","ops":[{"do":"posts","type":"yf_deal","n":3,"fields":["id","title","status"]}]}
+{"id":"v8","ops":[{"do":"status","ids":[5849,5854,5890],"status":"draft"}]}
