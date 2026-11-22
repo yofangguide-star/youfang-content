@@ -1,1 +1,1 @@
-{"id":"r5","ops":[{"do":"news","addsrc":["RNZ 新西兰广播 | https://www.rnz.co.nz/rss/national.xml | media=1, every=45","RNZ 政治与政策 | https://www.rnz.co.nz/rss/political.xml | media=1, every=60","RNZ 商业财经 | https://www.rnz.co.nz/rss/business.xml | media=1, every=60","警察 NZ Police | https://www.police.govt.nz/rss.xml | every=60","WorkSafe 职场安全 | https://www.worksafe.govt.nz/about-us/news-and-media/rss/ | every=180"]}]}
+{"id":"r6","ops":[{"do":"news","all":1}]}
