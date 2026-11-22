@@ -1,1 +1,1 @@
-{"id":"n1","ops":[{"do":"posts","type":"yf_news","n":8,"fields":["id","title","date","status"]}]}
+{"id":"n2","ops":[{"do":"news","srcs":1}]}
