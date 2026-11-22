@@ -1,1 +1,1 @@
-{"id":"j4","ops":[{"do":"probe","path":"/jobs/","find":["可办 AEWV 工签","可担保工签"]}]}
+{"id":"j5","ops":[{"do":"probe","path":"/submit/?type=job","as":"rental@joycarrental.co.nz","find":["职位类别","AEWV","认证雇主","英文要求","签证要求"]}]}
