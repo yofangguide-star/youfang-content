@@ -1,1 +1,1 @@
-{"id":"m1","ops":[{"do":"status"}]}
+{"id":"m2","ops":[{"do":"terms","get":["notify_email","from_email"]}]}
