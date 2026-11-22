@@ -1,1 +1,1 @@
-{"id":"p1123071814","ops":[{"do":"selftest"},{"do":"health","warm":1}]}
+{"id":"p1123071837","ops":[{"do":"log","name":"yf_news_log","n":40},{"do":"news","latest":1},{"do":"news","ls":1},{"do":"news","drafts":1},{"do":"partner","n":5},{"do":"creq"},{"do":"review"},{"do":"reports"},{"do":"efdata"},{"do":"inbox"},{"do":"leads"},{"do":"rent"}]}
