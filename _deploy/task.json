@@ -1,1 +1,1 @@
-{"id":"s3","ops":[{"do":"news","try":["Beehive 政府公告 | https://www.beehive.govt.nz/rss.xml |","警察 NZ Police | https://www.police.govt.nz/rss/news.xml |"]}]}
+{"id":"s4","ops":[{"do":"news","try":["储备银行 RBNZ | https://www.rbnz.govt.nz/feeds/news |","警察 NZ Police | https://www.police.govt.nz/rss.xml |"]}]}
