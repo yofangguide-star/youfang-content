@@ -1,1 +1,1 @@
-{"id":"v5","ops":[{"do":"meta","id":5849,"get":["_yf_ai_verdict","_yf_reject_reason"]},{"do":"meta","id":5854,"get":["_yf_ai_verdict","_yf_reject_reason"]},{"do":"meta","id":5890,"get":["_yf_ai_verdict","_yf_reject_reason"]}]}
+{"id":"v6","ops":[{"do":"status","id":5849,"status":"draft"},{"do":"status","id":5890,"status":"draft"},{"do":"status","id":5854,"status":"draft"}]}
