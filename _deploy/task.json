@@ -1,1 +1,1 @@
-{"id":"z1","ops":[{"do":"posts","type":"city_merchant","n":4,"fields":["id","title","status"]}]}
+{"id":"s1","ops":[{"do":"posts","type":"city_merchant","n":3,"fields":["id","title","status"]},{"do":"status"}]}
