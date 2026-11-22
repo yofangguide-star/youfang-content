@@ -1,1 +1,1 @@
-{"id":"j7","ops":[{"do":"probe","path":"/submit/?type=job","as":"rental@joycarrental.co.nz","find":["英语水平要求","接收简历的邮箱","只用来收审核结果"]}]}
+{"id":"e1","ops":[{"do":"probe","path":"/submit/?type=job","as":"rental@joycarrental.co.nz","find":["只用来收审核结果","邮箱 <b","接收简历的邮箱"]},{"do":"probe","path":"/submit/?type=free","find":["审核结果和管理链接发到这里"]}]}
