@@ -1,1 +1,1 @@
-{"id":"t9","ops":[{"do":"probe","path":"/submit/?type=deal","find":["发布发优惠","发布优惠"]},{"do":"probe","path":"/submit/?type=free","find":["发布二手闲置","发布发"]}]}
+{"id":"q1","ops":[{"do":"probe","path":"/submit/?done=1&type=deal","find":["专属链接","自动下架","请留意你的邮箱"]},{"do":"probe","path":"/submit/?done=1&type=free","find":["专属链接","自动下架"]}]}
