@@ -1,1 +1,1 @@
-{"id":"g5","ops":[{"do":"meta","id":5631,"body":1}]}
+{"id":"g6","ops":[{"do":"posts","type":"yf_guide","n":1,"fields":["id","title"],"id":5631}]}
