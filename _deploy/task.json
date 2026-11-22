@@ -1,1 +1,1 @@
-{"id":"r1","ops":[{"do":"news","try":["RNZ 新西兰广播 | https://www.rnz.co.nz/rss/national.xml |","海关 Customs | https://www.customs.govt.nz/about-us/news/ |"]}]}
+{"id":"r2","ops":[{"do":"news","try":["RNZ 政治与政策 | https://www.rnz.co.nz/rss/political.xml |","RNZ 商业财经 | https://www.rnz.co.nz/rss/business.xml |"]}]}
