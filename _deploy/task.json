@@ -1,1 +1,1 @@
-{"id":"c1","ops":[{"do":"probe","path":"/merchant/?city=dunedin","as":"rental@joycarrental.co.nz","find":["查看商家页面","本月浏览","这家商家发布的信息"]}]}
+{"id":"c2","ops":[{"do":"probe","path":"/merchant/?city=auckland","as":"rental@joycarrental.co.nz","find":["查看商家页面","本月浏览"]}]}
