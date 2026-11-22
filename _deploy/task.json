@@ -1,1 +1,1 @@
-{"id":"d3","ops":[{"do":"trash","ids":[5889]}]}
+{"id":"j7","ops":[{"do":"probe","path":"/submit/?type=job","as":"rental@joycarrental.co.nz","find":["英语水平要求","接收简历的邮箱","只用来收审核结果"]}]}
