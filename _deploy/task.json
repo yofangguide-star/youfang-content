@@ -1,1 +1,1 @@
-{"id":"s4","ops":[{"do":"news","try":["储备银行 RBNZ | https://www.rbnz.govt.nz/feeds/news |","警察 NZ Police | https://www.police.govt.nz/rss.xml |"]}]}
+{"id":"s5","ops":[{"do":"news","try":["商业委员会 Commerce Commission | https://comcom.govt.nz/news-and-media/media-releases/rss |","WorkSafe 职场安全 | https://www.worksafe.govt.nz/about-us/news-and-media/rss/ |"]}]}
