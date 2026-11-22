@@ -1,1 +1,1 @@
-{"id":"x1","ops":[{"do":"news","delsrc":["https://www.rnz.co.nz/rss/national.xml","https://www.rnz.co.nz/rss/political.xml","https://www.rnz.co.nz/rss/business.xml"]}]}
+{"id":"a1","ops":[{"do":"news","try":["选举委员会 Electoral Commission | https://elections.nz/media-and-news/ |","消费者保护 Consumer Protection | https://www.consumerprotection.govt.nz/general-help/news/ |"]}]}
