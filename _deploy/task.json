@@ -1,1 +1,1 @@
-{"id":"probe-m","ops":[{"do":"probe","path":"/merchant/","raw":1}]}
+{"id":"acct","ops":[{"do":"accts","email":"oscar.zdh@gmail.com"}]}
