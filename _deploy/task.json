@@ -1,1 +1,1 @@
-{"id":"ls","ops":[{"do":"posts","type":"yf_deal","n":10}]}
+{"id":"tiptest","ops":[{"do":"formsim","action":"yf_submit","post":{"yf_type":"tip","yf_agree":"1","yf_email":"selftest@youfang.co.nz","yf_city":"christchurch","yf_f":{"title":"PAK'nSAVE Riccarton 鸡蛋 10 只装 $5.49，原价 $8.99","area":"Riccarton","content":"限量，在冷柜最下面一层"}}}]}
