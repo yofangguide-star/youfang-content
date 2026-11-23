@@ -1,1 +1,1 @@
-{"id":"probe-deals","ops":[{"do":"probe","path":"/deals/","find":"标记失效"},{"do":"probe","path":"/submit/?type=tip","find":"看到什么便宜了"}]}
+{"id":"probe-deals2","ops":[{"do":"probe","path":"/deals/","find":"yf-deals"},{"do":"probe","path":"/deals/","find":"西红柿"},{"do":"probe","path":"/deals/?city=christchurch","find":"热心群众"}]}
