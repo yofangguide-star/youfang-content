@@ -1,1 +1,1 @@
-{"id":"probe-merchant","ops":[{"op":"probe","path":"/merchant/"}]}
+{"id":"probe-merchant","ops":[{"do":"probe","path":"/merchant/"}]}
