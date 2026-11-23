@@ -1,1 +1,1 @@
-{"id":"probe5","ops":[{"do":"probe","path":"/deals/paknsave-riccarton-%e9%b8%a1%e8%9b%8b-10-%e5%8f%aa%e8%a3%85-5-49%ef%bc%8c%e5%8e%9f%e4%bb%b7-8/","find":"标记失效"},{"do":"probe","path":"/deals/","find":"yf-deadform"}]}
+{"id":"probe-fp","ops":[{"do":"probe","path":"/","find":"爆个便宜"},{"do":"probe","path":"/","find":"发优惠"}]}
