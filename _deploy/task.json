@@ -1,1 +1,1 @@
-{"id":"seed","ops":[{"do":"meta","id":5907,"set":{"_yf_dead":["0000000000testvote0000000000aaaa"]}},{"do":"meta","id":5907,"get":["_yf_dead"]}]}
+{"id": "p1124a-1795457901", "ops": [{"do": "selftest"}, {"do": "health", "warm": 1}, {"do": "log", "name": "yf_news_log", "n": 40}, {"do": "news", "latest": 1}, {"do": "partner", "n": 5}, {"do": "stuck"}]}
