@@ -1,1 +1,1 @@
-{"id":"ls3","ops":[{"do":"posts","type":"yf_deal","n":1}]}
+{"id":"probe3","ops":[{"do":"probe","path":"/deals/","find":"热心群众"},{"do":"probe","path":"/deals/","find":"标记失效"},{"do":"probe","path":"/deals/","find":"Riccarton"}]}
