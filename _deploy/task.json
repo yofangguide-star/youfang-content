@@ -1,1 +1,1 @@
-{"id":"probe-deals2","ops":[{"do":"probe","path":"/deals/","find":"yf-deals"},{"do":"probe","path":"/deals/","find":"西红柿"},{"do":"probe","path":"/deals/?city=christchurch","find":"热心群众"}]}
+{"id":"ls","ops":[{"do":"posts","type":"yf_deal","n":10}]}
