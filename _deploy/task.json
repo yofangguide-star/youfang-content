@@ -1,1 +1,1 @@
-{"id":"probe-fp","ops":[{"do":"probe","path":"/","find":"爆个便宜"},{"do":"probe","path":"/","find":"发优惠"}]}
+{"id":"seed","ops":[{"do":"meta","id":5907,"set":{"_yf_dead":["0000000000testvote0000000000aaaa"]}},{"do":"meta","id":5907,"get":["_yf_dead"]}]}
