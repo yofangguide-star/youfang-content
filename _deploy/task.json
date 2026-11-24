@@ -1,1 +1,1 @@
-{"id": "p1124r-1795458307", "ops": [{"do": "status", "ids": [5896, 5897, 5898, 5899, 5901, 5902, 5903, 5904], "status": "draft"}, {"do": "posts", "type": "yf_news", "n": 12, "fields": ["id", "title", "status"]}, {"do": "probe", "path": "/news/", "find": ["RNZ", "Fatal error"]}, {"do": "probe", "path": "/", "find": ["RNZ", "Fatal error"]}]}
+{"id":"ck","ops":[{"do":"posts","type":"yf_deal","n":4}]}
