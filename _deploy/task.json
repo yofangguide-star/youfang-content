@@ -1,1 +1,1 @@
-{"id":"cred","ops":[{"do":"probe","path":"/submit/?type=merchant","find":"yf-cred-kind"},{"do":"probe","path":"/submit/?type=merchant","find":"data-cred"},{"do":"probe","path":"/submit/?type=tip","find":"注册"}]}
+{"id":"cred2","ops":[{"do":"probe","path":"/submit/?type=merchant","as":"rental@joycarrental.co.nz","find":"yf-cred-kind"},{"do":"probe","path":"/submit/?type=merchant","as":"rental@joycarrental.co.nz","find":"data-cred"},{"do":"probe","path":"/submit/?type=tip","as":"rental@joycarrental.co.nz","find":"这不是我自家的"}]}
