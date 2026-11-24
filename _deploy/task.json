@@ -1,1 +1,1 @@
-{"id":"v","ops":[{"do":"probe","path":"/deals/","find":"标记失效"},{"do":"probe","path":"/deals/","find":"JOY Car Rental"},{"do":"probe","path":"/deals/","find":"热心群众"}]}
+{"id":"cred","ops":[{"do":"probe","path":"/submit/?type=merchant","find":"yf-cred-kind"},{"do":"probe","path":"/submit/?type=merchant","find":"data-cred"},{"do":"probe","path":"/submit/?type=tip","find":"注册"}]}
