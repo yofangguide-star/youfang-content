@@ -1,1 +1,1 @@
-{"id":"cz","ops":[{"do":"probe","path":"/submit/","as":"rental@joycarrental.co.nz","find":"还没有商家页"},{"do":"probe","path":"/submit/","as":"rental@joycarrental.co.nz","find":"发在你的商家页名下"},{"do":"probe","path":"/submit/","find":"还没有商家页"}]}
+{"id":"p1125071817","ops":[{"do":"selftest"},{"do":"health","warm":1}]}
