@@ -1,1 +1,1 @@
-{"id":"ck","ops":[{"do":"posts","type":"yf_deal","n":4}]}
+{"id":"v","ops":[{"do":"probe","path":"/deals/","find":"标记失效"},{"do":"probe","path":"/deals/","find":"JOY Car Rental"},{"do":"probe","path":"/deals/","find":"热心群众"}]}
