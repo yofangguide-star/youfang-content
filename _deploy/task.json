@@ -1,1 +1,1 @@
-{"id":"jcC","ops":[{"do":"probe","path":"/merchant/","as":"rental@joycarrental.co.nz","raw":1}]}
+{"id":"jcD","ops":[{"do":"probe","path":"/merchant/","as":"rental@joycarrental.co.nz","raw":1,"find":"merchants/"}]}
