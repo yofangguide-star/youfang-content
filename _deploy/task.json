@@ -1,1 +1,1 @@
-{"id":"jc2","ops":[{"do":"probe","path":"/?s=joy&pt=city_merchant","find":"/merchants/"},{"do":"probe","path":"/?s=joy&pt=city_merchant","rawn":2}]}
+{"id":"jc3","ops":[{"do":"posts","type":"city_merchant","n":60}]}
