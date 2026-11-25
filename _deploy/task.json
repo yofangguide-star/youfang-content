@@ -1,1 +1,1 @@
-{"id":"v1","ops":[{"do":"probe","path":"/merchants/joy/","find":"yf-wxqr-img"},{"do":"probe","path":"/merchants/joy/","find":"yf-map"},{"do":"probe","path":"/merchants/joy/","find":"商家发布"},{"do":"probe","path":"/merchants/joy/","find":"南极"}]}
+{"id":"d1","ops":[{"do":"probe","path":"/deals/","find":"JOY Car Rental"},{"do":"probe","path":"/deals/","find":"热心群众"}]}
