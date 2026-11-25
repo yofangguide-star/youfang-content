@@ -1,1 +1,1 @@
-{"id": "patrol1795630844_567", "ops": [{"do": "news", "try": ["WorkSafe \u804c\u573a\u5b89\u5168|https://www.worksafe.govt.nz/about-us/news-and-media/rss/"]}, {"do": "probe", "url": "https://www.worksafe.govt.nz/about-us/news-and-media/rss/", "find": ["<item>", "<description>", "content:encoded"]}]}
+{"id": "patrol1795631275_804", "ops": [{"do": "news", "try": ["WorkSafe \u804c\u573a\u5b89\u5168|https://www.worksafe.govt.nz/about-us/news-and-media/rss/"]}]}
