@@ -1,1 +1,1 @@
-{"id":"dw7","ops":[{"do":"probe","path":"/?s=Danielle&pt=city_merchant","find":"merchants/"},{"do":"probe","path":"/?s=Danielle&pt=city_merchant","find":"Danielle"},{"do":"probe","path":"/?s=insurance&pt=city_merchant","find":"merchants/"}]}
+{"id":"dw8","ops":[{"do":"probe","path":"/?s=Danielle&pt=city_merchant","raw":1,"find":"Danielle"}]}
