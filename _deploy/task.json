@@ -1,1 +1,1 @@
-{"id":"oc","ops":[{"do":"probe","path":"/?city=auckland","find":"频道筹备中"},{"do":"probe","path":"/?city=wellington","find":"频道筹备中"},{"do":"probe","path":"/?city=dunedin","find":"频道筹备中"}]}
+{"id":"cc","ops":[{"do":"probe","path":"/","find":"筹备中"}]}
