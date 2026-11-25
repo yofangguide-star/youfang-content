@@ -1,1 +1,1 @@
-{"id":"dwa","ops":[{"do":"probe","path":"/?s=Danielle&pt=city_merchant","find":"没有找到"},{"do":"probe","path":"/?s=Danielle&pt=city_merchant","find":"没找到"},{"do":"probe","path":"/?s=Kea&pt=city_merchant","find":"Kea Key"}]}
+{"id":"up","ops":[{"do":"probe","path":"/submit/?type=merchant","as":"oscar.zdh@gmail.com","find":"yf-pick"},{"do":"probe","path":"/submit/?type=merchant","as":"oscar.zdh@gmail.com","find":"选好的照片"}]}
