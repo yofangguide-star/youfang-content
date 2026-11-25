@@ -1,1 +1,1 @@
-{"id":"ka","ops":[{"do":"probe","path":"/?s=Alvin&pt=city_merchant","find":"merchants/"},{"do":"probe","path":"/?s=Kelly&pt=city_merchant","find":"merchants/"},{"do":"probe","path":"/?s=保险&pt=city_merchant","find":"merchants/"}]}
+{"id":"ka2","ops":[{"do":"probe","path":"/?s=%E4%BF%9D%E9%99%A9&pt=city_merchant","rawn":1}]}
