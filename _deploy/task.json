@@ -1,1 +1,1 @@
-{"id":"ids","ops":[{"do":"posts","type":"page","n":30}]}
+{"id":"fix","ops":[{"do":"rename","id":5190,"title":"认领我的商家"},{"do":"trash","ids":[5907]}]}
