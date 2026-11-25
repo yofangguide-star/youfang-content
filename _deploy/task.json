@@ -1,1 +1,1 @@
-{"id":"cnt3","ops":[{"do":"probe","path":"/merchants/","find":"家华人商家"}]}
+{"id":"dw4","ops":[{"do":"posts","type":"city_merchant","n":50,"s":"Danielle"},{"do":"posts","type":"city_merchant","n":50,"q":"Danielle"}]}
