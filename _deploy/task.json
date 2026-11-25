@@ -1,1 +1,1 @@
-{"id":"stat","ops":[{"do":"posts","type":"yf_news","n":3},{"do":"posts","type":"yf_event","n":3},{"do":"posts","type":"yf_job","n":3},{"do":"posts","type":"yf_free","n":3},{"do":"posts","type":"city_merchant","n":2}]}
+{"id":"links","ops":[{"do":"probe","path":"/merchants/","find":"认领"},{"do":"probe","path":"/claim/","find":"认领"}]}
