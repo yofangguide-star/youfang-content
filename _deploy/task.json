@@ -1,1 +1,1 @@
-{"id":"links","ops":[{"do":"probe","path":"/merchants/","find":"认领"},{"do":"probe","path":"/claim/","find":"认领"}]}
+{"id":"rn","ops":[{"do":"rename","slug":"claim","title":"认领我的商家"}]}
