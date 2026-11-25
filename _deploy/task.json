@@ -1,1 +1,1 @@
-{"id":"sjoy-car-rental-christchurch","ops":[{"do":"probe","path":"/merchants/joy-car-rental-christchurch/","find":"yf-actionbar"}]}
+{"id":"sjoycarrental","ops":[{"do":"probe","path":"/merchants/joycarrental/","find":"yf-actionbar"}]}
