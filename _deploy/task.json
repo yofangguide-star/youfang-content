@@ -1,1 +1,1 @@
-{"id":"rt2","ops":[{"do":"probe","path":"/road/?isl=s","find":"南岛"},{"do":"probe","path":"/road/?isl=n","find":"北岛"}]}
+{"id":"rd","ops":[{"do":"posts","type":"yf_ride","n":3}]}
