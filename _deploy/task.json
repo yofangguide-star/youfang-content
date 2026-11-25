@@ -1,1 +1,1 @@
-{"id":"w1","ops":[{"do":"probe","path":"/merchants/joy/","find":"https://www.joycarrental.co.nz"},{"do":"probe","path":"/merchants/joy/","find":"http://www.joycarrental"},{"do":"probe","path":"/merchants/joy/","find":"youfang.co.nz/www."},{"do":"probe","path":"/merchants/joy/","find":"data-track=\"website\""}]}
+{"id":"v2","ops":[{"do":"probe","path":"/merchants/joy/?cb=9921","find":"yf-map"},{"do":"probe","path":"/merchants/joy/?cb=9921","find":"商家发布"},{"do":"probe","path":"/merchants/joy/?cb=9921","find":"点击复制"}]}
