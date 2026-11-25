@@ -1,1 +1,1 @@
-{"id":"rd","ops":[{"do":"posts","type":"page","n":40}]}
+{"id":"rt","ops":[{"do":"probe","path":"/road/?isl=s","find":"南岛路况"},{"do":"probe","path":"/road/?isl=n","find":"北岛路况"},{"do":"probe","path":"/road/?isl=all","find":"全国路况"}]}
