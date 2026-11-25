@@ -1,1 +1,1 @@
-{"id":"try2","ops":[{"do":"news","try":["驻克赖斯特彻奇总领馆|https://christchurch.china-consulate.gov.cn/chn/zytz/|120"]}]}
+{"id":"lg","ops":[{"do":"log","kind":"news","n":25}]}
