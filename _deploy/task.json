@@ -1,1 +1,1 @@
-{"id": "patrol1795630735_282", "ops": [{"do": "selftest"}, {"do": "health", "warm": 1}]}
+{"id": "patrol1795630757_365", "ops": [{"do": "log", "name": "yf_news_log", "n": 40}, {"do": "news", "latest": 1}, {"do": "partner", "n": 5}, {"do": "stuck"}, {"do": "log", "kind": "review", "n": 20}, {"do": "creq"}, {"do": "news", "drafts": 1}]}
