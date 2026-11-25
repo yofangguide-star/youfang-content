@@ -1,1 +1,1 @@
-{"id":"dw3","ops":[{"do":"probe","path":"/merchants/?s=Danielle","raw":1,"find":"Danielle"}]}
+{"id":"cnt","ops":[{"do":"posts","type":"city_merchant","n":400}]}
