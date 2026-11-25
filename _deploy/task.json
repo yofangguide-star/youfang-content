@@ -1,1 +1,1 @@
-{"id":"pg","ops":[{"do":"meta","get":["yf_page_claim","yf_page_merchant","yf_page_submit"]}]}
+{"id":"ids","ops":[{"do":"posts","type":"page","n":30}]}
