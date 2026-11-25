@@ -1,1 +1,1 @@
-{"id":"cnt2","ops":[{"do":"posts","type":"city_merchant","n":50}]}
+{"id":"cnt3","ops":[{"do":"probe","path":"/merchants/","find":"家华人商家"}]}
