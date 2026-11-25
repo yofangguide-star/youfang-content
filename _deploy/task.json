@@ -1,1 +1,1 @@
-{"id":"jcK","ops":[{"do":"probe","path":"/merchant/","as":"rental@joycarrental.co.nz","find":"merchants/","rawn":9}]}
+{"id":"sjoy-car-rental","ops":[{"do":"probe","path":"/merchants/joy-car-rental/","find":"yf-actionbar"}]}
