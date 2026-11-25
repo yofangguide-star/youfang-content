@@ -1,1 +1,1 @@
-{"id":"rdy","ops":[{"do":"probe","path":"/rides/?city=auckland","find":"但尼丁"},{"do":"probe","path":"/rides/?city=hamilton","find":"但尼丁"}]}
+{"id":"joy","ops":[{"do":"readbiz","q":"JOY Car Rental"}]}
