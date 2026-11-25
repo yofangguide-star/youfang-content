@@ -1,1 +1,1 @@
-{"id":"rn","ops":[{"do":"rename","slug":"claim","title":"认领我的商家"}]}
+{"id":"pg","ops":[{"do":"meta","get":["yf_page_claim","yf_page_merchant","yf_page_submit"]}]}
