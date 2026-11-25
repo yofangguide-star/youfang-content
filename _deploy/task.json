@@ -1,1 +1,1 @@
-{"id":"jc9","ops":[{"do":"posts","type":"city_merchant","n":200}]}
+{"id":"jcA","ops":[{"do":"probe","path":"/merchant/","as":"rental@joycarrental.co.nz","find":"joy"}]}
