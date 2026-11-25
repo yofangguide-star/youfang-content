@@ -1,1 +1,1 @@
-{"id": "yfcheck1795604607_36", "ops": [{"do": "probe", "path": "/merchant/", "find": "\u9000\u51fa", "as": "rental@joycarrental.co.nz"}, {"do": "probe", "path": "/merchant/", "find": "\u8fd8\u6ca1\u6709\u5546\u5bb6\u9875", "as": "rental@joycarrental.co.nz"}, {"do": "probe", "path": "/merchant/?city=auckland", "find": "\u9000\u51fa", "as": "rental@joycarrental.co.nz"}]}
+{"id":"ar1795605176","ops":[{"do":"probe","path":"/submit/?type=merchant","find":"所在区域"},{"do":"probe","path":"/submit/?type=merchant","find":"Roydvale"}]}
