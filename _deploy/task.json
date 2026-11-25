@@ -1,1 +1,1 @@
-{"id":"cs","ops":[{"do":"probe","path":"/wp-content/themes/youfang-theme/assets/app.css","find":"yf-gal a:first-child"},{"do":"probe","path":"/merchants/joy-car-rental/","find":"data-track=\"website\""}]}
+{"id":"jc2","ops":[{"do":"probe","path":"/?s=joy&pt=city_merchant","find":"/merchants/"},{"do":"probe","path":"/?s=joy&pt=city_merchant","rawn":2}]}
