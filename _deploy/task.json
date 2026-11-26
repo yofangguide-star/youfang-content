@@ -1,1 +1,1 @@
-{"id": "pt179571711831040", "ops": [{"do": "selftest"}, {"do": "health", "warm": 1}]}
+{"id": "pt179571714430198", "ops": [{"do": "log", "name": "yf_news_log", "n": 40}, {"do": "news", "latest": 1}, {"do": "partner", "n": 5}, {"do": "stuck"}, {"do": "log", "kind": "review", "n": 20}]}
