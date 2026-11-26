@@ -1,1 +1,12 @@
-{"id":"ml1795685709","ops":[{"do":"log","kind":"cron","n":3}]}
+{"id":"otp1795685908","ops":[
+{"do":"formsim","action":"yf_mlogin","post":{"do":"code","email":"otp-t1795685908@example.com"}},
+{"do":"formsim","action":"yf_mlogin","post":{"do":"code","email":"otp-t1795685908@example.com","again":"1"}},
+{"do":"formsim","action":"yf_mlogin","post":{"do":"verify","e":"b3RwLXQxNzk1Njg1OTA4QGV4YW1wbGUuY29t","code":"000000"}},
+{"do":"formsim","action":"yf_mlogin","post":{"do":"verify","e":"b3RwLXQxNzk1Njg1OTA4QGV4YW1wbGUuY29t","code":"@OTP"}},
+{"do":"formsim","action":"yf_mlogin","post":{"do":"verify","e":"b3RwLXQxNzk1Njg1OTA4QGV4YW1wbGUuY29t","code":"@OTP"}},
+{"do":"probe","path":"/merchant/","as":"otp-t1795685908@example.com","find":"我的发布"},
+{"do":"probe","path":"/merchant/","as":"otp-t1795685908@example.com","find":"修改密码"},
+{"do":"probe","path":"/merchant/","find":"发送验证码"},
+{"do":"probe","path":"/merchant/","find":"type=\"password\""},
+{"do":"probe","path":"/merchant/?do=verify&e=b3RwLXQxNzk1Njg1OTA4QGV4YW1wbGUuY29t","find":"one-time-code"}
+]}
