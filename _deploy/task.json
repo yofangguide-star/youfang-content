@@ -1,1 +1,1 @@
-{"id": "pt179571838312787", "ops": [{"do": "news", "show": 5957}, {"do": "news", "show": 5954}, {"do": "news", "show": 5930}, {"do": "meta", "id": 5954, "get": "yf_summary"}, {"do": "meta", "id": 5930, "get": "yf_summary"}]}
+{"id": "pt179571848318084", "ops": [{"do": "news", "show": 5957}, {"do": "news", "show": 5954}, {"do": "news", "show": 5930}]}
