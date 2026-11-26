@@ -1,1 +1,1 @@
-{"id": "yfcheck1795686583_40", "ops": [{"do": "probe", "path": "/merchant/", "find": "\u9000\u51fa", "as": "rental@joycarrental.co.nz"}, {"do": "probe", "path": "/merchant/", "find": "\u8fd8\u6ca1\u6709\u5546\u5bb6\u9875", "as": "rental@joycarrental.co.nz"}, {"do": "probe", "path": "/merchant/?city=auckland", "find": "\u9000\u51fa", "as": "rental@joycarrental.co.nz"}]}
+{"id":"sh1795688472","ops":[{"do":"probe","path":"/merchant/","as":"rental@joycarrental.co.nz","find":"<h2>我的发布"},{"do":"probe","path":"/merchant/","as":"rental@joycarrental.co.nz","find":"yf-mbar"}]}
