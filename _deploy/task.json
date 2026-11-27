@@ -1,1 +1,1 @@
-{"id":"ad31795811787","ops":[{"do":"adsync","what":"migration"},{"do":"peek","url":"https://www.educationcounts.govt.nz/directories/list-of-nz-schools","links":"csv"}]}
+{"id":"sch11795811832","ops":[{"do":"peek","url":"https://catalogue.data.govt.nz/api/3/action/datastore_search?resource_id=4b292323-9fcc-41f8-814b-3c7b19cf14b3&q=Christchurch&limit=2","n":900},{"do":"peek","url":"https://www.educationcounts.govt.nz/__data/assets/file/0003/62571/Directory-School-current.csv","n":300}]}
