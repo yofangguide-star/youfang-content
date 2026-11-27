@@ -1,0 +1,16 @@
+{
+    "ok": true,
+    "id": "mig71795811650",
+    "hash": "8534ddc1",
+    "log": [
+        "xlsx 表：Contents | Table 1 | Table 2 | Table 3 | Table 4 | Table 5 | Table 6 | Table 7 | Table 8",
+        "1: Table 6",
+        "2: Estimated migration",
+        "3: By world region\/country of citizenship(1)",
+        "4: World region\/country of citizenship ¦ September month ¦ September month ¦ September month ¦ September month ¦ September month ¦ Year ended September ¦ Year ended September ¦ Year ended September ¦ Year ended September ¦ Year ended September ¦ Change in mean estimate from 2025 to 2026",
+        "5: 2024 ¦ 2025 P(2) ¦ 2025 P⁽²⁾ ¦ 2026 P(2) ¦ 2026 P⁽²⁾ ¦ 2024 ¦ 2025 P(2) ¦ 2025 P⁽²⁾ ¦ 2026 P(2) ¦ 2026 P⁽²⁾ ¦ Month ¦ Year",
+        "6: Mean estimate ¦ Mean estimate ¦ Standard error(3) ¦ Mean estimate ¦ Standard error(3) ¦ Mean estimate ¦ Mean estimate ¦ Standard error(3) ¦ Mean estimate ¦ Standard error(3) ¦ Number ¦ Percent ¦ Number ¦ Percent",
+        "7: Migrant arrivals(4)",
+        "8: Oceania ¦ 2912 ¦ 3265 ¦ 30 ¦ 2614 ¦ 209 ¦ 37910 ¦ 36347 ¦ 35 ¦ 37557 ¦ 386 ¦ -651 ¦ -19.899999999999999 ¦ 1210 ¦ 3.3"
+    ]
+}
