@@ -1,1 +1,1 @@
-{"id":"ad1795781413","ops":[{"do":"peek","url":"https://api.data.stats.govt.nz/rest/data/STATSNZ,CEN23_ECI_016,1.0/all?firstNObservations=2&format=csvfilewithlabels","n":700}]}
+{"id":"xl1795781761","ops":[{"do":"xlsx","url":"https://www.stats.govt.nz/assets/Uploads/Building-consents-issued/Building-consents-issued-September-2026/Download-data/building-consents-issued-september-2026.xlsx"}]}
