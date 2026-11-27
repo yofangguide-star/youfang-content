@@ -1,3 +1,5 @@
-{"id":"pk51795779975","ops":[
-{"do":"peek","url":"https://www.stats.govt.nz/information-releases/building-consents-issued-september-2026/","links":"stats.govt.nz","n":60}
+{"id":"pk61795780050","ops":[
+{"do":"peek","url":"https://api.data.stats.govt.nz/rest/dataflow/all/all/latest","n":300},
+{"do":"peek","url":"https://explore.data.stats.govt.nz/","n":200},
+{"do":"peek","url":"https://services.arcgis.com/XTtANUDT8Va4DLwI/ArcGIS/rest/services/NZ_School_Zone_boundaries/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=false&resultRecordCount=2&f=json","n":1500}
 ]}
