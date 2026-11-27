@@ -1,1 +1,1 @@
-{"id":"sx21795780980","ops":[{"do":"sdmx","q":"building,consent,dwelling,migration,arrivals,language,ethnic group (detailed"}]}
+{"id":"bc1795781109","ops":[{"do":"peek","url":"https://www.stats.govt.nz/information-releases/building-consents-issued-September-2026/","grep":".csv","n":8,"ctx":160},{"do":"peek","url":"https://www.stats.govt.nz/information-releases/building-consents-issued-September-2026/","grep":".xlsx","n":5,"ctx":160}]}
