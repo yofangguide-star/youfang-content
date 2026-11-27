@@ -1,4 +1,3 @@
-{"id":"pk81795780183","ops":[
-{"do":"peek","url":"https://api.data.stats.govt.nz/rest/dataflow/all/all/latest","grep":"consent","n":12,"ctx":200},
-{"do":"peek","url":"https://api.data.stats.govt.nz/rest/dataflow/all/all/latest","grep":"migra","n":10,"ctx":200}
+{"id":"pk91795780244","ops":[
+{"do":"peek","url":"https://api.data.stats.govt.nz/rest/dataflow/all/all/latest","grep":"Dataflow id=","n":400,"ctx":150}
 ]}
