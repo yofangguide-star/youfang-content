@@ -1,0 +1,21 @@
+{
+    "ok": true,
+    "id": "cen31795813090",
+    "hash": "b29eb17f",
+    "log": [
+        "peek HTTP 200 | 长度 490345 | 类型 application\/vnd.sdmx.structure+json; charset=utf-8; version=1.0",
+        "peek grep「Total」8 处：",
+        "  …ECI_016\",\"version\":\"1.0\",\"agencyID\":\"STATSNZ\",\"isFinal\":false,\"name\":\"Ethnicity (detailed total responses level 3), age, and gender for the census usually resident population count…",
+        "  …RC, TALB, SA2, Health), 2013, 2018, and 2023 Censuses\",\"names\":{\"en\":\"Ethnicity (detailed total responses level 3), age, and gender for the census usually resident population count…",
+        "  …C, TALB, SA2, Health), 2013, 2018, and 2023 Censuses\"},\"description\":\"Ethnicity (detailed total responses level 3), age (5-year groups), and gender for the census usually resident …",
+        "  …alth districts, 2013, 2018, and 2023 Censuses.\",\"descriptions\":{\"en\":\"Ethnicity (detailed total responses level 3), age (5-year groups), and gender for the census usually resident …",
+        "  …:\"Iwi-Māori\"},\"annotations\":[{\"type\":\"ORDER\",\"text\":\"1\",\"texts\":{\"en\":\"1\"}}]},{\"id\":\"CAT_TOTALS_BY_TOPIC\",\"name\":\"Totals by topic\",\"names\":{\"en\":\"Totals by topic\"},\"annotations\":[…",
+        "  …ns\":[{\"type\":\"ORDER\",\"text\":\"1\",\"texts\":{\"en\":\"1\"}}]},{\"id\":\"CAT_TOTALS_BY_TOPIC\",\"name\":\"Totals by topic\",\"names\":{\"en\":\"Totals by topic\"},\"annotations\":[{\"type\":\"ORDER\",\"text\":\"2…",
+        "  …\"texts\":{\"en\":\"1\"}}]},{\"id\":\"CAT_TOTALS_BY_TOPIC\",\"name\":\"Totals by topic\",\"names\":{\"en\":\"Totals by topic\"},\"annotations\":[{\"type\":\"ORDER\",\"text\":\"2\",\"texts\":{\"en\":\"2\"}}]},{\"id\":\"C…",
+        "  …:\"Iwi-Māori\"},\"annotations\":[{\"type\":\"ORDER\",\"text\":\"1\",\"texts\":{\"en\":\"1\"}}]},{\"id\":\"CAT_TOTALS_BY_TOPIC\",\"name\":\"Totals by topic\",\"names\":{\"en\":\"Totals by topic\"},\"annotations\":[…",
+        "peek HTTP 200 | 长度 490345 | 类型 application\/vnd.sdmx.structure+json; charset=utf-8; version=1.0",
+        "peek grep「Burnside」2 处：",
+        "  …ype\":\"ORDER\",\"text\":\"1973\",\"texts\":{\"en\":\"1973\"}}],\"parent\":\"060\"},{\"id\":\"317501\",\"name\":\"Burnside West\",\"names\":{\"en\":\"Burnside West\"},\"annotations\":[{\"id\":\"@SDMX\",\"type\":\"ORDER\",…",
+        "  …xts\":{\"en\":\"1973\"}}],\"parent\":\"060\"},{\"id\":\"317501\",\"name\":\"Burnside West\",\"names\":{\"en\":\"Burnside West\"},\"annotations\":[{\"id\":\"@SDMX\",\"type\":\"ORDER\",\"text\":\"1974\",\"texts\":{\"en\":\"1…"
+    ]
+}
