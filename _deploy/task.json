@@ -1,1 +1,1 @@
-{"id":"cen61795813269","ops":[{"do":"peek","url":"https://api.data.stats.govt.nz/rest/data/STATSNZ,CEN23_ECI_016,1.0/2023.060..99.99?format=csvfilewithlabels","grep":"060,Christchurch City,","n":60,"ctx":75}]}
+{"id":"cen71795813373","ops":[{"do":"adsync","what":"census"}]}
