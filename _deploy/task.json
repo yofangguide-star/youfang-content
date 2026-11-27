@@ -1,1 +1,1 @@
-{"id":"mig31795811413","ops":[{"do":"peek","url":"https://www.stats.govt.nz/information-releases/international-migration-september-2026/","grep":"DocumentLink&quot;:&quot;","n":20,"ctx":170}]}
+{"id":"mig41795811470","ops":[{"do":"xsheet","url":"https://www.stats.govt.nz/assets/Uploads/International-migration/International-migration-September-2026/Download-data/international-migration-september-2026.xlsx"}]}
