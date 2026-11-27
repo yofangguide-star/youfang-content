@@ -1,1 +1,1 @@
-{"id":"mig71795811650","ops":[{"do":"xsheet","url":"https://www.stats.govt.nz/assets/Uploads/International-migration/International-migration-September-2026/Download-data/international-migration-september-2026.xlsx","sheet":"Table 6","rows":8}]}
+{"id":"ad31795811787","ops":[{"do":"adsync","what":"migration"},{"do":"peek","url":"https://www.educationcounts.govt.nz/directories/list-of-nz-schools","links":"csv"}]}
