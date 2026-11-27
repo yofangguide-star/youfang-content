@@ -1,1 +1,1 @@
-{"id":"cn1795818283","ops":[{"do":"adsync","what":"census_names"}]}
+{"id":"cn21795818318","ops":[{"do":"adsync","what":"census_names","parent":"076"},{"do":"adsync","what":"census_names","parent":"047"},{"do":"adsync","what":"census_names","parent":"071"}]}
