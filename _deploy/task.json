@@ -1,1 +1,1 @@
-{"id":"bc1795781109","ops":[{"do":"peek","url":"https://www.stats.govt.nz/information-releases/building-consents-issued-September-2026/","grep":".csv","n":8,"ctx":160},{"do":"peek","url":"https://www.stats.govt.nz/information-releases/building-consents-issued-September-2026/","grep":".xlsx","n":5,"ctx":160}]}
+{"id":"sx31795781172","ops":[{"do":"sdmx","q":"languages spoken,ethnic group (detailed total responses) by statistical area 2,Chinese"}]}
