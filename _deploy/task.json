@@ -1,5 +1,4 @@
-{"id":"pk31795779860","ops":[
-{"do":"peek","url":"https://www.stats.govt.nz/information-releases/building-consents-issued-september-2026/","links":".csv","n":10},
-{"do":"peek","url":"https://www.stats.govt.nz/information-releases/international-migration-september-2026/","links":".csv","n":10},
-{"do":"peek","url":"https://services.arcgis.com/XTtANUDT8Va4DLwI/ArcGIS/rest/services/NZ_School_Zone_boundaries/FeatureServer?f=pjson","n":900}
+{"id":"pk41795779918","ops":[
+{"do":"peek","url":"https://www.stats.govt.nz/information-releases/building-consents-issued-september-2026/","links":"assets","n":15},
+{"do":"peek","url":"https://www.stats.govt.nz/information-releases/international-migration-september-2026/","links":"assets","n":15}
 ]}
