@@ -1,1 +1,7 @@
-{"id":"src1795779644","ops":[{"do":"news","srcs":1}]}
+{"id":"pk11795779728","ops":[
+{"do":"peek","url":"https://www.rbnz.govt.nz/-/media/project/sites/rbnz/files/statistics/series/b/b20/hb20.xlsx","n":80},
+{"do":"peek","url":"https://www.stats.govt.nz/information-releases/?filters=Building%20consents","links":"building-consents-issued","n":10},
+{"do":"peek","url":"https://www.stats.govt.nz/information-releases/?filters=International%20migration","links":"international-migration","n":10},
+{"do":"peek","url":"https://catalogue.data.govt.nz/api/3/action/package_search?q=school%20enrolment%20zones&rows=3","n":900},
+{"do":"peek","url":"https://www.rbnz.govt.nz/news-and-events/news","links":"/news/2026","n":15}
+]}
