@@ -1,0 +1,20 @@
+{
+    "ok": true,
+    "id": "cen21795813031",
+    "hash": "2030bcbf",
+    "log": [
+        "peek HTTP 200 | 长度 490345 | 类型 application\/vnd.sdmx.structure+json; charset=utf-8; version=1.0",
+        "peek grep「conceptIdentity」7 处：",
+        "  …=STATSNZ:MSD_CEN23(1.0)\",\"type\":\"METADATA\"}],\"dataStructureComponents\":{\"attributeList\":{\"id\":\"AttributeDescriptor\",\"attributes\":[{\"id\":\"OBS_STATUS\",\"conceptIdentity\":\"urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=STATSNZ:CONCEPT_CEN23_ECI_016(1.0).OBS_STATUS\",\"localRepresentation\":{\"enumeration…",
+        "  …\":{\"primaryMeasure\":\"OBS_VALUE\"}}]},\"dimensionList\":{\"id\":\"DimensionDescriptor\",\"dimensions\":[{\"id\":\"CEN23_YEAR_001\",\"position\":0,\"type\":\"Dimension\",\"conceptIdentity\":\"urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=STATSNZ:CONCEPT_CEN23_ECI_016(1.0).CEN23_YEAR_001\",\"localRepresentation\":{\"enumera…",
+        "  …\"enumeration\":\"urn:sdmx:org.sdmx.infomodel.codelist.Codelist=STATSNZ:CL_CEN23_YEAR_001(1.0)\"}},{\"id\":\"CEN23_GEO_002\",\"position\":1,\"type\":\"Dimension\",\"conceptIdentity\":\"urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=STATSNZ:CONCEPT_CEN23_ECI_016(1.0).CEN23_GEO_002\",\"localRepresentation\":{\"enumerat…",
+        "  …{\"enumeration\":\"urn:sdmx:org.sdmx.infomodel.codelist.Codelist=STATSNZ:CL_CEN23_GEO_002(1.0)\"}},{\"id\":\"CEN23_ETH_003\",\"position\":2,\"type\":\"Dimension\",\"conceptIdentity\":\"urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=STATSNZ:CONCEPT_CEN23_ECI_016(1.0).CEN23_ETH_003\",\"localRepresentation\":{\"enumerat…",
+        "  …{\"enumeration\":\"urn:sdmx:org.sdmx.infomodel.codelist.Codelist=STATSNZ:CL_CEN23_ETH_003(1.0)\"}},{\"id\":\"CEN23_AGE_003\",\"position\":3,\"type\":\"Dimension\",\"conceptIdentity\":\"urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=STATSNZ:CONCEPT_CEN23_ECI_016(1.0).CEN23_AGE_003\",\"localRepresentation\":{\"enumerat…",
+        "  …{\"enumeration\":\"urn:sdmx:org.sdmx.infomodel.codelist.Codelist=STATSNZ:CL_CEN23_AGE_003(1.0)\"}},{\"id\":\"CEN23_GEN_002\",\"position\":4,\"type\":\"Dimension\",\"conceptIdentity\":\"urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=STATSNZ:CONCEPT_CEN23_ECI_016(1.0).CEN23_GEN_002\",\"localRepresentation\":{\"enumerat…",
+        "  …x:org.sdmx.infomodel.codelist.Codelist=STATSNZ:CL_CEN23_GEN_002(1.0)\"}}]},\"measureList\":{\"id\":\"MeasureDescriptor\",\"primaryMeasure\":{\"id\":\"OBS_VALUE\",\"conceptIdentity\":\"urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=STATSNZ:CONCEPT_CEN23_ECI_016(1.0).OBS_VALUE\",\"localRepresentation\":{\"textFormat\":…",
+        "peek HTTP 200 | 长度 490345 | 类型 application\/vnd.sdmx.structure+json; charset=utf-8; version=1.0",
+        "peek grep「Chinese」2 处：",
+        "  …names\":{\"en\":\"Other Southeast Asian\"},\"annotations\":[{\"id\":\"@SDMX\",\"type\":\"ORDER\",\"text\":\"30\",\"texts\":{\"en\":\"30\"}}],\"parent\":\"4\"},{\"id\":\"421\",\"name\":\"Chinese\",\"names\":{\"en\":\"Chinese\"},\"annotations\":[{\"id\":\"@SDMX\",\"type\":\"ORDER\",\"text\":\"31\",\"texts\":{\"en\":\"31\"}}],\"parent\":\"4\"},{\"id\":\"431\",\"name\":\"Indi…",
+        "  …heast Asian\"},\"annotations\":[{\"id\":\"@SDMX\",\"type\":\"ORDER\",\"text\":\"30\",\"texts\":{\"en\":\"30\"}}],\"parent\":\"4\"},{\"id\":\"421\",\"name\":\"Chinese\",\"names\":{\"en\":\"Chinese\"},\"annotations\":[{\"id\":\"@SDMX\",\"type\":\"ORDER\",\"text\":\"31\",\"texts\":{\"en\":\"31\"}}],\"parent\":\"4\"},{\"id\":\"431\",\"name\":\"Indian\",\"names\":{\"en\":\"India…"
+    ]
+}
