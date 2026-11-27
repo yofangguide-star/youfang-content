@@ -1,1 +1,1 @@
-{"id":"sx61795781356","ops":[{"do":"sdmx","q":"2023"}]}
+{"id":"ad1795781413","ops":[{"do":"peek","url":"https://api.data.stats.govt.nz/rest/data/STATSNZ,CEN23_ECI_016,1.0/all?firstNObservations=2&format=csvfilewithlabels","n":700}]}
