@@ -1,5 +1,4 @@
-{"id":"pk61795780050","ops":[
-{"do":"peek","url":"https://api.data.stats.govt.nz/rest/dataflow/all/all/latest","n":300},
-{"do":"peek","url":"https://explore.data.stats.govt.nz/","n":200},
-{"do":"peek","url":"https://services.arcgis.com/XTtANUDT8Va4DLwI/ArcGIS/rest/services/NZ_School_Zone_boundaries/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=false&resultRecordCount=2&f=json","n":1500}
+{"id":"pk71795780117","ops":[
+{"do":"peek","url":"https://api.data.stats.govt.nz/rest/dataflow/all/all/latest","grep":"consent","n":12,"ctx":200},
+{"do":"peek","url":"https://api.data.stats.govt.nz/rest/dataflow/all/all/latest","grep":"migration","n":10,"ctx":200}
 ]}
