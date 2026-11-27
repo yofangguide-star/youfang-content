@@ -1,1 +1,1 @@
-{"id":"ocr11795812401","ops":[{"do":"adsync","what":"ocr","rate":2.75,"date":"2026-10-28","move":"hold","vote":"4-3","next":"2026-12-09","src":"https://www.rbnz.govt.nz/news-and-events/events/2026/october/monetary-policy-review-and-ocr-october-2026"}]}
+{"id":"cen11795812999","ops":[{"do":"peek","url":"https://api.data.stats.govt.nz/rest/dataflow/STATSNZ/CEN23_ECI_016/1.0?references=all","grep":"<str:Dimension ","n":10,"ctx":120}]}
