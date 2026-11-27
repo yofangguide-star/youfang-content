@@ -1,0 +1,9 @@
+{
+    "ok": true,
+    "id": "cen11795812999",
+    "hash": "048007fb",
+    "log": [
+        "peek HTTP 200 | 长度 490345 | 类型 application\/vnd.sdmx.structure+json; charset=utf-8; version=1.0",
+        "peek grep「<str:Dimension 」0 处："
+    ]
+}
