@@ -1,1 +1,1 @@
-{"id":"ads1795790590","ops":[{"do":"adsync","what":"consents"}]}
+{"id": "patrol1795803501", "ops": [{"do": "selftest"}, {"do": "health", "warm": 1}, {"do": "stuck"}, {"do": "partner", "n": 5}, {"do": "creq"}]}
