@@ -1,4 +1,4 @@
-{"id":"pk71795780117","ops":[
+{"id":"pk81795780183","ops":[
 {"do":"peek","url":"https://api.data.stats.govt.nz/rest/dataflow/all/all/latest","grep":"consent","n":12,"ctx":200},
-{"do":"peek","url":"https://api.data.stats.govt.nz/rest/dataflow/all/all/latest","grep":"migration","n":10,"ctx":200}
+{"do":"peek","url":"https://api.data.stats.govt.nz/rest/dataflow/all/all/latest","grep":"migra","n":10,"ctx":200}
 ]}
