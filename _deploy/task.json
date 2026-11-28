@@ -1,1 +1,1 @@
-{"id":"ac31795865575","ops":[{"do":"agentcard","mid":5971,"types":"migration","dry":1},{"do":"agentcard","mid":5971,"force":1}]}
+{"id":"mn1795865698","ops":[{"do":"adsync","what":"migration_names"}]}
