@@ -1,1 +1,1 @@
-{"id":"sb1795860716","ops":[{"do":"probe","path":"/submit/?type=event","find":"活动名称"}]}
+{"id":"si1795864782","ops":[{"do":"sysinfo"}]}
