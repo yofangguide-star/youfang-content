@@ -1,1 +1,1 @@
-{"id":"ac21795865458","ops":[{"do":"agentcard","mid":5971,"dry":1}]}
+{"id":"ac31795865575","ops":[{"do":"agentcard","mid":5971,"types":"migration","dry":1},{"do":"agentcard","mid":5971,"force":1}]}
